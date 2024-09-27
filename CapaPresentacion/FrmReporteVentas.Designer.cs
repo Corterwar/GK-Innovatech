@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnBuscar2 = new FontAwesome.Sharp.IconButton();
-            this.btnLimpiarBusqueda = new FontAwesome.Sharp.IconButton();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBusqueda = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
@@ -50,80 +47,43 @@
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dtFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             this.dtFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BtnGuardar2 = new CustomControls.RJControls.RJButton();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.rjButton4 = new CustomControls.RJControls.RJButton();
+            this.rjButton5 = new CustomControls.RJControls.RJButton();
+            this.txtBusqueda = new CustomControls.RJControls.RJTextBox();
+            this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnBuscar2
-            // 
-            this.btnBuscar2.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBuscar2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar2.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscar2.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscar2.IconColor = System.Drawing.Color.Black;
-            this.btnBuscar2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar2.IconSize = 20;
-            this.btnBuscar2.Location = new System.Drawing.Point(523, 126);
-            this.btnBuscar2.Name = "btnBuscar2";
-            this.btnBuscar2.Size = new System.Drawing.Size(30, 23);
-            this.btnBuscar2.TabIndex = 81;
-            this.btnBuscar2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar2.UseVisualStyleBackColor = false;
-            this.btnBuscar2.Click += new System.EventHandler(this.btnBuscar2_Click);
-            // 
-            // btnLimpiarBusqueda
-            // 
-            this.btnLimpiarBusqueda.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLimpiarBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiarBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarBusqueda.ForeColor = System.Drawing.Color.Black;
-            this.btnLimpiarBusqueda.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiarBusqueda.IconColor = System.Drawing.Color.Black;
-            this.btnLimpiarBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiarBusqueda.IconSize = 20;
-            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(559, 125);
-            this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
-            this.btnLimpiarBusqueda.Size = new System.Drawing.Size(28, 23);
-            this.btnLimpiarBusqueda.TabIndex = 80;
-            this.btnLimpiarBusqueda.UseVisualStyleBackColor = false;
-            this.btnLimpiarBusqueda.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(413, 126);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(105, 22);
-            this.txtBusqueda.TabIndex = 79;
             // 
             // comboBusqueda
             // 
+            this.comboBusqueda.BackColor = System.Drawing.Color.Black;
             this.comboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBusqueda.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBusqueda.ForeColor = System.Drawing.Color.White;
             this.comboBusqueda.FormattingEnabled = true;
-            this.comboBusqueda.Location = new System.Drawing.Point(292, 126);
+            this.comboBusqueda.Location = new System.Drawing.Point(218, 232);
             this.comboBusqueda.Name = "comboBusqueda";
-            this.comboBusqueda.Size = new System.Drawing.Size(114, 24);
+            this.comboBusqueda.Size = new System.Drawing.Size(163, 29);
             this.comboBusqueda.TabIndex = 78;
             // 
             // label10
             // 
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(11, 109);
+            this.label10.Location = new System.Drawing.Point(1024, 301);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(601, 55);
+            this.label10.Size = new System.Drawing.Size(575, 55);
             this.label10.TabIndex = 76;
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -133,15 +93,16 @@
             this.dgvData.AllowUserToDeleteRows = false;
             this.dgvData.AllowUserToResizeColumns = false;
             this.dgvData.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FechaRegistro,
@@ -157,24 +118,31 @@
             this.PrecioVenta,
             this.Cantidad,
             this.SubTotal});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvData.DefaultCellStyle = dataGridViewCellStyle14;
-            this.dgvData.Location = new System.Drawing.Point(30, 195);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvData.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvData.EnableHeadersVisualStyles = false;
+            this.dgvData.Location = new System.Drawing.Point(107, 316);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvData.RowHeadersVisible = false;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvData.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.dgvData.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvData.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvData.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.dgvData.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.SystemColors.Highlight;
             this.dgvData.RowTemplate.Height = 28;
-            this.dgvData.Size = new System.Drawing.Size(557, 239);
+            this.dgvData.Size = new System.Drawing.Size(710, 254);
             this.dgvData.TabIndex = 75;
             // 
             // FechaRegistro
@@ -255,157 +223,264 @@
             this.SubTotal.Name = "SubTotal";
             this.SubTotal.ReadOnly = true;
             // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.label6.Location = new System.Drawing.Point(12, 174);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(600, 281);
-            this.label6.TabIndex = 74;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscar.IconColor = System.Drawing.Color.Black;
-            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 18;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(504, 54);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(73, 22);
-            this.btnBuscar.TabIndex = 72;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(213, 63);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(243, 37);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.Size = new System.Drawing.Size(85, 21);
             this.label4.TabIndex = 70;
             this.label4.Text = "Fecha Fin:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 63);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(65, 37);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.Size = new System.Drawing.Size(105, 21);
             this.label3.TabIndex = 69;
             this.label3.Text = "Fecha Inicio:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // dtFechaFin
             // 
             this.dtFechaFin.CustomFormat = "dd/MM/yyyy";
+            this.dtFechaFin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaFin.Location = new System.Drawing.Point(276, 58);
+            this.dtFechaFin.Location = new System.Drawing.Point(225, 55);
             this.dtFechaFin.Name = "dtFechaFin";
-            this.dtFechaFin.Size = new System.Drawing.Size(97, 20);
+            this.dtFechaFin.Size = new System.Drawing.Size(126, 29);
             this.dtFechaFin.TabIndex = 68;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 13);
-            this.label2.TabIndex = 67;
-            this.label2.Text = "Reporte Compras";
+            this.dtFechaFin.ValueChanged += new System.EventHandler(this.dtFechaFin_ValueChanged);
             // 
             // dtFechaInicio
             // 
             this.dtFechaInicio.CustomFormat = "dd/MM/yyyy";
+            this.dtFechaInicio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaInicio.Location = new System.Drawing.Point(101, 58);
+            this.dtFechaInicio.Location = new System.Drawing.Point(57, 55);
             this.dtFechaInicio.Name = "dtFechaInicio";
-            this.dtFechaInicio.Size = new System.Drawing.Size(97, 20);
+            this.dtFechaInicio.Size = new System.Drawing.Size(130, 29);
             this.dtFechaInicio.TabIndex = 65;
+            this.dtFechaInicio.ValueChanged += new System.EventHandler(this.dtFechaInicio_ValueChanged);
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(11, 22);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(104, 213);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(601, 76);
-            this.label1.TabIndex = 66;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Size = new System.Drawing.Size(713, 62);
+            this.label1.TabIndex = 96;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.groupBox1.Controls.Add(this.BtnGuardar2);
+            this.groupBox1.Controls.Add(this.rjButton1);
+            this.groupBox1.Controls.Add(this.dtFechaInicio);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.dtFechaFin);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(107, 51);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(710, 121);
+            this.groupBox1.TabIndex = 97;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Reporte Ventas";
             // 
             // BtnGuardar2
             // 
             this.BtnGuardar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.BtnGuardar2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.BtnGuardar2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.BtnGuardar2.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.BtnGuardar2.BorderRadius = 20;
-            this.BtnGuardar2.BorderSize = 1;
+            this.BtnGuardar2.BorderSize = 2;
             this.BtnGuardar2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnGuardar2.FlatAppearance.BorderSize = 0;
             this.BtnGuardar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGuardar2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGuardar2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.BtnGuardar2.Image = global::CapaPresentacion.Properties.Resources.sobresalir__1_;
-            this.BtnGuardar2.Location = new System.Drawing.Point(45, 113);
+            this.BtnGuardar2.Location = new System.Drawing.Point(549, 46);
             this.BtnGuardar2.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar2.Name = "BtnGuardar2";
-            this.BtnGuardar2.Size = new System.Drawing.Size(86, 46);
+            this.BtnGuardar2.Size = new System.Drawing.Size(136, 46);
             this.BtnGuardar2.TabIndex = 83;
             this.BtnGuardar2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.BtnGuardar2.UseVisualStyleBackColor = false;
             this.BtnGuardar2.Click += new System.EventHandler(this.btnExportar_Click);
             // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton1.BorderRadius = 20;
+            this.rjButton1.BorderSize = 2;
+            this.rjButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton1.Image = global::CapaPresentacion.Properties.Resources.buscar__1_;
+            this.rjButton1.Location = new System.Drawing.Point(384, 46);
+            this.rjButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(137, 45);
+            this.rjButton1.TabIndex = 119;
+            this.rjButton1.Text = " Buscar";
+            this.rjButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(134, 238);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 17);
+            this.label11.TabIndex = 71;
+            this.label11.Text = "Buscar por:";
+            // 
+            // rjButton4
+            // 
+            this.rjButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton4.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton4.BorderRadius = 20;
+            this.rjButton4.BorderSize = 2;
+            this.rjButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjButton4.FlatAppearance.BorderSize = 0;
+            this.rjButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton4.Image = global::CapaPresentacion.Properties.Resources.buscar__1_;
+            this.rjButton4.Location = new System.Drawing.Point(677, 230);
+            this.rjButton4.Margin = new System.Windows.Forms.Padding(2);
+            this.rjButton4.Name = "rjButton4";
+            this.rjButton4.Size = new System.Drawing.Size(51, 37);
+            this.rjButton4.TabIndex = 117;
+            this.rjButton4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton4.UseVisualStyleBackColor = false;
+            this.rjButton4.Click += new System.EventHandler(this.btnBuscar2_Click);
+            // 
+            // rjButton5
+            // 
+            this.rjButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton5.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton5.BorderRadius = 20;
+            this.rjButton5.BorderSize = 2;
+            this.rjButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjButton5.FlatAppearance.BorderSize = 0;
+            this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton5.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton5.Image = global::CapaPresentacion.Properties.Resources.IMAGEN_ASDJKHAKFJGAGSJFAKLDS;
+            this.rjButton5.Location = new System.Drawing.Point(741, 229);
+            this.rjButton5.Margin = new System.Windows.Forms.Padding(2);
+            this.rjButton5.Name = "rjButton5";
+            this.rjButton5.Size = new System.Drawing.Size(51, 37);
+            this.rjButton5.TabIndex = 118;
+            this.rjButton5.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton5.UseVisualStyleBackColor = false;
+            this.rjButton5.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.BackColor = System.Drawing.Color.Black;
+            this.txtBusqueda.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtBusqueda.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtBusqueda.BorderRadius = 10;
+            this.txtBusqueda.BorderSize = 2;
+            this.txtBusqueda.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.ForeColor = System.Drawing.Color.White;
+            this.txtBusqueda.IsReadOnly = false;
+            this.txtBusqueda.Location = new System.Drawing.Point(455, 229);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBusqueda.Multiline = false;
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtBusqueda.PasswordChar = false;
+            this.txtBusqueda.PlaceholderColor = System.Drawing.Color.White;
+            this.txtBusqueda.PlaceholderText = "Busqueda...";
+            this.txtBusqueda.ShortcutsEnabled = false;
+            this.txtBusqueda.Size = new System.Drawing.Size(199, 36);
+            this.txtBusqueda.TabIndex = 84;
+            this.txtBusqueda.Texts = "";
+            this.txtBusqueda.UnderlinedStyle = false;
+            // 
+            // rjTextBox2
+            // 
+            this.rjTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(59)))));
+            this.rjTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(119)))), ((int)(((byte)(220)))));
+            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rjTextBox2.BorderRadius = 15;
+            this.rjTextBox2.BorderSize = 2;
+            this.rjTextBox2.Enabled = false;
+            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rjTextBox2.IsReadOnly = true;
+            this.rjTextBox2.Location = new System.Drawing.Point(25, 13);
+            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox2.Multiline = true;
+            this.rjTextBox2.Name = "rjTextBox2";
+            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rjTextBox2.PasswordChar = false;
+            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox2.PlaceholderText = "";
+            this.rjTextBox2.ShortcutsEnabled = true;
+            this.rjTextBox2.Size = new System.Drawing.Size(874, 595);
+            this.rjTextBox2.TabIndex = 95;
+            this.rjTextBox2.Texts = "";
+            this.rjTextBox2.UnderlinedStyle = false;
+            this.rjTextBox2._TextChanged += new System.EventHandler(this.rjTextBox2__TextChanged);
+            // 
             // FrmReporteVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 471);
-            this.Controls.Add(this.BtnGuardar2);
-            this.Controls.Add(this.btnBuscar2);
-            this.Controls.Add(this.btnLimpiarBusqueda);
+            this.ClientSize = new System.Drawing.Size(902, 620);
+            this.Controls.Add(this.rjButton4);
+            this.Controls.Add(this.rjButton5);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.comboBusqueda);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dgvData);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dtFechaFin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dtFechaInicio);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.rjTextBox2);
             this.Name = "FrmReporteVentas";
             this.Text = "frmReporteVentas";
             this.Load += new System.EventHandler(this.FrmReporteVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private FontAwesome.Sharp.IconButton btnBuscar2;
-        private FontAwesome.Sharp.IconButton btnLimpiarBusqueda;
-        private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.ComboBox comboBusqueda;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvData;
-        private System.Windows.Forms.Label label6;
-        private FontAwesome.Sharp.IconButton btnBuscar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtFechaFin;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtFechaInicio;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroDocumento;
@@ -420,5 +495,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private CustomControls.RJControls.RJButton BtnGuardar2;
+        private CustomControls.RJControls.RJTextBox txtBusqueda;
+        private CustomControls.RJControls.RJTextBox rjTextBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label11;
+        private CustomControls.RJControls.RJButton rjButton1;
+        private CustomControls.RJControls.RJButton rjButton4;
+        private CustomControls.RJControls.RJButton rjButton5;
     }
 }

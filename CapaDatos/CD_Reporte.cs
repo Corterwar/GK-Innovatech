@@ -1,18 +1,16 @@
 ﻿using CapaEntidad;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
+using System.Data.SqlClient;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
     public class CD_Reporte
     {
 
-        public List<ReporteCompra> Compra(string fechainicio, string fechafin, int idproveedor)
+        public List<ReporteCompra> Compra(DateTime fechainicio, DateTime fechafin, int idproveedor)
         {
             List<ReporteCompra> lista = new List<ReporteCompra>();
 
@@ -22,9 +20,9 @@ namespace CapaDatos
                 {
                     StringBuilder query = new StringBuilder();
                     SqlCommand cmd = new SqlCommand("SP_REPORTECOMPRAS", oconexion);
-                    cmd.Parameters.AddWithValue("fechainicio",fechainicio);
-                    cmd.Parameters.AddWithValue("fechafin",fechafin);
-                    cmd.Parameters.AddWithValue("idproveedor",idproveedor);
+                    cmd.Parameters.AddWithValue("fechainicio", fechainicio);
+                    cmd.Parameters.AddWithValue("fechafin", fechafin);
+                    cmd.Parameters.AddWithValue("idproveedor", idproveedor);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
@@ -61,7 +59,7 @@ namespace CapaDatos
             return lista;
         }
 
-        public List<ReporteVenta> Venta(string fechainicio, string fechafin)
+        public List<ReporteVenta> Venta(DateTime fechainicio, DateTime fechafin)
         {
             List<ReporteVenta> lista = new List<ReporteVenta>();
 

@@ -1,11 +1,9 @@
 ﻿using CapaEntidad;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
+using System.Data.SqlClient;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
@@ -21,8 +19,8 @@ namespace CapaDatos
                 {
 
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select IdCliente, Documento, NombreCompleto, Correo, Telefono, Estado from Cliente");
-                   
+                    query.AppendLine("select IdCliente, Documento, NombreCompleto, Direccion, Correo, Telefono, Estado from Cliente");
+
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
 
                     cmd.CommandType = CommandType.Text;
@@ -37,6 +35,7 @@ namespace CapaDatos
                                 IdCliente = Convert.ToInt32(dr["IdCliente"]),
                                 Documento = dr["Documento"].ToString(),
                                 NombreCompleto = dr["NombreCompleto"].ToString(),
+                                Direccion = dr["Direccion"].ToString(),
                                 Correo = dr["Correo"].ToString(),
                                 Telefono = dr["Telefono"].ToString(),
                                 Estado = Convert.ToBoolean(dr["Estado"]),
@@ -66,6 +65,7 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand("SP_REGISTRARCLIENTE", oconexion);
                     cmd.Parameters.AddWithValue("Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("NombreCompleto", obj.NombreCompleto);
+                    cmd.Parameters.AddWithValue("Direccion", obj.Direccion);
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
@@ -108,6 +108,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("IdCliente", obj.IdCliente);
                     cmd.Parameters.AddWithValue("Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("NombreCompleto", obj.NombreCompleto);
+                    cmd.Parameters.AddWithValue("Direccion", obj.Direccion);    
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);

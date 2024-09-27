@@ -1,12 +1,9 @@
 ﻿using CapaEntidad;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
+using System.Data.SqlClient;
 using System.Text;
-using System.Threading.Tasks;
-using System.Reflection;
 
 namespace CapaDatos
 {
@@ -42,7 +39,7 @@ namespace CapaDatos
             return idCorrelativo;
         }
 
-      
+
 
         public bool RestarStock(int idProd, int cantidad)
         {
@@ -157,7 +154,7 @@ namespace CapaDatos
                     StringBuilder query = new StringBuilder();
 
 
-                    query.AppendLine("select v.IdVenta,u.NombreCompleto,");
+                    query.AppendLine("select v.IdVenta,u.NombreCompleto,u.Documento,");
                     query.AppendLine("v.DocumentoCliente,v.NombreCliente,");
                     query.AppendLine("v.TipoDocumento,v.NumeroDocumento,");
                     query.AppendLine("v.MontoPago,v.MontoCambio,v.MontoTotal,");
@@ -176,7 +173,7 @@ namespace CapaDatos
                             obj = new Venta()
                             {
                                 IdVenta = Convert.ToInt32(dr["IdVenta"]),
-                                oUsuario = new Usuario { NombreCompleto = dr["NombreCompleto"].ToString() },
+                                oUsuario = new Usuario { NombreCompleto = dr["NombreCompleto"].ToString(), Documento = dr["Documento"].ToString() },
                                 DocumentoCliente = dr["DocumentoCliente"].ToString(),
                                 NombreCliente = dr["NombreCliente"].ToString(),
                                 TipoDocumento = dr["TipoDocumento"].ToString(),
@@ -204,46 +201,42 @@ namespace CapaDatos
         {
             List<DetalleVenta> oLista = new List<DetalleVenta>();
 
-                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
                 {
-                    try
+                    oconexion.Open();
+                    StringBuilder query = new StringBuilder();
+
+
+
+                    query.AppendLine("select p.Nombre,p.Descripcion,dv.PrecioVenta,dv.Cantidad,dv.SubTotal from Detalle_Venta dv");
+                    query.AppendLine("inner join Productos p on p.IdProducto = dv.IdProducto");
+                    query.AppendLine("where dv.IdVenta = @IdVenta");
+
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
+                    cmd.Parameters.AddWithValue("@IdVenta", idVenta);
+                    cmd.CommandType = CommandType.Text;
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        oconexion.Open();
-                        StringBuilder query = new StringBuilder();
-
-                    //                    select
-                    //p.Nombre,dv.PrecioVenta,dv.Cantidad,dv.SubTotal
-                    //from Detalle_Venta dv
-                    //inner join Productos p on p.IdProducto = dv.IdProducto
-                    //where dv.IdVenta = 1
-
-                        query.AppendLine("select p.Nombre,dv.PrecioVenta,dv.Cantidad,dv.SubTotal from Detalle_Venta dv");
-                        query.AppendLine("inner join Productos p on p.IdProducto = dv.IdProducto");
-                        query.AppendLine("where dv.IdVenta = @IdVenta");
-
-
-                        SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
-                        cmd.Parameters.AddWithValue("@IdVenta", idVenta);
-                        cmd.CommandType = CommandType.Text;
-
-                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        while (dr.Read())
                         {
-                            while (dr.Read())
+                            oLista.Add(new DetalleVenta()
                             {
-                                oLista.Add(new DetalleVenta()
-                                {
-                                    oProducto = new Producto() { Nombre = dr["Nombre"].ToString() },
-                                    PrecioVenta = Convert.ToDecimal(dr["PrecioVenta"].ToString()),
-                                    Cantidad = Convert.ToInt32(dr["Cantidad"].ToString()),
-                                    SubTotal = Convert.ToDecimal(dr["SubTotal"].ToString())
-                                });
-                            }
+                                oProducto = new Producto() { Nombre = dr["Nombre"].ToString() , Descripcion = dr["Descripcion"].ToString() },
+                                PrecioVenta = Convert.ToDecimal(dr["PrecioVenta"].ToString()),
+                                Cantidad = Convert.ToInt32(dr["Cantidad"].ToString()),
+                                SubTotal = Convert.ToDecimal(dr["SubTotal"].ToString())
+                            });
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        oLista = new List<DetalleVenta>();
-                    }
+                }
+                catch (Exception ex)
+                {
+                    oLista = new List<DetalleVenta>();
+                }
             }
 
 

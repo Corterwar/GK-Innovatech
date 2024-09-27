@@ -1,15 +1,9 @@
-﻿using System;
+﻿using CapaEntidad;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using CapaEntidad;
-using System.Reflection;
-using System.Collections;
-using System.Security.Claims;
-using System.Xml.Linq;
+using System.Text;
 
 namespace CapaDatos
 {
@@ -24,7 +18,7 @@ namespace CapaDatos
             {
                 try
                 {
-               
+
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("select u.IdUsuario, u.Documento, u.NombreCompleto,u.Correo,u.Clave,u.Estado,r.IdRol,r.Descripcion from usuario u");
                     query.AppendLine("inner join Rol r on r.IdRol = u.IdRol");
@@ -45,7 +39,7 @@ namespace CapaDatos
                                 Correo = dr["Correo"].ToString(),
                                 Clave = dr["Clave"].ToString(),
                                 Estado = Convert.ToBoolean(dr["Estado"]),
-                                oRol = new Rol() { IdRol = Convert.ToInt32(dr["IdRol"]) , Descripcion = dr["Descripcion"].ToString() }
+                                oRol = new Rol() { IdRol = Convert.ToInt32(dr["IdRol"]), Descripcion = dr["Descripcion"].ToString() }
                             });
                         }
                     }
@@ -69,25 +63,25 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
 
-//                    create PROC SP_REGISTRARUSUARIO(
-//@Documento varchar(50),
-//@NombreCompleto varchar(100),
-//@Correo varchar(100),
-//@Clave varchar(80),
-//@IdRol int,
-//@Estado bit,
-//@IdUsuarioResultado int output,
-//@Mensaje varchar(500) output
-//)
-//as
+                    //                    create PROC SP_REGISTRARUSUARIO(
+                    //@Documento varchar(50),
+                    //@NombreCompleto varchar(100),
+                    //@Correo varchar(100),
+                    //@Clave varchar(80),
+                    //@IdRol int,
+                    //@Estado bit,
+                    //@IdUsuarioResultado int output,
+                    //@Mensaje varchar(500) output
+                    //)
+                    //as
                     SqlCommand cmd = new SqlCommand("SP_REGISTRARUSUARIO", oconexion);
-                    cmd.Parameters.AddWithValue("Documento",obj.Documento);
+                    cmd.Parameters.AddWithValue("Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("NombreCompleto", obj.NombreCompleto);
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Clave", obj.Clave);
                     cmd.Parameters.AddWithValue("IdRol", obj.oRol.IdRol);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
-                    cmd.Parameters.Add("IdUsuarioResultado",SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("IdUsuarioResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -168,7 +162,7 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand("SP_ELIMINARUSUARIO", oconexion);
                     cmd.Parameters.AddWithValue("IdUsuario", obj.IdUsuario);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();

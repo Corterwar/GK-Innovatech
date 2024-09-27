@@ -1,10 +1,5 @@
 ﻿using CapaDatos;
 using CapaEntidad;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
@@ -51,9 +46,9 @@ namespace CapaNegocio
         }
 
 
-        public bool actualizarLogo(byte[] img,out string mensaje)
+        public bool actualizarLogo(byte[] img, out string mensaje)
         {
-            return objcd_Negocio.actualizarLogo(img,out mensaje);
+            return objcd_Negocio.actualizarLogo(img, out mensaje);
         }
     }
 }

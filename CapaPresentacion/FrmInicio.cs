@@ -1,13 +1,7 @@
-﻿using CapaEntidad;
-using CapaNegocio;
+﻿using CapaNegocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -28,7 +22,7 @@ namespace CapaPresentacion
             int prod = new CN_Producto().Listar().Where(p => p.Estado == true).Count();
             Btn2.Text = "Cantidad de Productos: " + prod;
 
-            int user = new CN_Usuario().Listar().Where(u=> u.Estado == true).Count();
+            int user = new CN_Usuario().Listar().Where(u => u.Estado == true).Count();
             Btn3.Text = "Cantidad de Usuarios: " + user;
 
             int clientes = new CN_Cliente().Listar().Where(c => c.Estado == true).Count();
@@ -43,19 +37,6 @@ namespace CapaPresentacion
             Btn6.Text = "Cantidad de Proveedores: " + proveedores;
         }
 
-        private void btnIngresar2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

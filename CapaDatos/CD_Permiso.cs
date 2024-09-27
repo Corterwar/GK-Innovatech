@@ -1,11 +1,9 @@
 ﻿using CapaEntidad;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
+using System.Data.SqlClient;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
@@ -36,7 +34,7 @@ namespace CapaDatos
                         {
                             lista.Add(new Permiso()
                             {
-                                oRol = new Rol() {IdRol = Convert.ToInt32(dr["IdRol"]) },
+                                oRol = new Rol() { IdRol = Convert.ToInt32(dr["IdRol"]) },
                                 NombreMenu = dr["NombreMenu"].ToString(),
 
                             });

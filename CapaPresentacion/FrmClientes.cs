@@ -3,12 +3,7 @@ using CapaNegocio;
 using CapaPresentacion.Utilidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -45,62 +40,123 @@ namespace CapaPresentacion
 
             foreach (Cliente item in listaClientes)
             {
-                dgvData.Rows.Add(new object[] {"",item.IdCliente,item.Documento,item.NombreCompleto,item.Correo,item.Telefono,
+                dgvData.Rows.Add(new object[] {"",item.IdCliente,item.Documento,item.NombreCompleto,item.Direccion,item.Correo,item.Telefono,
                     item.Estado == true ? 1 : 0,
                     item.Estado == true ? "Activo": "No Activo"
                 });
             }
-        
+
+        }
+
+        private bool Validaciones()
+        {
+            bool confirmacion = true;
+
+            if (txtDocumento.Texts == "")
+            {
+                confirmacion = false;
+            }
+            if (txtDireccion.Texts == "")
+            {
+                confirmacion = false;
+            }
+            if (txtCorreo.Texts == "" || !(txtCorreo.Texts.Contains("@")))
+            {
+                confirmacion = false;
+            }
+            if (txtNombre.Texts == "")
+            {
+                confirmacion = false;
+            }
+            if (txtTelefono.Texts == "")
+            {
+                confirmacion = false;
+            }
+
+
+            return confirmacion;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string mensaje = string.Empty;
-            Cliente objCliente = new Cliente()
-            {
-                IdCliente = Convert.ToInt32(txtid.Text),
-                Documento = txtDocumento.Text,
-                NombreCompleto = txtNombre.Text,
-                Correo = txtCorreo.Text,
-                Telefono = txtTelefono.Text,
-                Estado = Convert.ToInt32(((OpcionesCombo)comboEstado.SelectedItem).Valor) == 1 ? true : false
-            };
 
-            if (objCliente.IdCliente == 0)
+            if (Validaciones())
             {
-                int idClienteGenerado = new CN_Cliente().Registrar(objCliente, out mensaje);
-                if (idClienteGenerado != 0)
+                DialogResult confirmacion;
+
+                string mensaje = string.Empty;
+
+                if (Convert.ToInt32(txtid.Text) == 0)
                 {
-                    dgvData.Rows.Add(new object[] {"",idClienteGenerado,txtDocumento.Text,txtNombre.Text,txtCorreo.Text,txtTelefono.Text,
-                    ((OpcionesCombo)comboEstado.SelectedItem).Valor.ToString(),
-                    ((OpcionesCombo)comboEstado.SelectedItem).Texto.ToString()});
-                    LimpiarCampos();
+                    confirmacion = MessageBox.Show("¿Seguro desea agregar el Cliente?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    confirmacion = MessageBox.Show("¿Seguro desea editar el Cliente?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 }
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    Cliente objCliente = new Cliente()
+                    {
+                        IdCliente = Convert.ToInt32(txtid.Text),
+                        Documento = txtDocumento.Texts,
+                        NombreCompleto = txtNombre.Texts,
+                        Direccion = txtDireccion.Texts,
+                        Correo = txtCorreo.Texts,
+                        Telefono = txtTelefono.Texts,
+                        Estado = Convert.ToInt32(((OpcionesCombo)comboEstado.SelectedItem).Valor) == 1 ? true : false
+                    };
+
+                    if (objCliente.IdCliente == 0)
+                    {
+                        int idClienteGenerado = new CN_Cliente().Registrar(objCliente, out mensaje);
+                        if (idClienteGenerado != 0)
+                        {
+                            dgvData.Rows.Add(new object[] {"",idClienteGenerado,txtDocumento.Texts,txtNombre.Texts,txtDireccion.Texts,txtCorreo.Texts,txtTelefono.Texts,
+                            ((OpcionesCombo)comboEstado.SelectedItem).Valor.ToString(),
+                            ((OpcionesCombo)comboEstado.SelectedItem).Texto.ToString()});
+                            LimpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show(mensaje);
+                        }
+                    }
+                    else
+                    {
+                        bool resultado = new CN_Cliente().Editar(objCliente, out mensaje);
+                        if (resultado == true)
+                        {
+                            DataGridViewRow row = dgvData.Rows[Convert.ToInt32(txtindice.Text)];
+                            row.Cells["IdCliente"].Value = txtid.Text;
+                            row.Cells["Documento"].Value = txtDocumento.Texts;
+                            row.Cells["NombreCompleto"].Value = txtNombre.Texts;
+                            row.Cells["Direccion"].Value = txtDireccion.Texts;
+                            row.Cells["Correo"].Value = txtCorreo.Texts;
+                            row.Cells["Telefono"].Value = txtTelefono.Texts;
+                            row.Cells["EstadoValor"].Value = ((OpcionesCombo)comboEstado.SelectedItem).Valor.ToString();
+                            row.Cells["Estado"].Value = ((OpcionesCombo)comboEstado.SelectedItem).Texto.ToString();
+                            LimpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show(mensaje);
+                        }
+                    }
+
+                }
+
             }
             else
             {
-                bool resultado = new CN_Cliente().Editar(objCliente, out mensaje);
-                if (resultado == true)
-                {
-                    DataGridViewRow row = dgvData.Rows[Convert.ToInt32(txtindice.Text)];
-                    row.Cells["IdCliente"].Value = txtid.Text;
-                    row.Cells["Documento"].Value = txtDocumento.Text;
-                    row.Cells["NombreCompleto"].Value = txtNombre.Text;
-                    row.Cells["Correo"].Value = txtCorreo.Text;
-                    row.Cells["Telefono"].Value = txtTelefono.Text;
-                    row.Cells["EstadoValor"].Value = ((OpcionesCombo)comboEstado.SelectedItem).Valor.ToString();
-                    row.Cells["Estado"].Value = ((OpcionesCombo)comboEstado.SelectedItem).Texto.ToString();
-                    LimpiarCampos();
-                }
-                else
-                {
-                    MessageBox.Show(mensaje);
-                }
+                
+
+                    MessageBox.Show("Debe Completar todos los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
             }
+
+           
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -125,7 +181,7 @@ namespace CapaPresentacion
                     {
                         dgvData.Rows[Convert.ToInt32(txtindice.Text)].Cells["EstadoValor"].Value = 0;
                         dgvData.Rows[Convert.ToInt32(txtindice.Text)].Cells["Estado"].Value = "No Activo";
-                        //dgvData.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
+                    
                         LimpiarCampos();
                     }
                     else
@@ -144,7 +200,7 @@ namespace CapaPresentacion
             {
                 foreach (DataGridViewRow row in dgvData.Rows)
                 {
-                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Text.Trim().ToUpper()))
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Texts.Trim().ToUpper()))
                     {
                         row.Visible = true;
                     }
@@ -159,7 +215,7 @@ namespace CapaPresentacion
 
         private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
         {
-            txtBusqueda.Text = "";
+            txtBusqueda.Texts = "";
             foreach (DataGridViewRow row in dgvData.Rows)
             {
                 row.Visible = true;
@@ -176,11 +232,12 @@ namespace CapaPresentacion
                 {
                     txtindice.Text = indice.ToString();
                     txtid.Text = dgvData.Rows[indice].Cells["IdCliente"].Value.ToString();
-                    txtDocumento.Text = dgvData.Rows[indice].Cells["Documento"].Value.ToString();
-                    txtNombre.Text = dgvData.Rows[indice].Cells["NombreCompleto"].Value.ToString();
-                    txtCorreo.Text = dgvData.Rows[indice].Cells["Correo"].Value.ToString();
-                    txtTelefono.Text = dgvData.Rows[indice].Cells["Telefono"].Value.ToString();
-                    
+                    txtDocumento.Texts = dgvData.Rows[indice].Cells["Documento"].Value.ToString();
+                    txtNombre.Texts = dgvData.Rows[indice].Cells["NombreCompleto"].Value.ToString();
+                    txtDireccion.Texts = dgvData.Rows[indice].Cells["Direccion"].Value.ToString();
+                    txtCorreo.Texts = dgvData.Rows[indice].Cells["Correo"].Value.ToString();
+                    txtTelefono.Texts = dgvData.Rows[indice].Cells["Telefono"].Value.ToString();
+
 
 
 
@@ -225,12 +282,33 @@ namespace CapaPresentacion
         {
             txtindice.Text = "-1";
             txtid.Text = "0";
-            txtDocumento.Text = "";
-            txtNombre.Text = "";
-            txtCorreo.Text = "";
-            txtTelefono.Text = "";
+            txtDocumento.Texts = "";
+            txtNombre.Texts = "";
+            txtCorreo.Texts = "";
+            txtTelefono.Texts = "";
+            txtDireccion.Texts = "";
             comboEstado.SelectedIndex = 0;
             txtDocumento.Select();
+        }
+
+        private void rjTextBox1__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -238,31 +316,72 @@ namespace CapaPresentacion
 
         }
 
-        private void comboBusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
 
+            // Verificar si el carácter es un dígito
+            bool esDigito = Char.IsDigit(e.KeyChar);
+
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = txtDocumento.Texts.Length < 8;
+
+            // Permitir el carácter solo si es una tecla de control o un dígito y la longitud permitida no se ha alcanzado
+            if (esControl || (esDigito && longitudPermitida))
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
 
+            // Verificar si el carácter es un dígito
+            bool esDigito = Char.IsDigit(e.KeyChar);
+
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = txtNombre.Texts.Length < 80;
+
+            // Permitir el carácter solo si es una tecla de control o un dígito y la longitud permitida no se ha alcanzado
+            if (esControl || (!esDigito && longitudPermitida))
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
         }
 
-        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
 
-        }
+            // Verificar si el carácter es un dígito
+            bool esDigito = Char.IsDigit(e.KeyChar);
 
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = txtTelefono.Texts.Length < 11;
 
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-
+            // Permitir el carácter solo si es una tecla de control o un dígito y la longitud permitida no se ha alcanzado
+            if (esControl || (esDigito && longitudPermitida))
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
         }
     }
 
-    }
+}
 

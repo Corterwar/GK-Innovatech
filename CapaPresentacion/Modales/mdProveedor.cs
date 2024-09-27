@@ -3,12 +3,9 @@ using CapaNegocio;
 using CapaPresentacion.Utilidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaPresentacion.Modales
@@ -20,6 +17,12 @@ namespace CapaPresentacion.Modales
         public mdProveedor()
         {
             InitializeComponent();
+
+            // Configura la opacidad del formulario (50% de transparencia)
+            this.Opacity = 1;
+            // Establece un color clave de transparencia (el color de fondo del formulario será transparente)
+            this.BackColor = Color.FromArgb(36, 35, 58); // El color que quieres transparente
+            this.TransparencyKey = this.BackColor;
         }
 
         private void mdProveedor_Load(object sender, EventArgs e)
@@ -43,7 +46,11 @@ namespace CapaPresentacion.Modales
 
             foreach (Proveedor item in lista)
             {
-                dgvData.Rows.Add(new object[] {item.IdProveedor,item.Documento,item.RazonSocial
+                dgvData.Rows.Add(new object[] {
+                    item.IdProveedor,
+                    item.Documento,
+                    item.RazonSocial,
+                    item.Correo
                 });
             }
         }
@@ -53,13 +60,14 @@ namespace CapaPresentacion.Modales
             int iRow = e.RowIndex;
             int iColumn = e.ColumnIndex;
 
-            if(iRow >= 0 && iColumn > 0)
+            if (iRow >= 0 && iColumn > 0)
             {
                 _Proveedor = new Proveedor()
                 {
                     IdProveedor = Convert.ToInt32(dgvData.Rows[iRow].Cells["IdProveedor"].Value.ToString()),
-                    Documento =dgvData.Rows[iRow].Cells["Documento"].Value.ToString(),
-                    RazonSocial = dgvData.Rows[iRow].Cells["RazonSocial"].Value.ToString()
+                    Documento = dgvData.Rows[iRow].Cells["Documento"].Value.ToString(),
+                    RazonSocial = dgvData.Rows[iRow].Cells["RazonSocial"].Value.ToString(),
+                    Correo = dgvData.Rows[iRow].Cells["Correo"].Value.ToString()
                 };
 
                 this.DialogResult = DialogResult.OK;
@@ -75,7 +83,7 @@ namespace CapaPresentacion.Modales
             {
                 foreach (DataGridViewRow row in dgvData.Rows)
                 {
-                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Text.Trim().ToUpper()))
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Texts.Trim().ToUpper()))
                     {
                         row.Visible = true;
                     }
@@ -90,11 +98,51 @@ namespace CapaPresentacion.Modales
 
         private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
         {
-            txtBusqueda.Text = "";
+            txtBusqueda.Texts = "";
             foreach (DataGridViewRow row in dgvData.Rows)
             {
                 row.Visible = true;
             }
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void comboBusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjTextBox2__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void rjTextBox1__TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

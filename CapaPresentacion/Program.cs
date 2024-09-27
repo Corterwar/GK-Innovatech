@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaEntidad;
-using CustomControls.RJControls;
 
 namespace CapaPresentacion
 {
@@ -18,7 +13,7 @@ namespace CapaPresentacion
         {
 
 
-  
+
 
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-AR");
             Application.EnableVisualStyles();

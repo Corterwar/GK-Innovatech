@@ -1,11 +1,8 @@
 ﻿using CapaEntidad;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
@@ -27,7 +24,7 @@ namespace CapaDatos
 
                     cmd.CommandType = CommandType.Text;
 
-                    using (SqlDataReader dr= cmd.ExecuteReader())
+                    using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
                         {
@@ -40,7 +37,7 @@ namespace CapaDatos
                             };
                         }
                     }
-                
+
                 }
             }
             catch
@@ -70,10 +67,10 @@ namespace CapaDatos
                     query.AppendLine("where IdNegocio = 1");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
-                    cmd.Parameters.AddWithValue("@Nombre",obj.Nombre);          
+                    cmd.Parameters.AddWithValue("@Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("@RUC", obj.RUC);
-                    cmd.Parameters.AddWithValue("@Direccion",obj.Direccion);
-                  
+                    cmd.Parameters.AddWithValue("@Direccion", obj.Direccion);
+
                     cmd.CommandType = CommandType.Text;
 
 
@@ -82,12 +79,12 @@ namespace CapaDatos
                         mensaje = "No se pudo actualizar los datos";
                         respuesta = false;
                     }
-            
-                    
+
+
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 mensaje = ex.Message;
                 respuesta = false;
@@ -114,7 +111,7 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            img = (byte[]) dr["Logo"];
+                            img = (byte[])dr["Logo"];
                             //obj = new Negocio()
                             //{
                             //    IdNegocio = int.Parse(dr["IdNegocio"].ToString()),
@@ -130,7 +127,7 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-               
+
                 obtenido = false;
                 img = new byte[0];
             }
@@ -138,7 +135,7 @@ namespace CapaDatos
         }
 
 
-        public bool actualizarLogo(byte[] image,out string mensaje)
+        public bool actualizarLogo(byte[] image, out string mensaje)
         {
             mensaje = string.Empty;
             bool respuesta = true;

@@ -4,12 +4,7 @@ using CapaPresentacion.Utilidades;
 using ClosedXML.Excel;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -95,8 +90,8 @@ namespace CapaPresentacion
                     }
                 }
             }
-        
-    }
+
+        }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -104,8 +99,8 @@ namespace CapaPresentacion
             List<ReporteVenta> lista = new List<ReporteVenta>();
 
             lista = new CN_Reporte().Venta(
-                dtFechaInicio.Value.ToString(),
-                dtFechaFin.Value.ToString()
+                dtFechaInicio.Value,
+                dtFechaFin.Value
             );
 
             dgvData.Rows.Clear();
@@ -113,7 +108,7 @@ namespace CapaPresentacion
             foreach (ReporteVenta rv in lista)
             {
                 dgvData.Rows.Add(new object[]
-                {   
+                {
                     rv.FechaRegistro,
                     rv.TipoDocumento,
                     rv.NumeroDocumento,
@@ -139,7 +134,7 @@ namespace CapaPresentacion
             {
                 foreach (DataGridViewRow row in dgvData.Rows)
                 {
-                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Text.Trim().ToUpper()))
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Texts.Trim().ToUpper()))
                     {
                         row.Visible = true;
                     }
@@ -154,14 +149,34 @@ namespace CapaPresentacion
 
         private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
         {
-            txtBusqueda.Text = "";
+            txtBusqueda.Texts = "";
             foreach (DataGridViewRow row in dgvData.Rows)
             {
                 row.Visible = true;
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void rjTextBox2__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtFechaFin_ValueChanged(object sender, EventArgs e)
         {
 
         }

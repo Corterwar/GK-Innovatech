@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CapaDatos;
+﻿using CapaDatos;
 using CapaEntidad;
+using System.Collections.Generic;
 
 namespace CapaNegocio
 {
@@ -14,7 +10,7 @@ namespace CapaNegocio
 
         public List<Usuario> Listar()
         {
-           return objcd_usuario.Listar();
+            return objcd_usuario.Listar();
         }
 
         public int Registrar(Usuario obj, out string Mensaje)
@@ -38,7 +34,7 @@ namespace CapaNegocio
                 Mensaje += "Es Necesario el Correo del Usuario\n";
             }
 
-            if(Mensaje != string.Empty)
+            if (Mensaje != string.Empty)
             {
                 return 0;
             }

@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using CapaEntidad;
+using CapaNegocio;
+using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
-using CapaNegocio;
-using CapaEntidad;
 using Point = System.Drawing.Point;
+
 
 
 namespace CapaPresentacion
@@ -48,9 +45,9 @@ namespace CapaPresentacion
         private void btnIngresar_Click(object sender, EventArgs e)
         {
 
-            Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == campoDni.Text && u.Clave == campoClave.Text && u.Estado == true).FirstOrDefault();
+            Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == campoDNI.Text && u.Clave == campoClave.Text && u.Estado == true).FirstOrDefault();
 
-            if(ousuario != null)
+            if (ousuario != null)
             {
                 Inicio form = new Inicio(ousuario);
                 form.Show();
@@ -60,10 +57,10 @@ namespace CapaPresentacion
             }
             else
             {
-                System.Windows.MessageBox.Show("No se encuentra el Usuario","Alerta",MessageBoxButton.OK,MessageBoxImage.Exclamation);
+                System.Windows.MessageBox.Show("No se encuentra el Usuario", "Alerta", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
 
-   
+
 
         }
 
@@ -71,32 +68,19 @@ namespace CapaPresentacion
         private void frm_closing(object sender, FormClosingEventArgs e)
         {
             campoClave.Text = "";
-            campoDni.Text = "";
-            this.Show();        }
-
-        private void campoDni_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir solo dígitos, control (como Backspace), o una coma decimal
-            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                // Bloquear cualquier otro carácter
-                e.Handled = true;
-            }
+            campoDNI.Text = "";
+            this.Show();
         }
 
-        private void campoClave_TextChanged(object sender, EventArgs e)
-        {
+       
 
-        }
+
 
         private void btnIngresar2_Click(object sender, EventArgs e)
         {
 
-            Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == campoDni.Text && u.Clave == campoClave.Text && u.Estado == true).FirstOrDefault();
+
+            Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == campoDNI.Texts && u.Clave == campoClave.Texts && u.Estado == true).FirstOrDefault();
 
             if (ousuario != null)
             {
@@ -112,29 +96,59 @@ namespace CapaPresentacion
             }
         }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
 
-        }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+
+
+        private void campoClave_KeyPress(object sender, KeyPressEventArgs e)
         {
+
+            bool esControl = Char.IsControl(e.KeyChar);
+            // Verificar la longitud actual del texto y permitir solo hasta 80 dígitos
+            bool longitudPermitida = campoClave.Texts.Trim().Length < 80;
+
+            // Permitir el carácter solo si es una tecla de control o un dígito y la longitud permitida no se ha alcanzado
+            if (longitudPermitida || esControl)
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+        private void campoDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
+
+            // Verificar si el carácter es un dígito
+            bool esDigito = Char.IsDigit(e.KeyChar);
+
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = campoDNI.Texts.Length < 8;
+
+            // Permitir el carácter solo si es una tecla de control o un dígito y la longitud permitida no se ha alcanzado
+            if (esControl || (esDigito && longitudPermitida))
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+
+
 
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
+
+
 }

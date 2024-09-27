@@ -2,15 +2,9 @@
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
 using ClosedXML.Excel;
-using DocumentFormat.OpenXml.Office2016.Drawing.Command;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -30,7 +24,7 @@ namespace CapaPresentacion
             comboProveedor.Items.Add(new OpcionesCombo() { Valor = 0, Texto = "Todos" });
             foreach (Proveedor item in listaProveedores)
             {
-                comboProveedor.Items.Add(new OpcionesCombo() { Valor = item.IdProveedor, Texto = item.RazonSocial});
+                comboProveedor.Items.Add(new OpcionesCombo() { Valor = item.IdProveedor, Texto = item.RazonSocial });
 
             }
             comboProveedor.DisplayMember = "Texto";
@@ -57,8 +51,8 @@ namespace CapaPresentacion
             List<ReporteCompra> lista = new List<ReporteCompra>();
 
             lista = new CN_Reporte().Compra(
-                dtFechaInicio.Value.ToString(),
-                dtFechaFin.Value.ToString(),
+                dtFechaInicio.Value,
+                dtFechaFin.Value,
                 idproveedor
             );
 
@@ -95,7 +89,7 @@ namespace CapaPresentacion
             {
                 foreach (DataGridViewRow row in dgvData.Rows)
                 {
-                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Text.Trim().ToUpper()))
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Texts.Trim().ToUpper()))
                     {
                         row.Visible = true;
                     }
@@ -110,7 +104,7 @@ namespace CapaPresentacion
 
         private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
         {
-            txtBusqueda.Text = "";
+            txtBusqueda.Texts = "";
             foreach (DataGridViewRow row in dgvData.Rows)
             {
                 row.Visible = true;
@@ -128,7 +122,7 @@ namespace CapaPresentacion
                 DataTable dt = new DataTable();
                 foreach (DataGridViewColumn colum in dgvData.Columns)
                 {
-                        dt.Columns.Add(colum.HeaderText, typeof(string));       
+                    dt.Columns.Add(colum.HeaderText, typeof(string));
                 }
 
                 foreach (DataGridViewRow rows in dgvData.Rows)
@@ -151,8 +145,8 @@ namespace CapaPresentacion
                             rows.Cells[11].Value.ToString(),
                             rows.Cells[12].Value.ToString(),
                             rows.Cells[13].Value.ToString(),
-              
-                   
+
+
                         });
 
                     }
@@ -180,10 +174,6 @@ namespace CapaPresentacion
             }
         }
 
-        private void rjButton1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void BtnGuardar2_Click(object sender, EventArgs e)
         {
@@ -246,6 +236,51 @@ namespace CapaPresentacion
                     }
                 }
             }
+        }
+
+        private void dtFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtFechaFin_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboProveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBusqueda__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

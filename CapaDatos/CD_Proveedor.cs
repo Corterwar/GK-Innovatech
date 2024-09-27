@@ -1,11 +1,9 @@
 ﻿using CapaEntidad;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
+using System.Data.SqlClient;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
@@ -21,8 +19,8 @@ namespace CapaDatos
                 {
 
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select IdProveedor, Documento, RazonSocial, Correo, Telefono, Estado from Proveedor");
-                   
+                    query.AppendLine("select IdProveedor, Documento, RazonSocial,Direccion, Correo, Telefono, Estado from Proveedor");
+
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
 
                     cmd.CommandType = CommandType.Text;
@@ -37,6 +35,7 @@ namespace CapaDatos
                                 IdProveedor = Convert.ToInt32(dr["IdProveedor"]),
                                 Documento = dr["Documento"].ToString(),
                                 RazonSocial = dr["RazonSocial"].ToString(),
+                                Direccion = dr["Direccion"].ToString(),
                                 Correo = dr["Correo"].ToString(),
                                 Telefono = dr["Telefono"].ToString(),
                                 Estado = Convert.ToBoolean(dr["Estado"]),
@@ -66,9 +65,10 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand("SP_REGISTRARPROVEEDOR", oconexion);
                     cmd.Parameters.AddWithValue("Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("RazonSocial", obj.RazonSocial);
+                    cmd.Parameters.AddWithValue("Direccion", obj.Direccion);
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
-                  
+
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -109,9 +109,10 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("IdProveedor", obj.IdProveedor);
                     cmd.Parameters.AddWithValue("Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("RazonSocial", obj.RazonSocial);
+                    cmd.Parameters.AddWithValue("Direccion", obj.Direccion);
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
-              
+
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;

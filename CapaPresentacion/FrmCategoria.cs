@@ -3,12 +3,7 @@ using CapaNegocio;
 using CapaPresentacion.Utilidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -20,17 +15,7 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-
-
-        private void comboRol_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void FrmCategoria_Load(object sender, EventArgs e)
         {
@@ -41,7 +26,7 @@ namespace CapaPresentacion
             comboEstado.ValueMember = "Valor";
             comboEstado.SelectedIndex = 0;
 
-         
+
 
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
@@ -71,60 +56,101 @@ namespace CapaPresentacion
         {
             txtindice.Text = "-1";
             txtid.Text = "0";
-            txtDescripcion.Text = "";
+            txtDescripcion.Texts = "";
             comboEstado.SelectedIndex = 0;
             txtDescripcion.Select();
         }
+
+
+        private bool Validaciones()
+        {
+            bool confirmacion = true;
+
+            if (txtDescripcion.Texts == "")
+            {
+                confirmacion = false;
+            }
+
+
+            return confirmacion;
+
+        }
+
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string mensaje = string.Empty;
-            Categoria objCategoria = new Categoria()
-            {
-                IdCategoria = Convert.ToInt32(txtid.Text),
-                Descripcion = txtDescripcion.Text,
-                Estado = Convert.ToInt32(((OpcionesCombo)comboEstado.SelectedItem).Valor) == 1 ? true : false
-            };
 
-            if (objCategoria.IdCategoria == 0)
+            if (Validaciones())
             {
-                int idCategoriaGenerado = new CN_Categoria().Registrar(objCategoria, out mensaje);
-                if (idCategoriaGenerado != 0)
+                DialogResult confirmacion;
+
+                string mensaje = string.Empty;
+
+                if (Convert.ToInt32(txtid.Text) == 0)
                 {
-                    dgvData.Rows.Add(new object[] {"",idCategoriaGenerado,txtDescripcion.Text,
-                ((OpcionesCombo)comboEstado.SelectedItem).Valor.ToString(),
-                ((OpcionesCombo)comboEstado.SelectedItem).Texto.ToString()});
-                    LimpiarCampos();
+                    confirmacion = MessageBox.Show("¿Seguro desea agregar la Categoria?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    confirmacion = MessageBox.Show("¿Seguro desea editar la Categoria?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 }
+
+                if (confirmacion == DialogResult.Yes)
+                {
+
+                    Categoria objCategoria = new Categoria()
+                    {
+                        IdCategoria = Convert.ToInt32(txtid.Text),
+                        Descripcion = txtDescripcion.Texts,
+                        Estado = Convert.ToInt32(((OpcionesCombo)comboEstado.SelectedItem).Valor) == 1 ? true : false
+                    };
+
+                    if (objCategoria.IdCategoria == 0)
+                    {
+                        int idCategoriaGenerado = new CN_Categoria().Registrar(objCategoria, out mensaje);
+                        if (idCategoriaGenerado != 0)
+                        {
+                            dgvData.Rows.Add(new object[] {"",idCategoriaGenerado,txtDescripcion.Texts,
+                            ((OpcionesCombo)comboEstado.SelectedItem).Valor.ToString(),
+                            ((OpcionesCombo)comboEstado.SelectedItem).Texto.ToString()});
+                            LimpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show(mensaje);
+                        }
+                    }
+                    else
+                    {
+                        bool resultado = new CN_Categoria().Editar(objCategoria, out mensaje);
+                        if (resultado == true)
+                        {
+                            DataGridViewRow row = dgvData.Rows[Convert.ToInt32(txtindice.Text)];
+                            row.Cells["IdCategoria"].Value = txtid.Text;
+                            row.Cells["Descripcion"].Value = txtDescripcion.Texts;
+                            row.Cells["EstadoValor"].Value = ((OpcionesCombo)comboEstado.SelectedItem).Valor.ToString();
+                            row.Cells["Estado"].Value = ((OpcionesCombo)comboEstado.SelectedItem).Texto.ToString();
+                            LimpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show(mensaje);
+                        }
+                    }
+
+                }
+                
             }
             else
             {
-                bool resultado = new CN_Categoria().Editar(objCategoria, out mensaje);
-                if (resultado == true)
-                {
-                    DataGridViewRow row = dgvData.Rows[Convert.ToInt32(txtindice.Text)];
-                    row.Cells["IdCategoria"].Value = txtid.Text;
-                    row.Cells["Descripcion"].Value = txtDescripcion.Text;
-                    row.Cells["EstadoValor"].Value = ((OpcionesCombo)comboEstado.SelectedItem).Valor.ToString();
-                    row.Cells["Estado"].Value = ((OpcionesCombo)comboEstado.SelectedItem).Texto.ToString();
-                    LimpiarCampos();
-                }
-                else
-                {
-                    MessageBox.Show(mensaje);
-                }
+                MessageBox.Show("Debe Completar todos los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
+
+           
         }
 
-        private void dgvData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            
-
-        }
-
+       
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvData.Columns[e.ColumnIndex].Name == "btnseleccionar")
@@ -135,7 +161,7 @@ namespace CapaPresentacion
                 {
                     txtindice.Text = indice.ToString();
                     txtid.Text = dgvData.Rows[indice].Cells["IdCategoria"].Value.ToString();
-                    txtDescripcion.Text = dgvData.Rows[indice].Cells["Descripcion"].Value.ToString();
+                    txtDescripcion.Texts = dgvData.Rows[indice].Cells["Descripcion"].Value.ToString();
 
 
                     foreach (OpcionesCombo oc in comboEstado.Items)
@@ -214,7 +240,7 @@ namespace CapaPresentacion
             {
                 foreach (DataGridViewRow row in dgvData.Rows)
                 {
-                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Text.Trim().ToUpper()))
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Texts.Trim().ToUpper()))
                     {
                         row.Visible = true;
                     }
@@ -229,10 +255,32 @@ namespace CapaPresentacion
 
         private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
         {
-            txtBusqueda.Text = "";
+            txtBusqueda.Texts = "";
             foreach (DataGridViewRow row in dgvData.Rows)
             {
                 row.Visible = true;
+            }
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
+
+            // Verificar si el carácter es un dígito
+            bool esDigito = Char.IsDigit(e.KeyChar);
+
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = txtDescripcion.Texts.Length < 8;
+
+            // Permitir el carácter solo si es una tecla de control o un dígito y la longitud permitida no se ha alcanzado
+            if (esControl || (!esDigito && longitudPermitida))
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
             }
         }
     }

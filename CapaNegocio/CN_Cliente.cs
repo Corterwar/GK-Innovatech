@@ -1,10 +1,6 @@
 ﻿using CapaDatos;
 using CapaEntidad;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
@@ -28,6 +24,10 @@ namespace CapaNegocio
             if (obj.NombreCompleto == "")
             {
                 Mensaje += "Es Necesario el Nombre de Cliente\n";
+            }
+            if (obj.Direccion == "")
+            {
+                Mensaje += "Es Necesario la Direccion del Cliente\n";
             }
             if (obj.Telefono == "")
             {
@@ -60,6 +60,10 @@ namespace CapaNegocio
             if (obj.NombreCompleto == "")
             {
                 Mensaje += "Es Necesario el Nombre de Cliente\n";
+            }
+            if (obj.Direccion == "")
+            {
+                Mensaje += "Es Necesario la Direccion del Cliente\n";
             }
             if (obj.Telefono == "")
             {

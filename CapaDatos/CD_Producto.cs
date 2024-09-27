@@ -1,12 +1,9 @@
 ﻿using CapaEntidad;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
+using System.Data.SqlClient;
 using System.Text;
-using System.Threading.Tasks;
-using System.Reflection;
 
 namespace CapaDatos
 {
@@ -40,12 +37,12 @@ namespace CapaDatos
                                 Codigo = dr["Codigo"].ToString(),
                                 Nombre = dr["Nombre"].ToString(),
                                 Descripcion = dr["Descripcion"].ToString(),
-                                oCategoria = new Categoria() { IdCategoria = Convert.ToInt32(dr["IdCategoria"]),Descripcion= dr["DescripcionCategoria"].ToString() },
+                                oCategoria = new Categoria() { IdCategoria = Convert.ToInt32(dr["IdCategoria"]), Descripcion = dr["DescripcionCategoria"].ToString() },
                                 Stock = Convert.ToInt32(dr["Stock"]),
                                 PrecioCompra = Convert.ToDecimal(dr["PrecioCompra"]),
                                 PrecioVenta = Convert.ToDecimal(dr["PrecioVenta"]),
                                 Estado = Convert.ToBoolean(dr["Estado"]),
-                                });
+                            });
                         }
                     }
 
@@ -75,7 +72,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("IdCategoria", obj.oCategoria.IdCategoria);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
-              
+
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;

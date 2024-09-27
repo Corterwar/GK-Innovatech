@@ -31,48 +31,32 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.btnLimpiarBusqueda = new FontAwesome.Sharp.IconButton();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.IdCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBusqueda = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtid = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtindice = new System.Windows.Forms.TextBox();
             this.comboEstado = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.BtnLimpiar2 = new CustomControls.RJControls.RJButton();
             this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.BtnEliminar2 = new CustomControls.RJControls.RJButton();
-            this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.IdCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDescripcion = new CustomControls.RJControls.RJTextBox();
+            this.txtBusqueda = new CustomControls.RJControls.RJTextBox();
+            this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.rjButton2 = new CustomControls.RJControls.RJButton();
+            this.rjButton3 = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscar.IconColor = System.Drawing.Color.Black;
-            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.IconSize = 20;
-            this.btnBuscar.Location = new System.Drawing.Point(495, 191);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(33, 23);
-            this.btnBuscar.TabIndex = 53;
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dgvData
             // 
@@ -80,10 +64,11 @@
             this.dgvData.AllowUserToDeleteRows = false;
             this.dgvData.AllowUserToResizeColumns = false;
             this.dgvData.AllowUserToResizeRows = false;
+            this.dgvData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -105,199 +90,25 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvData.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvData.Location = new System.Drawing.Point(70, 267);
+            this.dgvData.EnableHeadersVisualStyles = false;
+            this.dgvData.Location = new System.Drawing.Point(107, 333);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
+            this.dgvData.RowHeadersVisible = false;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvData.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.dgvData.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvData.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvData.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.dgvData.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.SystemColors.Highlight;
             this.dgvData.RowTemplate.Height = 28;
-            this.dgvData.Size = new System.Drawing.Size(478, 167);
+            this.dgvData.Size = new System.Drawing.Size(710, 242);
             this.dgvData.TabIndex = 47;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting_1);
-            // 
-            // btnLimpiarBusqueda
-            // 
-            this.btnLimpiarBusqueda.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLimpiarBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiarBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarBusqueda.ForeColor = System.Drawing.Color.Black;
-            this.btnLimpiarBusqueda.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiarBusqueda.IconColor = System.Drawing.Color.Black;
-            this.btnLimpiarBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiarBusqueda.IconSize = 20;
-            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(534, 191);
-            this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
-            this.btnLimpiarBusqueda.Size = new System.Drawing.Size(32, 23);
-            this.btnLimpiarBusqueda.TabIndex = 54;
-            this.btnLimpiarBusqueda.UseVisualStyleBackColor = false;
-            this.btnLimpiarBusqueda.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(383, 192);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(106, 22);
-            this.txtBusqueda.TabIndex = 52;
-            // 
-            // comboBusqueda
-            // 
-            this.comboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBusqueda.FormattingEnabled = true;
-            this.comboBusqueda.Location = new System.Drawing.Point(114, 190);
-            this.comboBusqueda.Name = "comboBusqueda";
-            this.comboBusqueda.Size = new System.Drawing.Size(108, 24);
-            this.comboBusqueda.TabIndex = 51;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(33, 195);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 16);
-            this.label11.TabIndex = 50;
-            this.label11.Text = "Buscar por:";
-            // 
-            // txtid
-            // 
-            this.txtid.Location = new System.Drawing.Point(60, 66);
-            this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(24, 20);
-            this.txtid.TabIndex = 49;
-            this.txtid.Text = "0";
-            this.txtid.Visible = false;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(13, 185);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(605, 36);
-            this.label10.TabIndex = 48;
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtindice
-            // 
-            this.txtindice.Location = new System.Drawing.Point(30, 66);
-            this.txtindice.Name = "txtindice";
-            this.txtindice.Size = new System.Drawing.Size(24, 20);
-            this.txtindice.TabIndex = 55;
-            this.txtindice.Text = "-1";
-            this.txtindice.Visible = false;
-            // 
-            // comboEstado
-            // 
-            this.comboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboEstado.FormattingEnabled = true;
-            this.comboEstado.Location = new System.Drawing.Point(336, 62);
-            this.comboEstado.Name = "comboEstado";
-            this.comboEstado.Size = new System.Drawing.Size(162, 24);
-            this.comboEstado.TabIndex = 42;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(336, 46);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 16);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Estado:";
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(100, 64);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(161, 22);
-            this.txtDescripcion.TabIndex = 33;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(100, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 16);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Descripcion:";
-            // 
-            // BtnLimpiar2
-            // 
-            this.BtnLimpiar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.BtnLimpiar2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.BtnLimpiar2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.BtnLimpiar2.BorderRadius = 20;
-            this.BtnLimpiar2.BorderSize = 1;
-            this.BtnLimpiar2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnLimpiar2.FlatAppearance.BorderSize = 0;
-            this.BtnLimpiar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLimpiar2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLimpiar2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.BtnLimpiar2.Image = global::CapaPresentacion.Properties.Resources.escoba;
-            this.BtnLimpiar2.Location = new System.Drawing.Point(549, 107);
-            this.BtnLimpiar2.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnLimpiar2.Name = "BtnLimpiar2";
-            this.BtnLimpiar2.Size = new System.Drawing.Size(43, 41);
-            this.BtnLimpiar2.TabIndex = 74;
-            this.BtnLimpiar2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.BtnLimpiar2.UseVisualStyleBackColor = false;
-            this.BtnLimpiar2.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.rjButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.rjButton1.BorderRadius = 20;
-            this.rjButton1.BorderSize = 1;
-            this.rjButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.rjButton1.Location = new System.Drawing.Point(85, 107);
-            this.rjButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(190, 41);
-            this.rjButton1.TabIndex = 72;
-            this.rjButton1.Text = "+";
-            this.rjButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.rjButton1.UseVisualStyleBackColor = false;
-            this.rjButton1.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // BtnEliminar2
-            // 
-            this.BtnEliminar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.BtnEliminar2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.BtnEliminar2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.BtnEliminar2.BorderRadius = 20;
-            this.BtnEliminar2.BorderSize = 1;
-            this.BtnEliminar2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEliminar2.FlatAppearance.BorderSize = 0;
-            this.BtnEliminar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminar2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminar2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.BtnEliminar2.Image = global::CapaPresentacion.Properties.Resources.borrar;
-            this.BtnEliminar2.Location = new System.Drawing.Point(319, 107);
-            this.BtnEliminar2.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnEliminar2.Name = "BtnEliminar2";
-            this.BtnEliminar2.Size = new System.Drawing.Size(190, 41);
-            this.BtnEliminar2.TabIndex = 73;
-            this.BtnEliminar2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.BtnEliminar2.UseVisualStyleBackColor = false;
-            this.BtnEliminar2.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnseleccionar
             // 
@@ -318,7 +129,7 @@
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 200;
+            this.Descripcion.Width = 300;
             // 
             // EstadoValor
             // 
@@ -334,55 +145,344 @@
             this.Estado.ReadOnly = true;
             this.Estado.Width = 200;
             // 
+            // comboBusqueda
+            // 
+            this.comboBusqueda.BackColor = System.Drawing.Color.Black;
+            this.comboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBusqueda.ForeColor = System.Drawing.Color.White;
+            this.comboBusqueda.FormattingEnabled = true;
+            this.comboBusqueda.Location = new System.Drawing.Point(198, 258);
+            this.comboBusqueda.Name = "comboBusqueda";
+            this.comboBusqueda.Size = new System.Drawing.Size(132, 24);
+            this.comboBusqueda.TabIndex = 51;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(117, 262);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 17);
+            this.label11.TabIndex = 50;
+            this.label11.Text = "Buscar por:";
+            // 
+            // txtid
+            // 
+            this.txtid.Location = new System.Drawing.Point(30, 127);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(24, 20);
+            this.txtid.TabIndex = 49;
+            this.txtid.Text = "0";
+            this.txtid.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(104, 241);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(713, 59);
+            this.label10.TabIndex = 48;
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtindice
+            // 
+            this.txtindice.Location = new System.Drawing.Point(30, 66);
+            this.txtindice.Name = "txtindice";
+            this.txtindice.Size = new System.Drawing.Size(24, 20);
+            this.txtindice.TabIndex = 55;
+            this.txtindice.Text = "-1";
+            this.txtindice.Visible = false;
+            // 
+            // comboEstado
+            // 
+            this.comboEstado.BackColor = System.Drawing.Color.Black;
+            this.comboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboEstado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.comboEstado.ForeColor = System.Drawing.Color.White;
+            this.comboEstado.FormattingEnabled = true;
+            this.comboEstado.Location = new System.Drawing.Point(395, 54);
+            this.comboEstado.Name = "comboEstado";
+            this.comboEstado.Size = new System.Drawing.Size(162, 29);
+            this.comboEstado.TabIndex = 42;
+            // 
+            // BtnLimpiar2
+            // 
+            this.BtnLimpiar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.BtnLimpiar2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.BtnLimpiar2.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.BtnLimpiar2.BorderRadius = 20;
+            this.BtnLimpiar2.BorderSize = 2;
+            this.BtnLimpiar2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLimpiar2.FlatAppearance.BorderSize = 0;
+            this.BtnLimpiar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLimpiar2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.BtnLimpiar2.Image = global::CapaPresentacion.Properties.Resources.escoba;
+            this.BtnLimpiar2.Location = new System.Drawing.Point(603, 174);
+            this.BtnLimpiar2.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnLimpiar2.Name = "BtnLimpiar2";
+            this.BtnLimpiar2.Size = new System.Drawing.Size(190, 41);
+            this.BtnLimpiar2.TabIndex = 74;
+            this.BtnLimpiar2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.BtnLimpiar2.UseVisualStyleBackColor = false;
+            this.BtnLimpiar2.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton1.BorderRadius = 20;
+            this.rjButton1.BorderSize = 2;
+            this.rjButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton1.Location = new System.Drawing.Point(132, 174);
+            this.rjButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(190, 41);
+            this.rjButton1.TabIndex = 72;
+            this.rjButton1.Text = "+";
+            this.rjButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // BtnEliminar2
+            // 
+            this.BtnEliminar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.BtnEliminar2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.BtnEliminar2.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.BtnEliminar2.BorderRadius = 20;
+            this.BtnEliminar2.BorderSize = 2;
+            this.BtnEliminar2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEliminar2.FlatAppearance.BorderSize = 0;
+            this.BtnEliminar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEliminar2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEliminar2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.BtnEliminar2.Image = global::CapaPresentacion.Properties.Resources.borrar;
+            this.BtnEliminar2.Location = new System.Drawing.Point(370, 174);
+            this.BtnEliminar2.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnEliminar2.Name = "BtnEliminar2";
+            this.BtnEliminar2.Size = new System.Drawing.Size(190, 41);
+            this.BtnEliminar2.TabIndex = 73;
+            this.BtnEliminar2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.BtnEliminar2.UseVisualStyleBackColor = false;
+            this.BtnEliminar2.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.Black;
+            this.txtDescripcion.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtDescripcion.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDescripcion.BorderRadius = 10;
+            this.txtDescripcion.BorderSize = 2;
+            this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.txtDescripcion.ForeColor = System.Drawing.Color.White;
+            this.txtDescripcion.IsReadOnly = false;
+            this.txtDescripcion.Location = new System.Drawing.Point(158, 48);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcion.Multiline = false;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtDescripcion.PasswordChar = false;
+            this.txtDescripcion.PlaceholderColor = System.Drawing.Color.White;
+            this.txtDescripcion.PlaceholderText = "Descripcion";
+            this.txtDescripcion.ShortcutsEnabled = true;
+            this.txtDescripcion.Size = new System.Drawing.Size(174, 36);
+            this.txtDescripcion.TabIndex = 108;
+            this.txtDescripcion.Texts = "";
+            this.txtDescripcion.UnderlinedStyle = false;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.BackColor = System.Drawing.Color.Black;
+            this.txtBusqueda.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtBusqueda.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtBusqueda.BorderRadius = 10;
+            this.txtBusqueda.BorderSize = 2;
+            this.txtBusqueda.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.txtBusqueda.ForeColor = System.Drawing.Color.White;
+            this.txtBusqueda.IsReadOnly = false;
+            this.txtBusqueda.Location = new System.Drawing.Point(478, 255);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBusqueda.Multiline = false;
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtBusqueda.PasswordChar = false;
+            this.txtBusqueda.PlaceholderColor = System.Drawing.Color.White;
+            this.txtBusqueda.PlaceholderText = "Busqueda...";
+            this.txtBusqueda.ShortcutsEnabled = true;
+            this.txtBusqueda.Size = new System.Drawing.Size(186, 36);
+            this.txtBusqueda.TabIndex = 109;
+            this.txtBusqueda.Texts = "";
+            this.txtBusqueda.UnderlinedStyle = false;
+            // 
+            // rjTextBox2
+            // 
+            this.rjTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(59)))));
+            this.rjTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(119)))), ((int)(((byte)(220)))));
+            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rjTextBox2.BorderRadius = 15;
+            this.rjTextBox2.BorderSize = 2;
+            this.rjTextBox2.Enabled = false;
+            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rjTextBox2.IsReadOnly = true;
+            this.rjTextBox2.Location = new System.Drawing.Point(25, 13);
+            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox2.Multiline = true;
+            this.rjTextBox2.Name = "rjTextBox2";
+            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rjTextBox2.PasswordChar = false;
+            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox2.PlaceholderText = "";
+            this.rjTextBox2.ShortcutsEnabled = true;
+            this.rjTextBox2.Size = new System.Drawing.Size(885, 595);
+            this.rjTextBox2.TabIndex = 110;
+            this.rjTextBox2.Texts = "";
+            this.rjTextBox2.UnderlinedStyle = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtDescripcion);
+            this.groupBox1.Controls.Add(this.comboEstado);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(107, 50);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(710, 107);
+            this.groupBox1.TabIndex = 111;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Informacion Categoria";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(405, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 17);
+            this.label1.TabIndex = 115;
+            this.label1.Text = "Estado:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(176, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 17);
+            this.label5.TabIndex = 114;
+            this.label5.Text = "Descripcion:";
+            // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton2.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton2.BorderRadius = 20;
+            this.rjButton2.BorderSize = 2;
+            this.rjButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton2.Image = global::CapaPresentacion.Properties.Resources.buscar__1_;
+            this.rjButton2.Location = new System.Drawing.Point(687, 255);
+            this.rjButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(51, 37);
+            this.rjButton2.TabIndex = 112;
+            this.rjButton2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // rjButton3
+            // 
+            this.rjButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton3.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton3.BorderRadius = 20;
+            this.rjButton3.BorderSize = 2;
+            this.rjButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjButton3.FlatAppearance.BorderSize = 0;
+            this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton3.Image = global::CapaPresentacion.Properties.Resources.IMAGEN_ASDJKHAKFJGAGSJFAKLDS;
+            this.rjButton3.Location = new System.Drawing.Point(742, 255);
+            this.rjButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.rjButton3.Name = "rjButton3";
+            this.rjButton3.Size = new System.Drawing.Size(51, 37);
+            this.rjButton3.TabIndex = 113;
+            this.rjButton3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton3.UseVisualStyleBackColor = false;
+            this.rjButton3.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
+            // 
             // FrmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.ClientSize = new System.Drawing.Size(643, 471);
-            this.Controls.Add(this.BtnLimpiar2);
-            this.Controls.Add(this.rjButton1);
-            this.Controls.Add(this.BtnEliminar2);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dgvData);
-            this.Controls.Add(this.btnLimpiarBusqueda);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(902, 620);
+            this.Controls.Add(this.rjButton3);
+            this.Controls.Add(this.rjButton2);
             this.Controls.Add(this.txtBusqueda);
+            this.Controls.Add(this.rjButton1);
+            this.Controls.Add(this.dgvData);
+            this.Controls.Add(this.BtnLimpiar2);
+            this.Controls.Add(this.BtnEliminar2);
             this.Controls.Add(this.comboBusqueda);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtindice);
-            this.Controls.Add(this.comboEstado);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.rjTextBox2);
             this.Name = "FrmCategoria";
             this.Text = "FrmCategoria";
             this.Load += new System.EventHandler(this.FrmCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private FontAwesome.Sharp.IconButton btnBuscar;
         private System.Windows.Forms.DataGridView dgvData;
-        private FontAwesome.Sharp.IconButton btnLimpiarBusqueda;
-        private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.ComboBox comboBusqueda;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtindice;
         private System.Windows.Forms.ComboBox comboEstado;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Label label2;
         private CustomControls.RJControls.RJButton BtnLimpiar2;
         private CustomControls.RJControls.RJButton rjButton1;
         private CustomControls.RJControls.RJButton BtnEliminar2;
+        private CustomControls.RJControls.RJTextBox txtDescripcion;
+        private CustomControls.RJControls.RJTextBox txtBusqueda;
+        private CustomControls.RJControls.RJTextBox rjTextBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private CustomControls.RJControls.RJButton rjButton2;
+        private CustomControls.RJControls.RJButton rjButton3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewButtonColumn btnseleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;

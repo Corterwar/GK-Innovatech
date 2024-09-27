@@ -166,6 +166,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -199,6 +200,10 @@
     <Compile Include="Custom\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Custom\RJTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom\RJTextBox.Designer.cs" />
     <Compile Include="FrmCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +233,12 @@
     </Compile>
     <Compile Include="FrmDetalleVenta.Designer.cs">
       <DependentUpon>FrmDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGraficos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGraficos.Designer.cs">
+      <DependentUpon>FrmGraficos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmInicio.cs">
       <SubType>Form</SubType>
@@ -310,6 +321,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\OpcionesCombo.cs" />
+    <EmbeddedResource Include="Custom\RJTextBox.resx" />
     <EmbeddedResource Include="FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDetalleVenta.resx">
       <DependentUpon>FrmDetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGraficos.resx">
+      <DependentUpon>FrmGraficos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
@@ -559,6 +574,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Panel.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awqweqweqwe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_2024-08-25_112138191-fotor-bg-remover-202408251121451.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awqweqweqwe %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salvado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CampoUFinal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CampoCFinal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMAGEN ASDJKHAKFJGAGSJFAKLDS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

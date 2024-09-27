@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
@@ -13,6 +10,7 @@ namespace CapaEntidad
         public String TipoDocumento { get; set; }
         public String NumeroDocumento { get; set; }
         public String DocumentoCliente { get; set; }
+ 
         public String NombreCliente { get; set; }
         public decimal MontoPago { get; set; }
         public decimal MontoCambio { get; set; }

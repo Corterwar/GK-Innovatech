@@ -4,14 +4,9 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -25,17 +20,25 @@ namespace CapaPresentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Venta oVenta = new CN_Venta().obtenerVenta(txtBusqueda.Text);
+
+            Venta oVenta = new CN_Venta().obtenerVenta(txtBusqueda.Texts);
 
             if (oVenta.IdVenta != 0)
             {
-                txtDocumento.Text = oVenta.NumeroDocumento;
-                txtFecha.Text = oVenta.FechaRegistro;
-                txtTipoDocumento.Text = oVenta.TipoDocumento;
-                txtUsuario.Text = oVenta.oUsuario.NombreCompleto;
-                
-                txtDocumentoC.Text = oVenta.DocumentoCliente;
-                txtNombre.Text = oVenta.NombreCliente;  
+                Cliente oCliente = new CN_Cliente().Listar().Where(d => d.Documento == oVenta.DocumentoCliente).First();
+
+                txtDocumento.Texts = oVenta.NumeroDocumento;
+              
+                txtFecha.Texts = oVenta.FechaRegistro;
+                txtTipoDocumento.Texts = oVenta.TipoDocumento;
+
+
+                txtUsuario.Texts = oVenta.oUsuario.NombreCompleto;
+                txtDocV.Texts = oVenta.oUsuario.Documento;
+
+                txtDocumentoC.Texts = oVenta.DocumentoCliente;
+                txtNombre.Texts = oVenta.NombreCliente;
+                txtCorreoC.Texts = oCliente.Correo;
 
 
 
@@ -46,30 +49,37 @@ namespace CapaPresentacion
                     dgvData.Rows.Add(new object[]
                     {
                         dc.oProducto.Nombre,
+                        dc.oProducto.Descripcion,
                         dc.PrecioVenta,
                         dc.Cantidad,
                         dc.SubTotal
                     });
                 }
-                txtPago.Text = oVenta.MontoPago.ToString("0.00");
-                txtCambio.Text = oVenta.MontoCambio.ToString("0.00");
-                txtTotal.Text = oVenta.MontoTotal.ToString("0.00");
+                txtPago.Texts = oVenta.MontoPago.ToString("0.00");
+                txtCambio.Texts = oVenta.MontoCambio.ToString("0.00");
+                txtTotal.Texts = oVenta.MontoTotal.ToString("0.00");
 
+            }
+            else
+            {
+                MessageBox.Show("Debe colocar un numero de venta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            txtFecha.Text = "";
-            txtTipoDocumento.Text = "";
-            txtUsuario.Text = "";
-            txtDocumentoC.Text = "";
-            txtNombre.Text = "";
+            txtFecha.Texts = "";
+            txtTipoDocumento.Texts = "";
+            txtUsuario.Texts = "";
+            txtDocumentoC.Texts = "";
+            txtNombre.Texts = "";
+            txtDocV.Texts = "";
+            txtCorreoC.Texts = "";
 
             dgvData.Rows.Clear();
-            txtPago.Text = "0.00";
-            txtCambio.Text = "0.00";
-            txtTotal.Text = "0.00";
+            txtPago.Texts = "0.00";
+            txtCambio.Texts = "0.00";
+            txtTotal.Texts = "0.00";
         }
 
         private void FrmDetalleVenta_Load(object sender, EventArgs e)
@@ -79,11 +89,11 @@ namespace CapaPresentacion
 
         private void btnDescargar_Click(object sender, EventArgs e)
         {
-            //if (txtDocumento.Text == "")
-            //{
-            //    MessageBox.Show("No se encontraron resultados", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //    return;
-            //}
+            if (txtDocumento.Texts == "")
+            {
+                MessageBox.Show("No se encontraron resultados", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             string Texto_Html = Properties.Resources.PlantillaVenta.ToString();
             Negocio oDatos = new CN_Negocio().obtenerDatos();
 
@@ -91,13 +101,13 @@ namespace CapaPresentacion
             Texto_Html = Texto_Html.Replace("@docnegocio", oDatos.RUC);
             Texto_Html = Texto_Html.Replace("@direcnegocio", oDatos.Direccion);
 
-            Texto_Html = Texto_Html.Replace("@tipodocumento", txtTipoDocumento.Text.ToUpper());
-            Texto_Html = Texto_Html.Replace("@numerodocumento", txtDocumento.Text);
+            Texto_Html = Texto_Html.Replace("@tipodocumento", txtTipoDocumento.Texts.ToUpper());
+            Texto_Html = Texto_Html.Replace("@numerodocumento", txtDocumento.Texts);
 
-            Texto_Html = Texto_Html.Replace("@doccliente", txtDocumentoC.Text);
-            Texto_Html = Texto_Html.Replace("@nombrecliente", txtNombre.Text);
-            Texto_Html = Texto_Html.Replace("@fecharegistro", txtFecha.Text);
-            Texto_Html = Texto_Html.Replace("@usuarioregistro", txtUsuario.Text);
+            Texto_Html = Texto_Html.Replace("@doccliente", txtDocumentoC.Texts);
+            Texto_Html = Texto_Html.Replace("@nombrecliente", txtNombre.Texts);
+            Texto_Html = Texto_Html.Replace("@fecharegistro", txtFecha.Texts);
+            Texto_Html = Texto_Html.Replace("@usuarioregistro", txtUsuario.Texts);
 
 
             string filas = string.Empty;
@@ -112,12 +122,12 @@ namespace CapaPresentacion
                 filas += "</tr>";
             }
             Texto_Html = Texto_Html.Replace("@filas", filas);
-            Texto_Html = Texto_Html.Replace("@montototal", txtTotal.Text);
-            Texto_Html = Texto_Html.Replace("@pagocon", txtPago.Text);
-            Texto_Html = Texto_Html.Replace("@cambio", txtCambio.Text);
+            Texto_Html = Texto_Html.Replace("@montototal", txtTotal.Texts);
+            Texto_Html = Texto_Html.Replace("@pagocon", txtPago.Texts);
+            Texto_Html = Texto_Html.Replace("@cambio", txtCambio.Texts);
 
             SaveFileDialog savefile = new SaveFileDialog();
-            savefile.FileName = string.Format("Venta_{0}.pdf", txtDocumento.Text);
+            savefile.FileName = string.Format("Venta_{0}.pdf", txtDocumento.Texts);
             savefile.Filter = "Pdf Files | *.pdf";
 
             if (savefile.ShowDialog() == DialogResult.OK)
@@ -152,5 +162,128 @@ namespace CapaPresentacion
                 }
             }
         }
+
+
+
+        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
+
+            // Verificar si el carácter es un dígito
+            bool esDigito = Char.IsDigit(e.KeyChar);
+
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = txtBusqueda.Texts.Length < 8;
+
+            // Permitir el carácter solo si es una tecla de control o un dígito y la longitud permitida no se ha alcanzado
+            if (esControl || (esDigito && longitudPermitida))
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void txtBusqueda_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+
+
+                Venta oVenta = new CN_Venta().obtenerVenta(txtBusqueda.Texts);
+
+                if (oVenta.IdVenta != 0)
+                {
+
+                    
+                    Cliente oCliente = new CN_Cliente().Listar().Where(d => d.Documento == oVenta.DocumentoCliente).First();
+                  
+
+                    txtDocumento.Texts = oVenta.NumeroDocumento;
+
+                    txtFecha.Texts = oVenta.FechaRegistro;
+                    txtTipoDocumento.Texts = oVenta.TipoDocumento;
+
+
+                    txtUsuario.Texts = oVenta.oUsuario.NombreCompleto;
+                    txtDocV.Texts = oVenta.oUsuario.Documento;
+
+                    txtDocumentoC.Texts = oVenta.DocumentoCliente;
+                    txtNombre.Texts = oVenta.NombreCliente;
+                    txtCorreoC.Texts = oCliente.Correo;
+
+                    dgvData.Rows.Clear();
+
+                    foreach (DetalleVenta dc in oVenta.oDetalleVenta)
+                    {
+                        dgvData.Rows.Add(new object[]
+                        {
+                        dc.oProducto.Nombre,
+                        dc.oProducto.Descripcion,
+                        dc.PrecioVenta,
+                        dc.Cantidad,
+                        dc.SubTotal
+                        });
+                    }
+                    txtPago.Texts = oVenta.MontoPago.ToString("0.00");
+                    txtCambio.Texts = oVenta.MontoCambio.ToString("0.00");
+                    txtTotal.Texts = oVenta.MontoTotal.ToString("0.00");
+
+                }
+                else
+                {
+                    txtBusqueda.ForeColor = Color.MistyRose;
+                    btnLimpiar_Click(sender, e);
+                }
+
+            }
+
+
+        }
+
+        private void txtFecha__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDocumentoC__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTipoDocumento__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBusqueda__TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+

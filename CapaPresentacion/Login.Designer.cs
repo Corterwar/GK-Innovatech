@@ -29,31 +29,37 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.campoClave = new System.Windows.Forms.TextBox();
-            this.campoDni = new System.Windows.Forms.TextBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Desc = new System.Windows.Forms.Label();
             this.Titulo = new System.Windows.Forms.Label();
             this.Fondo = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.campoDNI = new CustomControls.RJControls.RJTextBox();
+            this.campoClave = new CustomControls.RJControls.RJTextBox();
             this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fondo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(58)))));
-            this.panel1.Controls.Add(this.rjButton1);
+            this.panel1.Controls.Add(this.campoDNI);
             this.panel1.Controls.Add(this.campoClave);
-            this.panel1.Controls.Add(this.campoDni);
+            this.panel1.Controls.Add(this.pictureBox6);
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.rjButton1);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox4);
@@ -62,49 +68,43 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(428, 517);
             this.panel1.TabIndex = 5;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // pictureBox1
+            // pictureBox6
             // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Panel;
-            this.pictureBox1.Location = new System.Drawing.Point(426, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(10, 517);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = global::CapaPresentacion.Properties.Resources.CampoUFinal;
+            this.pictureBox6.Location = new System.Drawing.Point(75, 253);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(292, 68);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 6;
+            this.pictureBox6.TabStop = false;
             // 
-            // campoClave
+            // pictureBox5
             // 
-            this.campoClave.Location = new System.Drawing.Point(139, 346);
-            this.campoClave.Name = "campoClave";
-            this.campoClave.Size = new System.Drawing.Size(157, 20);
-            this.campoClave.TabIndex = 6;
-            // 
-            // campoDni
-            // 
-            this.campoDni.Location = new System.Drawing.Point(139, 285);
-            this.campoDni.Name = "campoDni";
-            this.campoDni.Size = new System.Drawing.Size(157, 20);
-            this.campoDni.TabIndex = 5;
-            this.campoDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoDni_KeyPress);
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::CapaPresentacion.Properties.Resources.CampoCFinal;
+            this.pictureBox5.Location = new System.Drawing.Point(75, 323);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(292, 68);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 5;
+            this.pictureBox5.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources.KKKK_fotor_bg_remover_20240825112448;
+
             this.pictureBox3.Location = new System.Drawing.Point(86, 267);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(266, 116);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.imagen_2024_08_25_112138191_fotor_bg_remover_20240825112145;
+            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.imagen_2024_08_25_112138191_fotor_bg_remover_202408251121451;
             this.pictureBox2.Location = new System.Drawing.Point(165, 147);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(97, 86);
@@ -122,6 +122,16 @@
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Panel;
+            this.pictureBox1.Location = new System.Drawing.Point(426, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(10, 517);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // Desc
             // 
             this.Desc.BackColor = System.Drawing.Color.Transparent;
@@ -136,7 +146,7 @@
             // Titulo
             // 
             this.Titulo.BackColor = System.Drawing.Color.Transparent;
-            this.Titulo.Font = new System.Drawing.Font("Segoe UI Variable Display", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Titulo.ForeColor = System.Drawing.Color.White;
             this.Titulo.Location = new System.Drawing.Point(550, 249);
             this.Titulo.Name = "Titulo";
@@ -165,10 +175,62 @@
             this.btnSalir.Location = new System.Drawing.Point(677, 108);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(36, 32);
-            this.btnSalir.TabIndex = 9;
+            this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.Salir_Click);
+            // 
+            // campoDNI
+            // 
+            this.campoDNI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(31)))), ((int)(((byte)(84)))));
+            this.campoDNI.BorderColor = System.Drawing.Color.Transparent;
+            this.campoDNI.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.campoDNI.BorderRadius = 10;
+            this.campoDNI.BorderSize = 1;
+            this.campoDNI.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.campoDNI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoDNI.ForeColor = System.Drawing.Color.White;
+            this.campoDNI.IsReadOnly = false;
+            this.campoDNI.Location = new System.Drawing.Point(129, 273);
+            this.campoDNI.Margin = new System.Windows.Forms.Padding(4);
+            this.campoDNI.Multiline = false;
+            this.campoDNI.Name = "campoDNI";
+            this.campoDNI.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.campoDNI.PasswordChar = false;
+            this.campoDNI.PlaceholderColor = System.Drawing.Color.White;
+            this.campoDNI.PlaceholderText = "D.N.I";
+            this.campoDNI.ShortcutsEnabled = false;
+            this.campoDNI.Size = new System.Drawing.Size(198, 32);
+            this.campoDNI.TabIndex = 1;
+            this.campoDNI.Texts = "";
+            this.campoDNI.UnderlinedStyle = true;
+            this.campoDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoDNI_KeyPress);
+            // 
+            // campoClave
+            // 
+            this.campoClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(31)))), ((int)(((byte)(84)))));
+            this.campoClave.BorderColor = System.Drawing.Color.Transparent;
+            this.campoClave.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.campoClave.BorderRadius = 10;
+            this.campoClave.BorderSize = 1;
+            this.campoClave.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.campoClave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoClave.ForeColor = System.Drawing.Color.White;
+            this.campoClave.IsReadOnly = false;
+            this.campoClave.Location = new System.Drawing.Point(129, 336);
+            this.campoClave.Margin = new System.Windows.Forms.Padding(4);
+            this.campoClave.Multiline = false;
+            this.campoClave.Name = "campoClave";
+            this.campoClave.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.campoClave.PasswordChar = true;
+            this.campoClave.PlaceholderColor = System.Drawing.Color.White;
+            this.campoClave.PlaceholderText = "Contraseña";
+            this.campoClave.ShortcutsEnabled = false;
+            this.campoClave.Size = new System.Drawing.Size(198, 32);
+            this.campoClave.TabIndex = 2;
+            this.campoClave.Texts = "";
+            this.campoClave.UnderlinedStyle = true;
+            this.campoClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoClave_KeyPress);
             // 
             // rjButton1
             // 
@@ -184,7 +246,7 @@
             this.rjButton1.Location = new System.Drawing.Point(114, 420);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(204, 44);
-            this.rjButton1.TabIndex = 7;
+            this.rjButton1.TabIndex = 3;
             this.rjButton1.Text = "Ingresar";
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
@@ -210,11 +272,12 @@
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fondo)).EndInit();
             this.ResumeLayout(false);
 
@@ -229,10 +292,12 @@
         private System.Windows.Forms.Label Desc;
         private System.Windows.Forms.Label Titulo;
         private System.Windows.Forms.PictureBox Fondo;
-        private System.Windows.Forms.TextBox campoClave;
-        private System.Windows.Forms.TextBox campoDni;
         private System.Windows.Forms.Button btnSalir;
         private CustomControls.RJControls.RJButton rjButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private CustomControls.RJControls.RJTextBox campoClave;
+        private CustomControls.RJControls.RJTextBox campoDNI;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }
