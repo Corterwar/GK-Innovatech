@@ -14,9 +14,13 @@ namespace CapaPresentacion
 {
     public partial class FrmDetalleCompra : Form
     {
-        public FrmDetalleCompra()
+        public FrmDetalleCompra(Usuario obj)
         {
             InitializeComponent();
+            if (obj.oRol.IdRol != 1) {
+
+                btnValidar.Visible = false;
+            }
         }
 
 
@@ -38,6 +42,15 @@ namespace CapaPresentacion
                 txtDocumentoProv.Texts = oCompra.oProveedor.Documento;
                 txtRazon.Texts = oCompra.oProveedor.RazonSocial;
                 txtCorreoP.Texts = oCompra.oProveedor.Correo;
+
+                if (oCompra.Estado == false){
+                    txtEstado.Texts = "En Camino";
+                }
+                else
+                {
+                    txtEstado.Texts = "Recibida";
+                }
+
 
                 dgvData.Rows.Clear();
 
@@ -67,13 +80,13 @@ namespace CapaPresentacion
             txtTipoDocumento.Texts = "";
             txtUsuario.Texts = "";
             txtDocV.Texts = "";
-
             txtDocumentoProv.Texts = "";
             txtRazon.Texts = "";
             txtCorreoP.Texts = "";
+            txtEstado.Texts = "";
+            txtTotal.Texts = "0.00";
 
             dgvData.Rows.Clear();
-            txtTotal.Texts = "0.00";
         }
 
         private void btnDescargar_Click(object sender, EventArgs e)
@@ -199,7 +212,14 @@ namespace CapaPresentacion
                     txtDocumentoProv.Texts = oCompra.oProveedor.Documento;
                     txtRazon.Texts = oCompra.oProveedor.RazonSocial;
                     txtCorreoP.Texts = oCompra.oProveedor.Correo;
-
+                    if (oCompra.Estado == false)
+                    {
+                        txtEstado.Texts = "En Camino";
+                    }
+                    else
+                    {
+                        txtEstado.Texts = "Recibida";
+                    }
 
                     dgvData.Rows.Clear();
 
@@ -233,6 +253,36 @@ namespace CapaPresentacion
         }
 
         private void txtDocumentoProv__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            String Mensaje = string.Empty;
+            if(txtBusqueda.Texts != "")
+            {
+                bool Resultado = new CN_Compra().ValidarCompra(txtBusqueda.Texts, out Mensaje);
+                MessageBox.Show(Mensaje,"Alerta",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                txtEstado.Texts = "Recibida";
+            }
+            else
+            {
+                MessageBox.Show("No hay ninguna compra para validar","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFecha__TextChanged(object sender, EventArgs e)
         {
 
         }

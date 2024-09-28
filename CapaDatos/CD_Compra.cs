@@ -88,7 +88,7 @@ namespace CapaDatos
                     query.AppendLine("select c.IdCompra,");
                     query.AppendLine("u.NombreCompleto,u.Documento,");
                     query.AppendLine("pr.Documento,pr.RazonSocial,pr.Correo,");
-                    query.AppendLine("c.TipoDocumento,c.NumeroDocumento,c.MontoTotal,convert(char(10), c.FechaRegistro, 103)[FechaRegistro]");
+                    query.AppendLine("c.TipoDocumento,c.Estado,c.NumeroDocumento,c.MontoTotal,convert(char(10), c.FechaRegistro, 103)[FechaRegistro]");
                     query.AppendLine("from Compra c");
                     query.AppendLine("inner join Usuario u on u.IdUsuario = c.IdUsuario");
                     query.AppendLine("inner join Proveedor pr on pr.IdProveedor = c.IdProveedor");
@@ -110,7 +110,8 @@ namespace CapaDatos
                                 TipoDocumento = dr["TipoDocumento"].ToString(),
                                 NumeroDocumento = dr["NumeroDocumento"].ToString(),
                                 MontoTotal = Convert.ToDecimal(dr["MontoTotal"].ToString()),
-                                FechaRegistro = dr["FechaRegistro"].ToString()
+                                FechaRegistro = dr["FechaRegistro"].ToString(),
+                                Estado = Convert.ToBoolean(dr["Estado"])
                             };
                         }
                     }

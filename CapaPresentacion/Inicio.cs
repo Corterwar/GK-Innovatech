@@ -23,6 +23,7 @@ namespace CapaPresentacion
             user = objusuario;
             InitializeComponent();
             abrirFormulario2(new FrmInicio());
+
         }
 
         private void abrirFormulario2(Form formulario)
@@ -142,12 +143,21 @@ namespace CapaPresentacion
 
         private void menuVerDetalleCompra_Click(object sender, EventArgs e)
         {
-            abrirFormulario((IconMenuItem)sender, new FrmDetalleCompra());
+            abrirFormulario((IconMenuItem)sender, new FrmDetalleCompra(user));
         }
 
         private void Negocio_Click(object sender, EventArgs e)
         {
-            abrirFormulario((IconMenuItem)sender, new FrmNegocio());
+
+            if (user.oRol.IdRol ==1)
+            {
+                abrirFormulario((IconMenuItem)sender, new FrmNegocio());
+            }
+            else
+            {
+                MessageBox.Show("No tiene los permisos","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+         
         }
 
         private void iconMenuItem9_Click(object sender, EventArgs e)

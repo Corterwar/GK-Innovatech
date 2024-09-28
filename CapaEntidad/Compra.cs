@@ -13,5 +13,7 @@ namespace CapaEntidad
         public decimal MontoTotal { get; set; }
         public List<DetalleCompra> oDetalleCompra { get; set; }
         public String FechaRegistro { get; set; }
+
+        public bool Estado { get; set; }
     }
 }
