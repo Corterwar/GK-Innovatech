@@ -316,6 +316,7 @@
             this.txtDireccion.Texts = "";
             this.txtDireccion.UnderlinedStyle = false;
             this.txtDireccion._TextChanged += new System.EventHandler(this.rjTextBox1__TextChanged);
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // label7
             // 
@@ -396,6 +397,7 @@
             this.txtCorreo.TabIndex = 106;
             this.txtCorreo.Texts = "";
             this.txtCorreo.UnderlinedStyle = false;
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // txtTelefono
             // 
@@ -539,6 +541,7 @@
             this.txtBusqueda.TabIndex = 108;
             this.txtBusqueda.Texts = "";
             this.txtBusqueda.UnderlinedStyle = false;
+            this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             // 
             // BtnLimpiar2
             // 

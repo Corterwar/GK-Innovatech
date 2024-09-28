@@ -121,6 +121,7 @@
             this.txtDireccion.TabIndex = 95;
             this.txtDireccion.Texts = "";
             this.txtDireccion.UnderlinedStyle = false;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // txtRuc
             // 
@@ -170,6 +171,7 @@
             this.txtNombre.TabIndex = 93;
             this.txtNombre.Texts = "";
             this.txtNombre.UnderlinedStyle = false;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // rjTextBox2
             // 

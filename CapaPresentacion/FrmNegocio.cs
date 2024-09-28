@@ -94,7 +94,7 @@ namespace CapaPresentacion
             if (Validaciones())
             {
 
-                DialogResult confirmacion = MessageBox.Show("¿Seguro desea agregar el usuario?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult confirmacion = MessageBox.Show("¿Seguro desea cambiar los datos?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirmacion == DialogResult.Yes)
                 {
                     Negocio obj = new Negocio()
@@ -140,6 +140,47 @@ namespace CapaPresentacion
 
             // Permitir el carácter solo si es una tecla de control o un dígito y la longitud permitida no se ha alcanzado
             if (esControl || (esDigito && longitudPermitida))
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
+
+            // Verificar si el carácter es un dígito
+            bool esDigito = Char.IsDigit(e.KeyChar);
+
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = txtNombre.Texts.Length < 60;
+
+            // Permitir el carácter solo si es una tecla de control o un caracter y la longitud permitida no se ha alcanzado
+            if (esControl || (!esDigito && longitudPermitida))
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
+
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = txtNombre.Texts.Length < 60;
+
+            // Permitir el carácter solo si es una tecla de control o un caracter y la longitud permitida no se ha alcanzado
+            if (esControl || longitudPermitida)
             {
                 e.Handled = false; // Permitir el carácter
             }

@@ -325,6 +325,7 @@
             this.txtBusqueda.TabIndex = 109;
             this.txtBusqueda.Texts = "";
             this.txtBusqueda.UnderlinedStyle = false;
+            this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             // 
             // rjTextBox2
             // 

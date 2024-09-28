@@ -417,6 +417,20 @@ namespace CapaPresentacion
             }
         }
 
+
+        private void dgvData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dgvData.Columns[e.ColumnIndex].Name == "Estado")
+            {
+                if (e.Value.ToString() == "No Activo")
+                {
+                    e.CellStyle.BackColor = Color.Red;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+
+            }
+        }
+
         private void rjButton1_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
@@ -446,64 +460,6 @@ namespace CapaPresentacion
 
         }
 
-        private void dgvData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (this.dgvData.Columns[e.ColumnIndex].Name == "Estado")
-            {
-                if (e.Value.ToString() == "No Activo")
-                {
-                    e.CellStyle.BackColor = Color.Red;
-                    e.CellStyle.ForeColor = Color.Black;
-                }
-
-            }
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDocumento__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCorreo__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClave__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombre__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboEstado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboRol_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBusqueda__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si el carácter es una tecla de control (como Backspace)
@@ -513,10 +469,67 @@ namespace CapaPresentacion
             bool esDigito = Char.IsDigit(e.KeyChar);
 
             // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
-            bool longitudPermitida = txtNombre.Texts.Length < 80;
+            bool longitudPermitida = txtNombre.Texts.Length < 100;
 
             // Permitir el carácter solo si es una tecla de control o un caracter y la longitud permitida no se ha alcanzado
             if (esControl || (!esDigito && longitudPermitida))
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
+
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = txtCorreo.Texts.Length < 100;
+
+            // Permitir el carácter solo si es una tecla de control o un caracter y la longitud permitida no se ha alcanzado
+            if (esControl || longitudPermitida)
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void txtClave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
+
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = txtClave.Texts.Length < 80;
+
+            // Permitir el carácter solo si es una tecla de control o un caracter y la longitud permitida no se ha alcanzado
+            if (esControl || longitudPermitida)
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
+
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = txtBusqueda.Texts.Length < 80;
+
+            // Permitir el carácter solo si es una tecla de control o un caracter y la longitud permitida no se ha alcanzado
+            if (esControl || longitudPermitida)
             {
                 e.Handled = false; // Permitir el carácter
             }

@@ -222,14 +222,21 @@ namespace CapaPresentacion
 
         private void txtPrecioC_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
+
+            // Verificar si el carácter es un dígito
+            bool esDigito = Char.IsDigit(e.KeyChar);
+
+            bool longitudPermitida = txtPrecioC.Texts.Length < 8;
             // Permitir solo dígitos, control (como Backspace), o una coma decimal
-            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
+            if (esControl || (esDigito && longitudPermitida))
             {
                 e.Handled = false;
             }
-            else if (e.KeyChar == ',' && txtPrecioC.Texts.Trim().Length > 0)
+            else if (e.KeyChar == ',' && (txtPrecioC.Texts.Trim().Length > 0 && longitudPermitida))
             {
-                // Permitir una coma decimal solo si no existe ya una en el texto
+                // Permitir una coma decimal solo si no existe ya una en el Textso
                 if (txtPrecioC.Texts.Contains(","))
                 {
                     e.Handled = true;
@@ -248,14 +255,21 @@ namespace CapaPresentacion
 
         private void txtPrecioV_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
+
+            // Verificar si el carácter es un dígito
+            bool esDigito = Char.IsDigit(e.KeyChar);
+
+            bool longitudPermitida = txtPrecioV.Texts.Length < 8;
             // Permitir solo dígitos, control (como Backspace), o una coma decimal
-            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
+            if (esControl || (esDigito && longitudPermitida))
             {
                 e.Handled = false;
             }
-            else if (e.KeyChar == ',' && txtPrecioV.Texts.Trim().Length > 0)
+            else if (e.KeyChar == ',' && (txtPrecioV.Texts.Trim().Length > 0 && longitudPermitida))
             {
-                // Permitir una coma decimal solo si no existe ya una en el texto
+                // Permitir una coma decimal solo si no existe ya una en el Textso
                 if (txtPrecioV.Texts.Contains(","))
                 {
                     e.Handled = true;

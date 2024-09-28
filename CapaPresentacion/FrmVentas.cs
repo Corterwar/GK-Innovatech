@@ -266,12 +266,19 @@ namespace CapaPresentacion
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
+
+            // Verificar si el carácter es un dígito
+            bool esDigito = Char.IsDigit(e.KeyChar);
+
+            bool longitudPermitida = txtPrecio.Texts.Length < 8;
             // Permitir solo dígitos, control (como Backspace), o una coma decimal
-            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
+            if (esControl || (esDigito && longitudPermitida))
             {
                 e.Handled = false;
             }
-            else if (e.KeyChar == ',' && txtPrecio.Texts.Trim().Length > 0)
+            else if (e.KeyChar == ',' && (txtPrecio.Texts.Trim().Length > 0 && longitudPermitida) )
             {
                 // Permitir una coma decimal solo si no existe ya una en el Textso
                 if (txtPrecio.Texts.Contains(","))
