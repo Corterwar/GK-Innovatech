@@ -63,6 +63,44 @@ namespace CapaDatos
             return obj;
         }
 
+        public Grafico DatosFechas(DateTime fechaDesde, DateTime fechaHasta)
+        {
+
+            Grafico obj = new Grafico();
+
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+
+                    SqlCommand cmd = new SqlCommand("SP_GRAFICOSVFECHAS", oconexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("fechaDesde", fechaDesde);
+                    cmd.Parameters.AddWithValue("fechaHasta", fechaHasta);
+                    SqlParameter total = new SqlParameter("@totVentas", 0); total.Direction = ParameterDirection.Output;
+                    SqlParameter totalC = new SqlParameter("@totCompras", 0); totalC.Direction = ParameterDirection.Output;
+          
+
+
+                    cmd.Parameters.Add(total);
+                    cmd.Parameters.Add(totalC);
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    obj.totalVentas = cmd.Parameters["@totVentas"].Value.ToString();
+                    obj.Compras = cmd.Parameters["@totCompras"].Value.ToString();
+                    oconexion.Close();
+                }
+                catch (Exception ex)
+                {
+                    obj = new Grafico();
+                }
+            }
+            return obj;
+        }
+
         public ArrayList Categorias()
         {
            

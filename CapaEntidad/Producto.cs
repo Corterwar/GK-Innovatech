@@ -8,6 +8,8 @@ namespace CapaEntidad
         public String Codigo { get; set; }
         public String Nombre { get; set; }
         public String Descripcion { get; set; }
+
+        public String Marca { get; set; }
         public Categoria oCategoria { get; set; }
         public int Stock { get; set; }
         public decimal PrecioCompra { get; set; }

@@ -328,13 +328,6 @@ namespace CapaPresentacion
                     }
 
 
-                    //Campo marca
-                    
-                    //Stock con paso intermedio
-
-                    //Graficos linea temporal desde y hasta graficos
-             
-
                     int idCorrelativo = new CN_Compra().obtenerCorrelativo();
                     string numeroDocumento = string.Format("{0:00000}", idCorrelativo);
 

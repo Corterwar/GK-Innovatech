@@ -34,5 +34,10 @@ namespace CapaNegocio
             }
             return oCompra;
         }
+
+        public bool ValidarCompra(int idCompra, out string Mensaje)
+        {
+            return objcd_compra.ValidarCompra(idCompra, out Mensaje);
+        }
     }
 }

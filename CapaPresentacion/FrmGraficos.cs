@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Modales;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -91,6 +92,14 @@ namespace CapaPresentacion
 
         private void lblTituloV_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            mdGraficos modal = new mdGraficos();
+
+            modal.Show();
 
         }
     }

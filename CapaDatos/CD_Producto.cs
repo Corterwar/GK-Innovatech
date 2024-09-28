@@ -21,7 +21,7 @@ namespace CapaDatos
 
 
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("Select p.IdProducto,p.Codigo,p.Nombre,p.Descripcion,c.IdCategoria,c.Descripcion[DescripcionCategoria],p.Stock,p.PrecioCompra,p.PrecioVenta,p.Estado from Productos p");
+                    query.AppendLine("Select p.IdProducto,p.Codigo,p.Nombre,p.Descripcion,p.Marca,c.IdCategoria,c.Descripcion[DescripcionCategoria],p.Stock,p.PrecioCompra,p.PrecioVenta,p.Estado from Productos p");
                     query.AppendLine("inner join Categorias c on c.IdCategoria = p.IdCategoria");
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
@@ -37,6 +37,7 @@ namespace CapaDatos
                                 Codigo = dr["Codigo"].ToString(),
                                 Nombre = dr["Nombre"].ToString(),
                                 Descripcion = dr["Descripcion"].ToString(),
+                                Marca = dr["Marca"].ToString(),
                                 oCategoria = new Categoria() { IdCategoria = Convert.ToInt32(dr["IdCategoria"]), Descripcion = dr["DescripcionCategoria"].ToString() },
                                 Stock = Convert.ToInt32(dr["Stock"]),
                                 PrecioCompra = Convert.ToDecimal(dr["PrecioCompra"]),
@@ -70,6 +71,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("Marca", obj.Marca);
                     cmd.Parameters.AddWithValue("IdCategoria", obj.oCategoria.IdCategoria);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
 
@@ -113,6 +115,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("Marca", obj.Marca);
                     cmd.Parameters.AddWithValue("IdCategoria", obj.oCategoria.IdCategoria);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;

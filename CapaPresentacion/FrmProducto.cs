@@ -61,7 +61,13 @@ namespace CapaPresentacion
 
             foreach (Producto item in listaProductos)
             {
-                dgvData.Rows.Add(new object[] {"",item.IdProducto,item.Codigo,item.Nombre,item.Descripcion,
+                dgvData.Rows.Add(new object[] {
+                    "",
+                    item.IdProducto,
+                    item.Codigo,
+                    item.Nombre,
+                    item.Descripcion,
+                    item.Marca,
                     item.oCategoria.IdCategoria,
                     item.oCategoria.Descripcion,
                     item.Stock,
@@ -92,6 +98,10 @@ namespace CapaPresentacion
             {
                 validaciones = false;
             }
+            if(txtMarca.Texts == "") 
+            { 
+                validaciones = false; 
+            }
 
             return validaciones;
         }
@@ -120,6 +130,7 @@ namespace CapaPresentacion
                         Codigo = txtCodigo.Texts,
                         Nombre = txtNombre.Texts,
                         Descripcion = txtDescripcion.Texts,
+                        Marca = txtMarca.Texts,
                         oCategoria = new Categoria() { IdCategoria = Convert.ToInt32(((OpcionesCombo)comboCategoria.SelectedItem).Valor) },
                         Estado = Convert.ToInt32(((OpcionesCombo)comboEstado.SelectedItem).Valor) == 1 ? true : false
                     };
@@ -130,18 +141,21 @@ namespace CapaPresentacion
                         if (idProductoGenerado != 0)
                         {
                             dgvData.Rows.Add(new object[] {
-                        "",
-                        idProductoGenerado,
-                        txtCodigo.Texts,
-                        txtNombre.Texts,
-                        txtDescripcion.Texts,
-                        ((OpcionesCombo)comboCategoria.SelectedItem).Valor.ToString(),
-                        ((OpcionesCombo)comboCategoria.SelectedItem).Texto.ToString(),
-                        "0",
-                        "0.00",
-                        "0.00",
-                        ((OpcionesCombo)comboEstado.SelectedItem).Valor.ToString(),
-                        ((OpcionesCombo)comboEstado.SelectedItem).Texto.ToString()});
+                                "",
+                                idProductoGenerado,
+                                txtCodigo.Texts,
+                                txtNombre.Texts,
+                                txtDescripcion.Texts,
+                                txtMarca.Texts,
+                                ((OpcionesCombo)comboCategoria.SelectedItem).Valor.ToString(),
+                                ((OpcionesCombo)comboCategoria.SelectedItem).Texto.ToString(),
+                                "0",
+                                "0.00",
+                                "0.00",
+                                ((OpcionesCombo)comboEstado.SelectedItem).Valor.ToString(),
+                                ((OpcionesCombo)comboEstado.SelectedItem).Texto.ToString()
+                            });
+
                             LimpiarCampos();
                         }
                         else
@@ -159,6 +173,7 @@ namespace CapaPresentacion
                             row.Cells["Codigo"].Value = txtCodigo.Texts;
                             row.Cells["Nombre"].Value = txtNombre.Texts;
                             row.Cells["Descripcion"].Value = txtDescripcion.Texts;
+                            row.Cells["Marca"].Value = txtMarca.Texts;
                             row.Cells["IdCategoria"].Value = ((OpcionesCombo)comboCategoria.SelectedItem).Valor.ToString();
                             row.Cells["Categoria"].Value = ((OpcionesCombo)comboCategoria.SelectedItem).Texto.ToString();
                             row.Cells["EstadoValor"].Value = ((OpcionesCombo)comboEstado.SelectedItem).Valor.ToString();
@@ -223,6 +238,7 @@ namespace CapaPresentacion
             txtCodigo.Texts = "";
             txtNombre.Texts = "";
             txtDescripcion.Texts = "";
+            txtMarca.Texts = "";
             comboCategoria.SelectedIndex = 0;
             comboEstado.SelectedIndex = 0;
             txtCodigo.Select();
@@ -348,13 +364,13 @@ namespace CapaPresentacion
                         {
                             rows.Cells[2].Value.ToString(),
                             rows.Cells[3].Value.ToString(),
-
                             rows.Cells[4].Value.ToString(),
-                            rows.Cells[6].Value.ToString(),
+                            rows.Cells[5].Value.ToString(),
                             rows.Cells[7].Value.ToString(),
                             rows.Cells[8].Value.ToString(),
                             rows.Cells[9].Value.ToString(),
-                            rows.Cells[11].Value.ToString(),
+                            rows.Cells[10].Value.ToString(),
+                            rows.Cells[12].Value.ToString(),
                         });
 
                     }

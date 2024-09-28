@@ -24,6 +24,10 @@ namespace CapaNegocio
             return obj.Categorias();
         }
 
+        public Grafico DatosFechas(DateTime fechaDesde, DateTime fechaHasta) {
+            return obj.DatosFechas(fechaDesde,fechaHasta);
+        }
+
         public ArrayList Vendidos()
         {
             return obj.Vendidos();

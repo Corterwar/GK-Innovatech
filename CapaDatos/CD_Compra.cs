@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -166,6 +167,40 @@ namespace CapaDatos
             }
 
             return oLista;
+        }
+
+
+        public bool ValidarCompra(int idCompra, out string Mensaje)
+        {
+            bool Resultado = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+
+                    SqlCommand cmd = new SqlCommand("SP_VALIDARCOMPRA", oconexion);
+                    cmd.Parameters.AddWithValue("IdCompra", idCompra);
+                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+                    Resultado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+
+                }
+            }
+            catch (Exception ex) 
+            {
+                Resultado = false;
+                Mensaje = ex.Message;
+            }
+
+            return Resultado;
         }
     }
 }
