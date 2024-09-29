@@ -17,16 +17,20 @@ namespace CapaPresentacion
 
         private void FrmProveedores_Load(object sender, EventArgs e)
         {
+            // Inicializa un ToolTip para el botón de eliminación y lo configura con el texto "Eliminar".
             ToolTip toolTip1 = new ToolTip();
             toolTip1.SetToolTip(BtnEliminar2, "Eliminar");
+
+            // Agrega opciones de estado (Activo y No Activo) al ComboBox.
             comboEstado.Items.Add(new OpcionesCombo() { Valor = 1, Texto = "Activo" });
             comboEstado.Items.Add(new OpcionesCombo() { Valor = 0, Texto = "No Activo" });
 
+            // Configura las propiedades del ComboBox para mostrar texto y valor.
             comboEstado.DisplayMember = "Texto";
             comboEstado.ValueMember = "Valor";
-            comboEstado.SelectedIndex = 0;
+            comboEstado.SelectedIndex = 0; // Establece el valor por defecto en "Activo".
 
-
+            // Agrega las columnas visibles del DataGridView al ComboBox de búsqueda.
             foreach (DataGridViewColumn columna in dgvData.Columns)
             {
                 if (columna.Visible == true && columna.Name != "btnseleccionar")
@@ -36,17 +40,23 @@ namespace CapaPresentacion
             }
             comboBusqueda.DisplayMember = "Texto";
             comboBusqueda.ValueMember = "Valor";
-            comboBusqueda.SelectedIndex = 0;
+            comboBusqueda.SelectedIndex = 0; // Establece el valor por defecto.
 
-            //Mostrar Proveedores en el dataGridView
+            // Carga la lista de proveedores desde la capa de negocio y la muestra en el DataGridView.
             List<Proveedor> listaProveedors = new CN_Proveedor().Listar();
-
             foreach (Proveedor item in listaProveedors)
             {
-                dgvData.Rows.Add(new object[] {"",item.IdProveedor,item.Documento,item.RazonSocial,item.Direccion,item.Correo,item.Telefono,
-                    item.Estado == true ? 1 : 0,
-                    item.Estado == true ? "Activo": "No Activo"
-                });
+                dgvData.Rows.Add(new object[] {
+            "", // Columna para íconos (si aplica)
+            item.IdProveedor,
+            item.Documento,
+            item.RazonSocial,
+            item.Direccion,
+            item.Correo,
+            item.Telefono,
+            item.Estado == true ? 1 : 0, // Representación del estado como entero.
+            item.Estado == true ? "Activo" : "No Activo" // Texto del estado.
+        });
             }
         }
 
@@ -54,168 +64,173 @@ namespace CapaPresentacion
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            // Llama al método para limpiar todos los campos del formulario.
             LimpiarCampos();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            // Verifica si el ID del proveedor es diferente de 0.
             if (Convert.ToInt32(txtid.Text) != 0)
             {
+                // Muestra un mensaje de confirmación antes de proceder a eliminar.
                 if (MessageBox.Show("¿Desea eliminar el Proveedor?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string mensaje = string.Empty;
                     Proveedor objProveedor = new Proveedor()
                     {
-                        IdProveedor = Convert.ToInt32(txtid.Text),
+                        IdProveedor = Convert.ToInt32(txtid.Text), // Asigna el ID del proveedor a eliminar.
                     };
 
-                    bool respuesta = new CN_Proveedor().Eliminar(objProveedor, out mensaje); ;
+                    // Llama al método de eliminación en la capa de negocio y recibe el mensaje de respuesta.
+                    bool respuesta = new CN_Proveedor().Eliminar(objProveedor, out mensaje);
                     if (respuesta)
                     {
+                        // Elimina la fila correspondiente del DataGridView.
                         dgvData.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
                     }
                     else
                     {
+                        // Muestra un mensaje de alerta si la eliminación falla.
                         MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
             }
         }
 
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            // Obtiene el nombre de la columna seleccionada en el ComboBox de búsqueda.
             string columnaFiltro = ((OpcionesCombo)comboBusqueda.SelectedItem).Valor.ToString();
 
+            // Verifica que haya filas en el DataGridView para realizar la búsqueda.
             if (dgvData.Rows.Count > 0)
             {
+                // Recorre cada fila del DataGridView para aplicar el filtro de búsqueda.
                 foreach (DataGridViewRow row in dgvData.Rows)
                 {
+                    // Comprueba si el valor de la celda en la columna seleccionada contiene el texto de búsqueda.
                     if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Texts.Trim().ToUpper()))
                     {
-                        row.Visible = true;
+                        row.Visible = true; // Muestra la fila si coincide.
                     }
                     else
                     {
-                        row.Visible = false;
+                        row.Visible = false; // Oculta la fila si no coincide.
                     }
-
                 }
             }
         }
 
         private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
         {
+            // Limpia el campo de búsqueda y muestra todas las filas del DataGridView.
             txtBusqueda.Texts = "";
             foreach (DataGridViewRow row in dgvData.Rows)
             {
-                row.Visible = true;
+                row.Visible = true; // Muestra todas las filas.
             }
         }
 
+
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Verifica si el clic fue en la columna "btnseleccionar".
             if (dgvData.Columns[e.ColumnIndex].Name == "btnseleccionar")
             {
-                int indice = e.RowIndex;
+                int indice = e.RowIndex; // Obtiene el índice de la fila seleccionada.
 
                 if (indice >= 0)
                 {
-                    LimpiarCampos();
-                    txtindice.Text = indice.ToString();
-                    txtid.Text = dgvData.Rows[indice].Cells["IdProveedor"].Value.ToString();
-                    txtDocumento.Texts = dgvData.Rows[indice].Cells["Documento"].Value.ToString();
-                    txtRazon.Texts = dgvData.Rows[indice].Cells["RazonSocial"].Value.ToString();
-                    txtDireccion.Texts = dgvData.Rows[indice].Cells["Direccion"].Value.ToString();
-                    txtCorreo.Texts = dgvData.Rows[indice].Cells["Correo"].Value.ToString();
-                    txtTelefono.Texts = dgvData.Rows[indice].Cells["Telefono"].Value.ToString();
+                    LimpiarCampos(); // Limpia los campos del formulario antes de cargar nuevos datos.
+                    txtindice.Text = indice.ToString(); // Guarda el índice de la fila seleccionada.
+                    txtid.Text = dgvData.Rows[indice].Cells["IdProveedor"].Value.ToString(); // Asigna el ID del proveedor.
+                    txtDocumento.Texts = dgvData.Rows[indice].Cells["Documento"].Value.ToString(); // Asigna el Documento.
+                    txtRazon.Texts = dgvData.Rows[indice].Cells["RazonSocial"].Value.ToString(); // Asigna la Razón Social.
+                    txtDireccion.Texts = dgvData.Rows[indice].Cells["Direccion"].Value.ToString(); // Asigna la Dirección.
+                    txtCorreo.Texts = dgvData.Rows[indice].Cells["Correo"].Value.ToString(); // Asigna el Correo.
+                    txtTelefono.Texts = dgvData.Rows[indice].Cells["Telefono"].Value.ToString(); // Asigna el Teléfono.
 
-
-
-
-
-
-
+                    // Establece el estado del proveedor en el ComboBox de estado.
                     foreach (OpcionesCombo oc in comboEstado.Items)
                     {
-
                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvData.Rows[indice].Cells["EstadoValor"].Value))
                         {
                             int indiceCombo = comboEstado.Items.IndexOf(oc);
-                            comboEstado.SelectedIndex = indiceCombo;
+                            comboEstado.SelectedIndex = indiceCombo; // Selecciona el estado correspondiente.
                             break;
                         }
-
                     }
-
                 }
-
             }
         }
 
         private void dgvData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            // Verifica si el índice de la fila es válido.
             if (e.RowIndex < 0)
             {
-                return;
+                return; // No realiza ninguna acción si el índice es inválido.
             }
+            // Verifica si la columna actual es la columna de íconos.
             if (e.ColumnIndex == 0)
             {
+                // Dibuja la celda y centra el ícono.
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var w = Properties.Resources.comprobado.Width - 15;
-                var h = Properties.Resources.comprobado.Height - 15;
+                var w = Properties.Resources.comprobado.Width - 15; // Ancho del ícono ajustado.
+                var h = Properties.Resources.comprobado.Height - 15; // Alto del ícono ajustado.
 
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2; // Calcula la posición X.
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2; // Calcula la posición Y.
 
+                // Dibuja el ícono en la celda.
                 e.Graphics.DrawImage(Properties.Resources.comprobado, new Rectangle(x, y, w, h));
-                e.Handled = true;
+                e.Handled = true; // Indica que el evento ha sido manejado.
             }
         }
+
         private void LimpiarCampos()
         {
-            txtindice.Text = "-1";
-            txtid.Text = "0";
-            txtDocumento.Texts = "";
-            txtRazon.Texts = "";
-            txtCorreo.Texts = "";
-            txtTelefono.Texts = "";
-            txtDireccion.Texts = "";
-            comboEstado.SelectedIndex = 0;
-            txtDocumento.Select();
+            // Restablece todos los campos a su estado inicial.
+            txtindice.Text = "-1"; // Restablece el índice.
+            txtid.Text = "0"; // Restablece el ID del proveedor.
+            txtDocumento.Texts = ""; // Limpia el campo de Documento.
+            txtRazon.Texts = ""; // Limpia el campo de Razón Social.
+            txtCorreo.Texts = ""; // Limpia el campo de Correo.
+            txtTelefono.Texts = ""; // Limpia el campo de Teléfono.
+            txtDireccion.Texts = ""; // Limpia el campo de Dirección.
+            comboEstado.SelectedIndex = 0; // Restablece el ComboBox de estado a "Activo".
+            txtDocumento.Select(); // Selecciona el campo de Documento para facilitar la entrada.
         }
 
         private bool Validaciones()
         {
+            // Método que valida los campos del formulario y devuelve un valor booleano.
             bool validaciones = true;
 
+            // Verifica que los campos requeridos no estén vacíos.
             if (txtDocumento.Texts == "")
             {
-                validaciones = false;
+                validaciones = false; // Documento vacío.
             }
             if (txtRazon.Texts == "")
             {
-                validaciones = false;
+                validaciones = false; // Razón Social vacía.
             }
-
             if (txtDireccion.Texts == "")
             {
-                validaciones = false;
+                validaciones = false; // Dirección vacía.
             }
-
             if (txtTelefono.Texts == "")
             {
-                validaciones = false;
+                validaciones = false; // Teléfono vacío.
             }
-
             if (txtCorreo.Texts == "" || !(txtCorreo.Texts.Contains("@")))
             {
-                validaciones = false;
+                validaciones = false; // Correo vacío o inválido.
             }
-
-
-
-            return validaciones;
-
+            return validaciones; // Retorna el resultado de las validaciones.
         }
 
 
@@ -327,25 +342,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBusqueda_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCorreo__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {

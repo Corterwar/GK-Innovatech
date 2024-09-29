@@ -75,7 +75,6 @@
             this.dtFechaInicio.Name = "dtFechaInicio";
             this.dtFechaInicio.Size = new System.Drawing.Size(133, 29);
             this.dtFechaInicio.TabIndex = 0;
-            this.dtFechaInicio.ValueChanged += new System.EventHandler(this.dtFechaInicio_ValueChanged);
             // 
             // dtFechaFin
             // 
@@ -88,7 +87,6 @@
             this.dtFechaFin.TabIndex = 3;
             this.dtFechaFin.TabStop = false;
             this.dtFechaFin.UseWaitCursor = true;
-            this.dtFechaFin.ValueChanged += new System.EventHandler(this.dtFechaFin_ValueChanged);
             // 
             // label3
             // 
@@ -99,7 +97,6 @@
             this.label3.Size = new System.Drawing.Size(105, 21);
             this.label3.TabIndex = 4;
             this.label3.Text = "Fecha Inicio:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -110,7 +107,6 @@
             this.label4.Size = new System.Drawing.Size(85, 21);
             this.label4.TabIndex = 5;
             this.label4.Text = "Fecha Fin:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // comboProveedor
             // 
@@ -124,7 +120,6 @@
             this.comboProveedor.Name = "comboProveedor";
             this.comboProveedor.Size = new System.Drawing.Size(114, 29);
             this.comboProveedor.TabIndex = 27;
-            this.comboProveedor.SelectedIndexChanged += new System.EventHandler(this.comboProveedor_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -135,7 +130,6 @@
             this.label5.Size = new System.Drawing.Size(94, 21);
             this.label5.TabIndex = 29;
             this.label5.Text = "Proveedor:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // dgvData
             // 
@@ -195,7 +189,6 @@
             this.dgvData.RowTemplate.Height = 28;
             this.dgvData.Size = new System.Drawing.Size(710, 254);
             this.dgvData.TabIndex = 49;
-            this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             // 
             // comboBusqueda
             // 
@@ -221,7 +214,6 @@
             this.label11.Size = new System.Drawing.Size(78, 17);
             this.label11.TabIndex = 59;
             this.label11.Text = "Buscar por:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -278,7 +270,6 @@
             this.txtBusqueda.TabIndex = 67;
             this.txtBusqueda.Texts = "";
             this.txtBusqueda.UnderlinedStyle = false;
-            this.txtBusqueda._TextChanged += new System.EventHandler(this.txtBusqueda__TextChanged);
             this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             // 
             // rjTextBox2
@@ -325,7 +316,6 @@
             this.groupBox1.TabIndex = 96;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reporte Compras";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // rjButton2
             // 

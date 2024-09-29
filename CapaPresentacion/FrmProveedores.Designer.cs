@@ -206,7 +206,6 @@
             this.comboBusqueda.Name = "comboBusqueda";
             this.comboBusqueda.Size = new System.Drawing.Size(115, 24);
             this.comboBusqueda.TabIndex = 75;
-            this.comboBusqueda.SelectedIndexChanged += new System.EventHandler(this.comboBusqueda_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -219,7 +218,6 @@
             this.label11.Size = new System.Drawing.Size(78, 17);
             this.label11.TabIndex = 74;
             this.label11.Text = "Buscar por:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // txtid
             // 
@@ -345,7 +343,6 @@
             this.label4.Size = new System.Drawing.Size(125, 17);
             this.label4.TabIndex = 92;
             this.label4.Text = "Correo Electronico:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -428,7 +425,6 @@
             this.txtCorreo.TabIndex = 88;
             this.txtCorreo.Texts = "";
             this.txtCorreo.UnderlinedStyle = false;
-            this.txtCorreo._TextChanged += new System.EventHandler(this.txtCorreo__TextChanged);
             this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // txtDocumento
