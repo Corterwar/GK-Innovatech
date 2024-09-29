@@ -123,7 +123,6 @@
             this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 74;
             this.label10.Text = "Paga con:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label12
             // 
@@ -320,8 +319,7 @@
             0,
             0,
             0});
-            this.txtCantidad.ValueChanged += new System.EventHandler(this.txtCantidad_ValueChanged);
-            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
+
             // 
             // groupBox2
             // 
@@ -442,7 +440,6 @@
             this.txtIdCliente.Size = new System.Drawing.Size(24, 25);
             this.txtIdCliente.TabIndex = 16;
             this.txtIdCliente.Visible = false;
-            this.txtIdCliente.TextChanged += new System.EventHandler(this.txtIdCliente_TextChanged);
             // 
             // groupBox3
             // 
@@ -467,7 +464,7 @@
             this.groupBox3.TabIndex = 69;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = " Informacion Producto";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+        
             // 
             // label8
             // 
@@ -778,7 +775,6 @@
             this.rjTextBox2.TabIndex = 95;
             this.rjTextBox2.Texts = "";
             this.rjTextBox2.UnderlinedStyle = false;
-            this.rjTextBox2._TextChanged += new System.EventHandler(this.rjTextBox2__TextChanged);
             // 
             // FrmVentas
             // 

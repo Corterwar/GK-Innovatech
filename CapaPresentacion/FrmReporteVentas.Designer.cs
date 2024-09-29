@@ -154,7 +154,6 @@
             this.label4.Size = new System.Drawing.Size(85, 21);
             this.label4.TabIndex = 70;
             this.label4.Text = "Fecha Fin:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -165,7 +164,7 @@
             this.label3.Size = new System.Drawing.Size(105, 21);
             this.label3.TabIndex = 69;
             this.label3.Text = "Fecha Inicio:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+
             // 
             // dtFechaFin
             // 
@@ -176,7 +175,7 @@
             this.dtFechaFin.Name = "dtFechaFin";
             this.dtFechaFin.Size = new System.Drawing.Size(126, 29);
             this.dtFechaFin.TabIndex = 68;
-            this.dtFechaFin.ValueChanged += new System.EventHandler(this.dtFechaFin_ValueChanged);
+
             // 
             // dtFechaInicio
             // 
@@ -187,7 +186,7 @@
             this.dtFechaInicio.Name = "dtFechaInicio";
             this.dtFechaInicio.Size = new System.Drawing.Size(130, 29);
             this.dtFechaInicio.TabIndex = 65;
-            this.dtFechaInicio.ValueChanged += new System.EventHandler(this.dtFechaInicio_ValueChanged);
+
             // 
             // label1
             // 
@@ -368,7 +367,6 @@
             this.rjTextBox2.TabIndex = 95;
             this.rjTextBox2.Texts = "";
             this.rjTextBox2.UnderlinedStyle = false;
-            this.rjTextBox2._TextChanged += new System.EventHandler(this.rjTextBox2__TextChanged);
             // 
             // FechaRegistro
             // 
