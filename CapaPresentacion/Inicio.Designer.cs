@@ -55,6 +55,7 @@
             this.menuTitulo = new System.Windows.Forms.MenuStrip();
             this.iconMenuItem9 = new FontAwesome.Sharp.IconMenuItem();
             this.Contenedor = new System.Windows.Forms.Panel();
+            this.lblRol = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelLateral.SuspendLayout();
             this.menuLateral.SuspendLayout();
@@ -80,7 +81,6 @@
             this.nombreUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.nombreUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreUser.ForeColor = System.Drawing.Color.White;
-        
             this.nombreUser.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.nombreUser.Location = new System.Drawing.Point(921, 30);
             this.nombreUser.Name = "nombreUser";
@@ -92,6 +92,7 @@
             // panelLateral
             // 
             this.panelLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.panelLateral.Controls.Add(this.lblRol);
             this.panelLateral.Controls.Add(this.menuLateral);
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
             this.panelLateral.Name = "panelLateral";
@@ -473,6 +474,21 @@
             this.Contenedor.Size = new System.Drawing.Size(918, 659);
             this.Contenedor.TabIndex = 6;
             // 
+            // lblRol
+            // 
+            this.lblRol.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.White;
+            this.lblRol.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblRol.Location = new System.Drawing.Point(36, 100);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(136, 31);
+            this.lblRol.TabIndex = 6;
+            this.lblRol.Text = "Rol:";
+            this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -528,6 +544,7 @@
         private System.Windows.Forms.Panel Contenedor;
         private System.Windows.Forms.PictureBox pictureBox2;
         private FontAwesome.Sharp.IconMenuItem menuGraficos;
+        private System.Windows.Forms.Label lblRol;
     }
 }
 

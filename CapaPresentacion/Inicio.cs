@@ -23,6 +23,7 @@ namespace CapaPresentacion
             user = objusuario;
             InitializeComponent();
             abrirFormulario2(new FrmInicio());
+            lblRol.Text +=  " " + user.oRol.Descripcion;
 
         }
 
