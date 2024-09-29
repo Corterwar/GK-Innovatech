@@ -216,7 +216,6 @@
             this.comboEstado.Name = "comboEstado";
             this.comboEstado.Size = new System.Drawing.Size(133, 29);
             this.comboEstado.TabIndex = 42;
-            this.comboEstado.SelectedIndexChanged += new System.EventHandler(this.comboEstado_SelectedIndexChanged);
             // 
             // comboBusqueda
             // 
@@ -242,7 +241,6 @@
             this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 76;
             this.label1.Text = "Buscar por:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label6
             // 
@@ -290,7 +288,6 @@
             this.label8.Size = new System.Drawing.Size(70, 17);
             this.label8.TabIndex = 115;
             this.label8.Text = "Direccion:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtDireccion
             // 
@@ -315,7 +312,6 @@
             this.txtDireccion.TabIndex = 114;
             this.txtDireccion.Texts = "";
             this.txtDireccion.UnderlinedStyle = false;
-            this.txtDireccion._TextChanged += new System.EventHandler(this.rjTextBox1__TextChanged);
             this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // label7
@@ -328,7 +324,6 @@
             this.label7.Size = new System.Drawing.Size(53, 17);
             this.label7.TabIndex = 113;
             this.label7.Text = "Estado:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label4
             // 

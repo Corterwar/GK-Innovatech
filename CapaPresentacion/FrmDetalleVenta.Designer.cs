@@ -272,7 +272,7 @@
             this.txtFecha.TabIndex = 99;
             this.txtFecha.Texts = "";
             this.txtFecha.UnderlinedStyle = false;
-            this.txtFecha._TextChanged += new System.EventHandler(this.txtFecha__TextChanged);
+           
             // 
             // txtUsuario
             // 
@@ -297,7 +297,7 @@
             this.txtUsuario.TabIndex = 97;
             this.txtUsuario.Texts = "";
             this.txtUsuario.UnderlinedStyle = false;
-            this.txtUsuario._TextChanged += new System.EventHandler(this.txtUsuario__TextChanged);
+   
             // 
             // txtTipoDocumento
             // 
@@ -322,7 +322,7 @@
             this.txtTipoDocumento.TabIndex = 98;
             this.txtTipoDocumento.Texts = "";
             this.txtTipoDocumento.UnderlinedStyle = false;
-            this.txtTipoDocumento._TextChanged += new System.EventHandler(this.txtTipoDocumento__TextChanged);
+         
             // 
             // label5
             // 
@@ -334,7 +334,7 @@
             this.label5.Size = new System.Drawing.Size(109, 17);
             this.label5.TabIndex = 103;
             this.label5.Text = "Nombre Cliente:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+   
             // 
             // label4
             // 
@@ -346,7 +346,7 @@
             this.label4.Size = new System.Drawing.Size(131, 17);
             this.label4.TabIndex = 102;
             this.label4.Text = "Documento Cliente:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+
             // 
             // groupBox2
             // 
@@ -466,7 +466,6 @@
             this.txtBusqueda.TabIndex = 94;
             this.txtBusqueda.Texts = "";
             this.txtBusqueda.UnderlinedStyle = false;
-            this.txtBusqueda._TextChanged += new System.EventHandler(this.txtBusqueda__TextChanged);
             this.txtBusqueda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBusqueda_KeyDown);
             this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             // 
@@ -582,7 +581,6 @@
             this.txtDocumentoC.TabIndex = 96;
             this.txtDocumentoC.Texts = "";
             this.txtDocumentoC.UnderlinedStyle = false;
-            this.txtDocumentoC._TextChanged += new System.EventHandler(this.txtDocumentoC__TextChanged);
             // 
             // txtNombre
             // 
@@ -606,8 +604,7 @@
             this.txtNombre.Size = new System.Drawing.Size(154, 36);
             this.txtNombre.TabIndex = 95;
             this.txtNombre.Texts = "";
-            this.txtNombre.UnderlinedStyle = false;
-            this.txtNombre._TextChanged += new System.EventHandler(this.txtNombre__TextChanged);
+            this.txtNombre.UnderlinedStyle = false;         
             // 
             // txtTotal
             // 

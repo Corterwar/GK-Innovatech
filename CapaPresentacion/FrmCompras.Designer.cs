@@ -203,7 +203,6 @@
             0,
             0,
             0});
-            this.txtCantidad.ValueChanged += new System.EventHandler(this.txtCantidad_ValueChanged);
             // 
             // groupBox1
             // 
@@ -304,7 +303,6 @@
             this.groupBox3.TabIndex = 70;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacion de Producto";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // label8
             // 
@@ -316,7 +314,6 @@
             this.label8.Size = new System.Drawing.Size(67, 17);
             this.label8.TabIndex = 123;
             this.label8.Text = "Cantidad:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -432,7 +429,6 @@
             this.txtPrecioC.TabIndex = 104;
             this.txtPrecioC.Texts = "";
             this.txtPrecioC.UnderlinedStyle = false;
-            this.txtPrecioC._TextChanged += new System.EventHandler(this.txtPrecioC__TextChanged);
             this.txtPrecioC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioC_KeyPress);
             // 
             // txtProducto
@@ -574,7 +570,7 @@
             this.rjButton2.TabIndex = 114;
             this.rjButton2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.rjButton2.UseVisualStyleBackColor = false;
-            this.rjButton2.Click += new System.EventHandler(this.btnBuscar_Click);
+
             // 
             // txtRazon
             // 

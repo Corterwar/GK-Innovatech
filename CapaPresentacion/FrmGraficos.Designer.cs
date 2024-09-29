@@ -217,7 +217,6 @@
             this.rjTextBox2.TabIndex = 94;
             this.rjTextBox2.Texts = "";
             this.rjTextBox2.UnderlinedStyle = false;
-            this.rjTextBox2._TextChanged += new System.EventHandler(this.rjTextBox2__TextChanged);
             // 
             // rjButton1
             // 

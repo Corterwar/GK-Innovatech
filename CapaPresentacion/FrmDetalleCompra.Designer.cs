@@ -202,7 +202,6 @@
             this.groupBox2.TabIndex = 109;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion Compra";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label11
             // 
@@ -247,7 +246,6 @@
             this.label1.Size = new System.Drawing.Size(118, 17);
             this.label1.TabIndex = 104;
             this.label1.Text = "Fecha de Compra:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label4
             // 
@@ -288,7 +286,6 @@
             this.groupBox3.TabIndex = 110;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacion Proveedor";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // label10
             // 
@@ -444,7 +441,6 @@
             this.txtDocumentoProv.TabIndex = 102;
             this.txtDocumentoProv.Texts = "";
             this.txtDocumentoProv.UnderlinedStyle = false;
-            this.txtDocumentoProv._TextChanged += new System.EventHandler(this.txtDocumentoProv__TextChanged);
             // 
             // txtDocV
             // 
@@ -493,7 +489,6 @@
             this.txtFecha.TabIndex = 102;
             this.txtFecha.Texts = "";
             this.txtFecha.UnderlinedStyle = false;
-            this.txtFecha._TextChanged += new System.EventHandler(this.txtFecha__TextChanged);
             // 
             // txtUsuario
             // 
