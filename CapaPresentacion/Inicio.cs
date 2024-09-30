@@ -126,7 +126,7 @@ namespace CapaPresentacion
         // Evento que abre el formulario de usuarios cuando se hace clic en el menú correspondiente.
         private void menuUsuarios_Click(object sender, EventArgs e)
         {
-            abrirFormulario((IconMenuItem)sender, new FrmUsuario()); // Abre el formulario de usuarios.
+            abrirFormulario((IconMenuItem)sender, new FrmUsuario(user)); // Abre el formulario de usuarios.
         }
 
         // Evento que abre el formulario de categorías cuando se hace clic en el menú correspondiente.

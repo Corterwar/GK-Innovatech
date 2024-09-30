@@ -10,10 +10,14 @@ namespace CapaPresentacion
 {
     public partial class FrmUsuario : Form
     {
-        public FrmUsuario()
+
+
+        private Usuario usuarioActual;
+
+        public FrmUsuario(Usuario oUsuario = null)
         {
             InitializeComponent();
-
+            usuarioActual = oUsuario;
         }
 
 
@@ -319,6 +323,14 @@ namespace CapaPresentacion
                 string mensaje = string.Empty; // Variable para almacenar mensajes de error
                 DialogResult confirmacion;
 
+                if (((OpcionesCombo)comboRol.SelectedItem).Texto == "Gerente" && ((OpcionesCombo)comboEstado.SelectedItem).Texto == "No Activo")
+                {
+                    MessageBox.Show("No se puede desactivar al Gerente", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+
                 // Determina si es un nuevo usuario o una edición
                 if (Convert.ToInt32(txtid.Text) == 0)
                 {
@@ -405,8 +417,17 @@ namespace CapaPresentacion
         // Método que se ejecuta al hacer clic en el botón Eliminar
         private void BtnEliminar2_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(txtid.Text) != 0) // Verifica que haya un usuario seleccionado
+            if (Convert.ToInt32(txtid.Text) != 0 && Convert.ToInt32(txtid.Text) != usuarioActual.IdUsuario) // Verifica que haya un usuario seleccionado
             {
+
+                if (((OpcionesCombo)comboRol.SelectedItem).Texto == "Gerente")
+                {
+                    MessageBox.Show("No se puede eliminar el Gerente","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+
                 if (MessageBox.Show("¿Desea eliminar el usuario?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string mensaje = string.Empty; // Variable para almacenar mensajes de error
