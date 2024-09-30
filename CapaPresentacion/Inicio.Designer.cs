@@ -31,7 +31,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nombreUser = new System.Windows.Forms.Label();
             this.panelLateral = new System.Windows.Forms.Panel();
-            this.lblRol = new System.Windows.Forms.Label();
             this.menuLateral = new System.Windows.Forms.MenuStrip();
             this.menuInicio = new FontAwesome.Sharp.IconMenuItem();
             this.menuVentas = new FontAwesome.Sharp.IconMenuItem();
@@ -51,6 +50,7 @@
             this.menuProveedores = new FontAwesome.Sharp.IconMenuItem();
             this.menuUsuarios = new FontAwesome.Sharp.IconMenuItem();
             this.menuGraficos = new FontAwesome.Sharp.IconMenuItem();
+            this.lblRol = new System.Windows.Forms.Label();
             this.BarraTop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuTitulo = new System.Windows.Forms.MenuStrip();
@@ -79,7 +79,7 @@
             this.nombreUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nombreUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.nombreUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreUser.ForeColor = System.Drawing.Color.White;
             this.nombreUser.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.nombreUser.Location = new System.Drawing.Point(921, 30);
@@ -98,21 +98,6 @@
             this.panelLateral.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panelLateral.Size = new System.Drawing.Size(203, 699);
             this.panelLateral.TabIndex = 5;
-            // 
-            // lblRol
-            // 
-            this.lblRol.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
-            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.ForeColor = System.Drawing.Color.White;
-            this.lblRol.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblRol.Location = new System.Drawing.Point(268, 27);
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(136, 31);
-            this.lblRol.TabIndex = 6;
-            this.lblRol.Text = "Rol:";
-            this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // menuLateral
             // 
@@ -138,7 +123,6 @@
             this.menuLateral.Size = new System.Drawing.Size(203, 533);
             this.menuLateral.TabIndex = 0;
             this.menuLateral.Text = "menuLateral";
-
             // 
             // menuInicio
             // 
@@ -430,6 +414,21 @@
             this.menuGraficos.Text = "Graficos";
             this.menuGraficos.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.menuGraficos.Click += new System.EventHandler(this.menuGraficos_Click);
+            // 
+            // lblRol
+            // 
+            this.lblRol.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.lblRol.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.White;
+            this.lblRol.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblRol.Location = new System.Drawing.Point(310, 28);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(136, 31);
+            this.lblRol.TabIndex = 6;
+            this.lblRol.Text = "Rol:";
+            this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // BarraTop
             // 
