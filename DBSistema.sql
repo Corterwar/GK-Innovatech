@@ -37,7 +37,6 @@ FechaRegistro datetime default getDate()
 GO
 
 
-
 CREATE TABLE Cliente(
 IdCliente int primary key identity,
 Documento varchar(50) unique,
@@ -155,69 +154,95 @@ go
 
 --Creacion de los procedimientos
 
-
-
-create procedure SP_REGISTRARUSUARIO(
-@Documento varchar(50),
-@NombreCompleto varchar(100),
-@Correo varchar(100),
-@Clave varchar(80),
-@IdRol int,
-@Estado bit,
-@IdUsuarioResultado int output,
-@Mensaje varchar(500) output
+CREATE PROCEDURE SP_REGISTRARUSUARIO
+(
+    @Documento VARCHAR(50),
+    @NombreCompleto VARCHAR(100),
+    @Correo VARCHAR(100),
+    @Clave VARCHAR(80),
+    @IdRol INT,
+    @Estado BIT,
+    @IdUsuarioResultado INT OUTPUT,
+    @Mensaje VARCHAR(500) OUTPUT
 )
-as
-begin
-	set @IdUsuarioResultado = 0
-	set @Mensaje = ''
-	if not exists(select * from Usuario where Documento = @Documento) 
-	begin
-		insert into Usuario(Documento,NombreCompleto,Correo,Clave,IdRol,Estado) values 
-		(@Documento,@NombreCompleto,@Correo,@Clave,@IdRol,@Estado)
+AS
+BEGIN
+    SET @IdUsuarioResultado = 0;
+    SET @Mensaje = '';
 
-		set @IdUsuarioResultado = SCOPE_IDENTITY()
-	
-	end
-	else
-		set @Mensaje = 'No se puede repetir el documento para m�s de un usuario'
-end
+    -- Validar si existe el documento
+    IF EXISTS(SELECT 1 FROM Usuario WHERE Documento = @Documento)
+    BEGIN
+        SET @Mensaje = 'El documento ya está registrado para otro usuario.';
+        RETURN;
+    END
 
-go
+    -- Validar si existe el correo
+    IF EXISTS(SELECT 1 FROM Usuario WHERE Correo = @Correo)
+    BEGIN
+        SET @Mensaje = 'El correo ya está registrado para otro usuario.';
+        RETURN;
+    END
 
-create procedure SP_EDITARUSUARIO(
-@IdUsuario int,
-@Documento varchar(50),
-@NombreCompleto varchar(100),
-@Correo varchar(100),
-@Clave varchar(80),
-@IdRol int,
-@Estado bit,
-@Respuesta bit output,
-@Mensaje varchar(500) output
+    -- Si no existen ni el documento ni el correo, proceder con la inserción
+    INSERT INTO Usuario (Documento, NombreCompleto, Correo, Clave, IdRol, Estado)
+    VALUES (@Documento, @NombreCompleto, @Correo, @Clave, @IdRol, @Estado);
+
+    -- Obtener el Id del usuario recién insertado
+    SET @IdUsuarioResultado = SCOPE_IDENTITY();
+
+    -- Mensaje de éxito
+    SET @Mensaje = 'Usuario registrado exitosamente.';
+END;
+GO
+
+CREATE PROCEDURE SP_EDITARUSUARIO
+(
+    @IdUsuario INT,
+    @Documento VARCHAR(50),
+    @NombreCompleto VARCHAR(100),
+    @Correo VARCHAR(100),
+    @Clave VARCHAR(80),
+    @IdRol INT,
+    @Estado BIT,
+    @Respuesta BIT OUTPUT,
+    @Mensaje VARCHAR(500) OUTPUT
 )
-as
-begin
-	set @Respuesta = 0
-	set @Mensaje = ''
-	if not exists(select * from Usuario where Documento = @Documento and IdUsuario != @IdUsuario) 
-	begin
-		update Usuario set
-		Documento = @Documento,
-		NombreCompleto =@NombreCompleto,
-		Correo =@Correo,
-		Clave =@Clave,
-		IdRol =@IdRol,
-		Estado =@Estado 
-		where IdUsuario = @IdUsuario
+AS
+BEGIN
+    SET @Respuesta = 0;
+    SET @Mensaje = '';
 
-		set @Respuesta = 1
-	
-	end
-	else
-		set @Mensaje = 'No se puede repetir el documento para m�s de un usuario'
-end
-go
+    -- Validar si el documento ya existe en otro usuario
+    IF EXISTS(SELECT 1 FROM Usuario WHERE Documento = @Documento AND IdUsuario != @IdUsuario)
+    BEGIN
+        SET @Mensaje = 'El documento ya está registrado para otro usuario.';
+        RETURN;
+    END
+
+    -- Validar si el correo ya existe en otro usuario
+    IF EXISTS(SELECT 1 FROM Usuario WHERE Correo = @Correo AND IdUsuario != @IdUsuario)
+    BEGIN
+        SET @Mensaje = 'El correo ya está registrado para otro usuario.';
+        RETURN;
+    END
+
+    -- Actualizar el usuario si no existen duplicados de documento ni correo
+    UPDATE Usuario 
+    SET 
+        Documento = @Documento,
+        NombreCompleto = @NombreCompleto,
+        Correo = @Correo,
+        Clave = @Clave,
+        IdRol = @IdRol,
+        Estado = @Estado
+    WHERE IdUsuario = @IdUsuario;
+
+    -- Respuesta exitosa y mensaje
+    SET @Respuesta = 1;
+    SET @Mensaje = 'Usuario actualizado exitosamente.';
+END;
+GO
 
 
 
@@ -307,10 +332,10 @@ begin
 	begin
 UPDATE Categorias
 SET 
-    Descripcion = @Descripcion, -- Nueva descripci�n para la categor�a
-    Estado = @Estado            -- Nuevo estado para la categor�a
+    Descripcion = @Descripcion, -- Nueva descripción para la categoría
+    Estado = @Estado            -- Nuevo estado para la categoría
 WHERE 
-    IdCategoria = @IdCategoria  -- ID de la categor�a a actualizar
+    IdCategoria = @IdCategoria  -- ID de la categoría a actualizar
 	end
 	else
 		begin
@@ -348,6 +373,9 @@ begin
 
 end
 go
+
+
+
 
 
 Create procedure SP_REGISTRARPRODUCTO(
@@ -446,68 +474,102 @@ begin
 end
 go
 
-create procedure SP_REGISTRARCLIENTE(
-@Documento varchar(50),
-@NombreCompleto varchar(100),
-@Direccion varchar(100),
-@Correo varchar(100),
-@Telefono varchar(50),
-@Estado bit,
-@Resultado int output,
-@Mensaje varchar(500) output
-)as
-begin
-	Set @Resultado = 0
-	set @Mensaje = ''
 
 
 
-	if not exists(Select * from Cliente where Documento = @Documento)
-	begin
-		insert into Cliente (Documento,NombreCompleto,Direccion,Correo,Telefono,Estado)
-		values (@Documento,@NombreCompleto,@Direccion,@Correo,@Telefono,@Estado)
+Create PROCEDURE SP_REGISTRARCLIENTE
+(
+    @Documento VARCHAR(50),
+    @NombreCompleto VARCHAR(100),
+    @Direccion VARCHAR(100),
+    @Correo VARCHAR(100),
+    @Telefono VARCHAR(50),
+    @Estado BIT,
+    @Resultado INT OUTPUT,
+    @Mensaje VARCHAR(500) OUTPUT
+)
+AS
+BEGIN
+    SET @Resultado = 0;
+    SET @Mensaje = '';
 
-		set @Resultado = SCOPE_IDENTITY()
-	end
-	else
-		set @Mensaje = 'El numero de documento ya existe'
-end
-go
+    -- Validar si el documento ya existe
+    IF EXISTS(SELECT 1 FROM Cliente WHERE Documento = @Documento)
+    BEGIN
+        SET @Mensaje = 'El número de documento ya existe.';
+        RETURN;
+    END
 
-create procedure SP_EDITARCLIENTE(
-@IdCliente int,
-@Documento varchar(50),
-@NombreCompleto varchar(100),
-@Direccion varchar(100),
-@Correo varchar(100),
-@Telefono varchar(50),
-@Estado bit,
-@Resultado bit output,
-@Mensaje varchar(500) output
-)as
-begin
-	Set @Resultado = 1
-	set @Mensaje = ''
+    -- Validar si el correo ya existe
+    IF EXISTS(SELECT 1 FROM Cliente WHERE Correo = @Correo)
+    BEGIN
+        SET @Mensaje = 'El correo ya está registrado.';
+        RETURN;
+    END
 
-	
+    -- Si no existen duplicados de documento ni correo, registrar al cliente
+    INSERT INTO Cliente (Documento, NombreCompleto, Direccion, Correo, Telefono, Estado)
+    VALUES (@Documento, @NombreCompleto, @Direccion, @Correo, @Telefono, @Estado);
 
-	if not exists(Select * from Cliente where Documento = @Documento and IdCliente != @IdCliente)
-	begin
-		update Cliente set
-		Documento = @Documento,
-		NombreCompleto = @NombreCompleto,
-		Direccion = @Direccion,
-		Correo = @Correo,
-		Telefono = @Telefono,
-		Estado = @Estado
-		where IdCliente = @IdCliente
+    -- Obtener el Id del cliente recién insertado
+    SET @Resultado = SCOPE_IDENTITY();
 
-	end
-	else
-		set @Resultado = 0
-		set @Mensaje = 'No se puede editar el cliente'
-end
-go
+    -- Mensaje de éxito
+    SET @Mensaje = 'Cliente registrado exitosamente.';
+END;
+GO
+
+
+create PROCEDURE SP_EDITARCLIENTE
+(
+    @IdCliente INT,
+    @Documento VARCHAR(50),
+    @NombreCompleto VARCHAR(100),
+    @Direccion VARCHAR(100),
+    @Correo VARCHAR(100),
+    @Telefono VARCHAR(50),
+    @Estado BIT,
+    @Resultado BIT OUTPUT,
+    @Mensaje VARCHAR(500) OUTPUT
+)
+AS
+BEGIN
+    SET @Resultado = 1;
+    SET @Mensaje = '';
+
+    -- Validar si el documento ya existe en otro cliente
+    IF EXISTS(SELECT 1 FROM Cliente WHERE Documento = @Documento AND IdCliente != @IdCliente)
+    BEGIN
+        SET @Resultado = 0;
+        SET @Mensaje = 'El número de documento ya está registrado para otro cliente.';
+        RETURN;
+    END
+
+    -- Validar si el correo ya existe en otro cliente
+    IF EXISTS(SELECT 1 FROM Cliente WHERE Correo = @Correo AND IdCliente != @IdCliente)
+    BEGIN
+        SET @Resultado = 0;
+        SET @Mensaje = 'El correo ya está registrado para otro cliente.';
+        RETURN;
+    END
+
+    -- Si no existen duplicados de documento ni correo, actualizar el cliente
+    UPDATE Cliente 
+    SET 
+        Documento = @Documento,
+        NombreCompleto = @NombreCompleto,
+        Direccion = @Direccion,
+        Correo = @Correo,
+        Telefono = @Telefono,
+        Estado = @Estado
+    WHERE IdCliente = @IdCliente;
+
+    -- Mensaje de éxito
+    SET @Mensaje = 'Cliente editado exitosamente.';
+END;
+GO
+
+
 
 create PROC SP_ELIMINARCLIENTE(
 @IdCliente int,
@@ -534,68 +596,99 @@ begin
 end
 go
 
-create procedure SP_REGISTRARPROVEEDOR(
-@Documento varchar(50),
-@RazonSocial varchar(80),
-@Direccion varchar(100),
-@Correo varchar(100),
-@Telefono varchar(50),
-@Estado bit,
-@Resultado int output,
-@Mensaje varchar(500) output
-)as
-begin
-	Set @Resultado = 0
-	set @Mensaje = ''
-
-	
-
-	if not exists(Select * from Proveedor where Documento = @Documento)
-	begin
-		insert into Proveedor(Documento,RazonSocial,Direccion,Correo,Telefono,Estado)
-		values (@Documento,@RazonSocial,@Direccion,@Correo,@Telefono,@Estado)
-
-		set @Resultado = SCOPE_IDENTITY()
-	end
-	else
-		set @Mensaje = 'El numero de documento ya existe'
-end
-go
-
-create procedure SP_EDITARPROVEEDOR(
-@IdProveedor int,
-@Documento varchar(50),
-@RazonSocial varchar(80),
-@Direccion varchar(100),
-@Correo varchar(100),
-@Telefono varchar(50),
-@Estado bit,
-@Resultado bit output,
-@Mensaje varchar(500) output
-)as
-begin
-	Set @Resultado = 1
-	set @Mensaje = ''
 
 
+Create PROCEDURE SP_REGISTRARPROVEEDOR
+(
+    @Documento VARCHAR(50),
+    @RazonSocial VARCHAR(80),
+    @Direccion VARCHAR(100),
+    @Correo VARCHAR(100),
+    @Telefono VARCHAR(50),
+    @Estado BIT,
+    @Resultado INT OUTPUT,
+    @Mensaje VARCHAR(500) OUTPUT
+)
+AS
+BEGIN
+    SET @Resultado = 0;
+    SET @Mensaje = '';
 
-	if not exists(Select * from Proveedor where Documento = @Documento and IdProveedor != @IdProveedor)
-	begin
-		update Proveedor set
-		Documento = @Documento,
-		RazonSocial = @RazonSocial,
-		Direccion = @Direccion,
-		Correo = @Correo,
-		Telefono = @Telefono,
-		Estado = @Estado
-		where IdProveedor = @IdProveedor
+    -- Validar si el documento ya existe
+    IF EXISTS (SELECT 1 FROM Proveedor WHERE Documento = @Documento)
+    BEGIN
+        SET @Mensaje = 'El número de documento ya existe.';
+        RETURN;
+    END
 
-	end
-	else
-		set @Resultado = 0
-		set @Mensaje = 'No se puede editar el proveedor'
-end
-go
+    -- Validar si el correo ya existe
+    IF EXISTS (SELECT 1 FROM Proveedor WHERE Correo = @Correo)
+    BEGIN
+        SET @Mensaje = 'El correo ya está registrado.';
+        RETURN;
+    END
+
+    -- Si no existen duplicados de documento ni correo, registrar al proveedor
+    INSERT INTO Proveedor (Documento, RazonSocial, Direccion, Correo, Telefono, Estado)
+    VALUES (@Documento, @RazonSocial, @Direccion, @Correo, @Telefono, @Estado);
+
+    -- Obtener el Id del proveedor recién insertado
+    SET @Resultado = SCOPE_IDENTITY();
+
+    -- Mensaje de éxito
+    SET @Mensaje = 'Proveedor registrado exitosamente.';
+END;
+GO
+
+create PROCEDURE SP_EDITARPROVEEDOR
+(
+    @IdProveedor INT,
+    @Documento VARCHAR(50),
+    @RazonSocial VARCHAR(80),
+    @Direccion VARCHAR(100),
+    @Correo VARCHAR(100),
+    @Telefono VARCHAR(50),
+    @Estado BIT,
+    @Resultado BIT OUTPUT,
+    @Mensaje VARCHAR(500) OUTPUT
+)
+AS
+BEGIN
+    SET @Resultado = 1;
+    SET @Mensaje = '';
+
+    -- Validar si el documento ya existe en otro proveedor
+    IF EXISTS (SELECT 1 FROM Proveedor WHERE Documento = @Documento AND IdProveedor != @IdProveedor)
+    BEGIN
+        SET @Resultado = 0;
+        SET @Mensaje = 'El número de documento ya está registrado para otro proveedor.';
+        RETURN;
+    END
+
+    -- Validar si el correo ya existe en otro proveedor
+    IF EXISTS (SELECT 1 FROM Proveedor WHERE Correo = @Correo AND IdProveedor != @IdProveedor)
+    BEGIN
+        SET @Resultado = 0;
+        SET @Mensaje = 'El correo ya está registrado para otro proveedor.';
+        RETURN;
+    END
+
+    -- Si no existen duplicados de documento ni correo, actualizar el proveedor
+    UPDATE Proveedor 
+    SET 
+        Documento = @Documento,
+        RazonSocial = @RazonSocial,
+        Direccion = @Direccion,
+        Correo = @Correo,
+        Telefono = @Telefono,
+        Estado = @Estado
+    WHERE IdProveedor = @IdProveedor;
+
+    -- Mensaje de éxito
+    SET @Mensaje = 'Proveedor editado exitosamente.';
+END;
+GO
+
 
 Create procedure SP_ELIMINARPROVEEDOR(
 @IdProveedor int,
@@ -714,7 +807,7 @@ BEGIN
             SET Estado = 1
             WHERE IdCompra = @IdCompra;
 
-            -- Devolvemos que la operaci�n fue exitosa
+            -- Devolvemos que la operación fue exitosa
             SET @Resultado = 1;
             SET @Mensaje = 'Compra validada y stock actualizado correctamente.';
         END
@@ -722,7 +815,7 @@ BEGIN
         BEGIN
             -- Si no se encuentran detalles de la compra
             SET @Resultado = 0;
-            SET @Mensaje = 'No se encontr� ning�n detalle para la compra especificada.';
+            SET @Mensaje = 'No se encontró ningún detalle para la compra especificada.';
         END
     END
     ELSE
