@@ -150,12 +150,12 @@
             this.comboBusqueda.BackColor = System.Drawing.Color.Black;
             this.comboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBusqueda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.comboBusqueda.ForeColor = System.Drawing.Color.White;
             this.comboBusqueda.FormattingEnabled = true;
             this.comboBusqueda.Location = new System.Drawing.Point(198, 258);
             this.comboBusqueda.Name = "comboBusqueda";
-            this.comboBusqueda.Size = new System.Drawing.Size(132, 24);
+            this.comboBusqueda.Size = new System.Drawing.Size(132, 25);
             this.comboBusqueda.TabIndex = 51;
             // 
             // label11

@@ -82,7 +82,7 @@
             this.nombreUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreUser.ForeColor = System.Drawing.Color.White;
             this.nombreUser.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.nombreUser.Location = new System.Drawing.Point(921, 30);
+            this.nombreUser.Location = new System.Drawing.Point(916, 15);
             this.nombreUser.Name = "nombreUser";
             this.nombreUser.Size = new System.Drawing.Size(136, 31);
             this.nombreUser.TabIndex = 3;
@@ -421,13 +421,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.lblRol.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.ForeColor = System.Drawing.Color.White;
+            this.lblRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.lblRol.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblRol.Location = new System.Drawing.Point(310, 28);
+            this.lblRol.Location = new System.Drawing.Point(910, 36);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(136, 31);
             this.lblRol.TabIndex = 6;
-            this.lblRol.Text = "Rol:";
             this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // BarraTop
@@ -447,9 +446,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.image_Photoroom1;
-            this.pictureBox2.Location = new System.Drawing.Point(866, 21);
+            this.pictureBox2.Location = new System.Drawing.Point(847, 8);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(49, 46);
+            this.pictureBox2.Size = new System.Drawing.Size(63, 64);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
