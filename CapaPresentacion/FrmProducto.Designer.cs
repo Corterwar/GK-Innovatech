@@ -56,10 +56,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblMarca = new System.Windows.Forms.Label();
+            this.txtMarca = new CustomControls.RJControls.RJTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtCodigo = new CustomControls.RJControls.RJTextBox();
+            this.txtDescripcion = new CustomControls.RJControls.RJTextBox();
+            this.txtNombre = new CustomControls.RJControls.RJTextBox();
             this.rjButton5 = new CustomControls.RJControls.RJButton();
             this.rjButton4 = new CustomControls.RJControls.RJButton();
             this.txtBusqueda = new CustomControls.RJControls.RJTextBox();
@@ -67,10 +71,6 @@
             this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.BtnEliminar2 = new CustomControls.RJControls.RJButton();
             this.BtnGuardar2 = new CustomControls.RJControls.RJButton();
-            this.txtMarca = new CustomControls.RJControls.RJTextBox();
-            this.txtCodigo = new CustomControls.RJControls.RJTextBox();
-            this.txtDescripcion = new CustomControls.RJControls.RJTextBox();
-            this.txtNombre = new CustomControls.RJControls.RJTextBox();
             this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -363,6 +363,31 @@
             this.lblMarca.TabIndex = 97;
             this.lblMarca.Text = "Marca:";
             // 
+            // txtMarca
+            // 
+            this.txtMarca.BackColor = System.Drawing.Color.Black;
+            this.txtMarca.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtMarca.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.txtMarca.BorderRadius = 10;
+            this.txtMarca.BorderSize = 2;
+            this.txtMarca.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarca.ForeColor = System.Drawing.Color.White;
+            this.txtMarca.IsReadOnly = false;
+            this.txtMarca.Location = new System.Drawing.Point(499, 91);
+            this.txtMarca.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMarca.Multiline = false;
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtMarca.PasswordChar = false;
+            this.txtMarca.PlaceholderColor = System.Drawing.Color.White;
+            this.txtMarca.PlaceholderText = "Marca";
+            this.txtMarca.ShortcutsEnabled = false;
+            this.txtMarca.Size = new System.Drawing.Size(162, 36);
+            this.txtMarca.TabIndex = 96;
+            this.txtMarca.Texts = "";
+            this.txtMarca.UnderlinedStyle = false;
+            this.txtMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMarca_KeyPress);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -406,6 +431,82 @@
             this.label1.Size = new System.Drawing.Size(116, 17);
             this.label1.TabIndex = 92;
             this.label1.Text = "Codigo Producto:";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.BackColor = System.Drawing.Color.Black;
+            this.txtCodigo.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtCodigo.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.txtCodigo.BorderRadius = 10;
+            this.txtCodigo.BorderSize = 2;
+            this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.ForeColor = System.Drawing.Color.White;
+            this.txtCodigo.IsReadOnly = false;
+            this.txtCodigo.Location = new System.Drawing.Point(61, 38);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigo.Multiline = false;
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtCodigo.PasswordChar = false;
+            this.txtCodigo.PlaceholderColor = System.Drawing.Color.White;
+            this.txtCodigo.PlaceholderText = "Cod Producto";
+            this.txtCodigo.ShortcutsEnabled = false;
+            this.txtCodigo.Size = new System.Drawing.Size(141, 36);
+            this.txtCodigo.TabIndex = 90;
+            this.txtCodigo.Texts = "";
+            this.txtCodigo.UnderlinedStyle = false;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.Black;
+            this.txtDescripcion.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtDescripcion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.txtDescripcion.BorderRadius = 10;
+            this.txtDescripcion.BorderSize = 2;
+            this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.ForeColor = System.Drawing.Color.White;
+            this.txtDescripcion.IsReadOnly = false;
+            this.txtDescripcion.Location = new System.Drawing.Point(499, 38);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcion.Multiline = false;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtDescripcion.PasswordChar = false;
+            this.txtDescripcion.PlaceholderColor = System.Drawing.Color.White;
+            this.txtDescripcion.PlaceholderText = "Descripcion";
+            this.txtDescripcion.ShortcutsEnabled = false;
+            this.txtDescripcion.Size = new System.Drawing.Size(162, 36);
+            this.txtDescripcion.TabIndex = 91;
+            this.txtDescripcion.Texts = "";
+            this.txtDescripcion.UnderlinedStyle = false;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.Color.Black;
+            this.txtNombre.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtNombre.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.txtNombre.BorderRadius = 10;
+            this.txtNombre.BorderSize = 2;
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.White;
+            this.txtNombre.IsReadOnly = false;
+            this.txtNombre.Location = new System.Drawing.Point(275, 38);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Multiline = false;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtNombre.PasswordChar = false;
+            this.txtNombre.PlaceholderColor = System.Drawing.Color.White;
+            this.txtNombre.PlaceholderText = "Producto";
+            this.txtNombre.ShortcutsEnabled = false;
+            this.txtNombre.Size = new System.Drawing.Size(151, 36);
+            this.txtNombre.TabIndex = 89;
+            this.txtNombre.Texts = "";
+            this.txtNombre.UnderlinedStyle = false;
+            this.txtNombre._TextChanged += new System.EventHandler(this.txtNombre__TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // rjButton5
             // 
@@ -455,7 +556,7 @@
             // 
             this.txtBusqueda.BackColor = System.Drawing.Color.Black;
             this.txtBusqueda.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtBusqueda.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtBusqueda.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtBusqueda.BorderRadius = 10;
             this.txtBusqueda.BorderSize = 2;
             this.txtBusqueda.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -563,107 +664,6 @@
             this.BtnGuardar2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.BtnGuardar2.UseVisualStyleBackColor = false;
             this.BtnGuardar2.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.BackColor = System.Drawing.Color.Black;
-            this.txtMarca.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtMarca.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtMarca.BorderRadius = 10;
-            this.txtMarca.BorderSize = 2;
-            this.txtMarca.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarca.ForeColor = System.Drawing.Color.White;
-            this.txtMarca.IsReadOnly = false;
-            this.txtMarca.Location = new System.Drawing.Point(499, 91);
-            this.txtMarca.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMarca.Multiline = false;
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtMarca.PasswordChar = false;
-            this.txtMarca.PlaceholderColor = System.Drawing.Color.White;
-            this.txtMarca.PlaceholderText = "Marca";
-            this.txtMarca.ShortcutsEnabled = false;
-            this.txtMarca.Size = new System.Drawing.Size(162, 36);
-            this.txtMarca.TabIndex = 96;
-            this.txtMarca.Texts = "";
-            this.txtMarca.UnderlinedStyle = false;
-            this.txtMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMarca_KeyPress);
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.BackColor = System.Drawing.Color.Black;
-            this.txtCodigo.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCodigo.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtCodigo.BorderRadius = 10;
-            this.txtCodigo.BorderSize = 2;
-            this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.ForeColor = System.Drawing.Color.White;
-            this.txtCodigo.IsReadOnly = false;
-            this.txtCodigo.Location = new System.Drawing.Point(61, 38);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodigo.Multiline = false;
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtCodigo.PasswordChar = false;
-            this.txtCodigo.PlaceholderColor = System.Drawing.Color.White;
-            this.txtCodigo.PlaceholderText = "Cod Producto";
-            this.txtCodigo.ShortcutsEnabled = false;
-            this.txtCodigo.Size = new System.Drawing.Size(141, 36);
-            this.txtCodigo.TabIndex = 90;
-            this.txtCodigo.Texts = "";
-            this.txtCodigo.UnderlinedStyle = false;
-            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.BackColor = System.Drawing.Color.Black;
-            this.txtDescripcion.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtDescripcion.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtDescripcion.BorderRadius = 10;
-            this.txtDescripcion.BorderSize = 2;
-            this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.ForeColor = System.Drawing.Color.White;
-            this.txtDescripcion.IsReadOnly = false;
-            this.txtDescripcion.Location = new System.Drawing.Point(499, 38);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDescripcion.Multiline = false;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtDescripcion.PasswordChar = false;
-            this.txtDescripcion.PlaceholderColor = System.Drawing.Color.White;
-            this.txtDescripcion.PlaceholderText = "Descripcion";
-            this.txtDescripcion.ShortcutsEnabled = false;
-            this.txtDescripcion.Size = new System.Drawing.Size(162, 36);
-            this.txtDescripcion.TabIndex = 91;
-            this.txtDescripcion.Texts = "";
-            this.txtDescripcion.UnderlinedStyle = false;
-            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.BackColor = System.Drawing.Color.Black;
-            this.txtNombre.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtNombre.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtNombre.BorderRadius = 10;
-            this.txtNombre.BorderSize = 2;
-            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.ForeColor = System.Drawing.Color.White;
-            this.txtNombre.IsReadOnly = false;
-            this.txtNombre.Location = new System.Drawing.Point(275, 38);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNombre.Multiline = false;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtNombre.PasswordChar = false;
-            this.txtNombre.PlaceholderColor = System.Drawing.Color.White;
-            this.txtNombre.PlaceholderText = "Producto";
-            this.txtNombre.ShortcutsEnabled = false;
-            this.txtNombre.Size = new System.Drawing.Size(151, 36);
-            this.txtNombre.TabIndex = 89;
-            this.txtNombre.Texts = "";
-            this.txtNombre.UnderlinedStyle = false;
-            this.txtNombre._TextChanged += new System.EventHandler(this.txtNombre__TextChanged);
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // rjTextBox2
             // 

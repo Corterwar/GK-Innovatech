@@ -102,7 +102,7 @@
             // 
             this.txtDireccion.BackColor = System.Drawing.Color.Black;
             this.txtDireccion.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtDireccion.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDireccion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtDireccion.BorderRadius = 10;
             this.txtDireccion.BorderSize = 2;
             this.txtDireccion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
@@ -127,7 +127,7 @@
             // 
             this.txtRuc.BackColor = System.Drawing.Color.Black;
             this.txtRuc.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtRuc.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtRuc.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtRuc.BorderRadius = 10;
             this.txtRuc.BorderSize = 2;
             this.txtRuc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
@@ -152,7 +152,7 @@
             // 
             this.txtNombre.BackColor = System.Drawing.Color.Black;
             this.txtNombre.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtNombre.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtNombre.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtNombre.BorderRadius = 10;
             this.txtNombre.BorderSize = 2;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);

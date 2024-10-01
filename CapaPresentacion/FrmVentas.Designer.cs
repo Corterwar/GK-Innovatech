@@ -278,7 +278,7 @@
             // 
             this.txtFecha.BackColor = System.Drawing.Color.Black;
             this.txtFecha.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtFecha.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtFecha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtFecha.BorderRadius = 10;
             this.txtFecha.BorderSize = 2;
             this.txtFecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -319,7 +319,6 @@
             0,
             0,
             0});
-
             // 
             // groupBox2
             // 
@@ -387,7 +386,7 @@
             // 
             this.txtNombreC.BackColor = System.Drawing.Color.Black;
             this.txtNombreC.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtNombreC.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtNombreC.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtNombreC.BorderRadius = 10;
             this.txtNombreC.BorderSize = 2;
             this.txtNombreC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -411,7 +410,7 @@
             // 
             this.txtDocumento.BackColor = System.Drawing.Color.Black;
             this.txtDocumento.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtDocumento.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDocumento.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtDocumento.BorderRadius = 10;
             this.txtDocumento.BorderSize = 2;
             this.txtDocumento.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -464,7 +463,6 @@
             this.groupBox3.TabIndex = 69;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = " Informacion Producto";
-        
             // 
             // label8
             // 
@@ -536,7 +534,7 @@
             // 
             this.txtProducto.BackColor = System.Drawing.Color.Black;
             this.txtProducto.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtProducto.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtProducto.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtProducto.BorderRadius = 10;
             this.txtProducto.BorderSize = 2;
             this.txtProducto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -560,7 +558,7 @@
             // 
             this.txtStock.BackColor = System.Drawing.Color.Black;
             this.txtStock.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtStock.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtStock.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtStock.BorderRadius = 10;
             this.txtStock.BorderSize = 2;
             this.txtStock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -585,7 +583,7 @@
             // 
             this.txtCod.BackColor = System.Drawing.Color.Black;
             this.txtCod.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCod.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCod.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtCod.BorderRadius = 10;
             this.txtCod.BorderSize = 2;
             this.txtCod.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -610,7 +608,7 @@
             // 
             this.txtPrecio.BackColor = System.Drawing.Color.Black;
             this.txtPrecio.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtPrecio.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtPrecio.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtPrecio.BorderRadius = 10;
             this.txtPrecio.BorderSize = 2;
             this.txtPrecio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -657,7 +655,7 @@
             // 
             this.txtCambio.BackColor = System.Drawing.Color.Black;
             this.txtCambio.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCambio.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCambio.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtCambio.BorderRadius = 10;
             this.txtCambio.BorderSize = 2;
             this.txtCambio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -681,7 +679,7 @@
             // 
             this.txtPaga.BackColor = System.Drawing.Color.Black;
             this.txtPaga.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtPaga.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtPaga.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtPaga.BorderRadius = 10;
             this.txtPaga.BorderSize = 2;
             this.txtPaga.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -707,7 +705,7 @@
             // 
             this.txtTotal.BackColor = System.Drawing.Color.Black;
             this.txtTotal.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtTotal.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtTotal.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
             this.txtTotal.BorderRadius = 10;
             this.txtTotal.BorderSize = 2;
             this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
