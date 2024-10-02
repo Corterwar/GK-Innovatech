@@ -379,7 +379,7 @@
             this.rjTextBox2.ShortcutsEnabled = true;
             this.rjTextBox2.Size = new System.Drawing.Size(874, 595);
             this.rjTextBox2.TabIndex = 95;
-            this.rjTextBox2.Texts = "Buscar";
+            this.rjTextBox2.Texts = "";
             this.rjTextBox2.UnderlinedStyle = false;
             // 
             // groupBox1
