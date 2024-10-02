@@ -463,7 +463,7 @@ namespace CapaPresentacion
                 if (oProveedor != null)
                 {
                     // Si se encontró el proveedor, cambia el fondo del campo txtDocumento a un color de éxito
-                    txtDocumento.BackColor = Color.Honeydew;
+                    txtDocumento.ForeColor = Color.Honeydew;
                     // Establece el ID del proveedor en el campo txtIdProveedor
                     txtIdProveedor.Text = oProveedor.IdProveedor.ToString();
                     // Establece la razón social del proveedor en el campo txtRazon
@@ -472,7 +472,7 @@ namespace CapaPresentacion
                 else
                 {
                     // Si no se encontró un proveedor, cambia el fondo del campo txtDocumento a un color de error
-                    txtDocumento.BackColor = Color.MistyRose;
+                    txtDocumento.ForeColor = Color.MistyRose;
                     // Establece el ID del proveedor a "0" para indicar que no se encontró
                     txtIdProveedor.Text = "0";
                     // Limpia el campo txtRazon
@@ -503,6 +503,24 @@ namespace CapaPresentacion
             else
             {
                 e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            using (var modal = new mdProveedor())
+            {
+                var result = modal.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    txtIdProveedor.Text = modal._Proveedor.IdProveedor.ToString();
+                    txtDocumento.Texts = modal._Proveedor.Documento.ToString();
+                    txtRazon.Texts = modal._Proveedor.RazonSocial.ToString();
+                }
+                else
+                {
+                    txtDocumento.Select();
+                }
             }
         }
     }

@@ -113,5 +113,10 @@ namespace CapaPresentacion.Modales
         {
 
         }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
