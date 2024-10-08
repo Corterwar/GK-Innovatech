@@ -168,7 +168,7 @@ namespace CapaPresentacion
                         img.SetAbsolutePosition(pdfDoc.Left, pdfDoc.GetTop(51));
                         pdfDoc.Add(img);
                     }
-
+                  
                     // Leer el HTML y agregarlo al documento PDF
                     using (StringReader sr = new StringReader(Texto_Html))
                     {
