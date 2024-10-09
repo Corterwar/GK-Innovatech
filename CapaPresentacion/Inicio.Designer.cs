@@ -44,6 +44,7 @@
             this.Productos = new FontAwesome.Sharp.IconMenuItem();
             this.Categorias = new FontAwesome.Sharp.IconMenuItem();
             this.Negocio = new FontAwesome.Sharp.IconMenuItem();
+            this.Cupon = new FontAwesome.Sharp.IconMenuItem();
             this.menuReportes = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuRVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.subMenuRCompras = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +57,7 @@
             this.menuTitulo = new System.Windows.Forms.MenuStrip();
             this.iconMenuItem9 = new FontAwesome.Sharp.IconMenuItem();
             this.Contenedor = new System.Windows.Forms.Panel();
+            this.lblIndicador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelLateral.SuspendLayout();
             this.menuLateral.SuspendLayout();
@@ -265,7 +267,8 @@
             this.menuMantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Productos,
             this.Categorias,
-            this.Negocio});
+            this.Negocio,
+            this.Cupon});
             this.menuMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuMantenimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
             this.menuMantenimiento.IconChar = FontAwesome.Sharp.IconChar.Wrench;
@@ -316,6 +319,18 @@
             this.Negocio.Size = new System.Drawing.Size(169, 28);
             this.Negocio.Text = "Negocio";
             this.Negocio.Click += new System.EventHandler(this.Negocio_Click);
+            // 
+            // Cupon
+            // 
+            this.Cupon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.Cupon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
+            this.Cupon.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Cupon.IconColor = System.Drawing.Color.Black;
+            this.Cupon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Cupon.Name = "Cupon";
+            this.Cupon.Size = new System.Drawing.Size(169, 28);
+            this.Cupon.Text = "Cupon";
+            this.Cupon.Click += new System.EventHandler(this.Cupon_Click);
             // 
             // menuReportes
             // 
@@ -432,6 +447,7 @@
             // BarraTop
             // 
             this.BarraTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.BarraTop.Controls.Add(this.lblIndicador);
             this.BarraTop.Controls.Add(this.lblRol);
             this.BarraTop.Controls.Add(this.pictureBox2);
             this.BarraTop.Controls.Add(this.pictureBox1);
@@ -486,6 +502,20 @@
             this.Contenedor.Name = "Contenedor";
             this.Contenedor.Size = new System.Drawing.Size(918, 659);
             this.Contenedor.TabIndex = 6;
+            // 
+            // lblIndicador
+            // 
+            this.lblIndicador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblIndicador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.lblIndicador.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIndicador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.lblIndicador.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblIndicador.Location = new System.Drawing.Point(312, 30);
+            this.lblIndicador.Name = "lblIndicador";
+            this.lblIndicador.Size = new System.Drawing.Size(410, 31);
+            this.lblIndicador.TabIndex = 7;
+            this.lblIndicador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Inicio
             // 
@@ -543,6 +573,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private FontAwesome.Sharp.IconMenuItem menuGraficos;
         private System.Windows.Forms.Label lblRol;
+        private FontAwesome.Sharp.IconMenuItem Cupon;
+        private System.Windows.Forms.Label lblIndicador;
     }
 }
 

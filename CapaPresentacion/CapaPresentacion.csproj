@@ -222,6 +222,12 @@
     <Compile Include="FrmCompras.Designer.cs">
       <DependentUpon>FrmCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCupon.Designer.cs">
+      <DependentUpon>FrmCupon.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDetalleCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCompras.resx">
       <DependentUpon>FrmCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCupon.resx">
+      <DependentUpon>FrmCupon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDetalleCompra.resx">
       <DependentUpon>FrmDetalleCompra.cs</DependentUpon>

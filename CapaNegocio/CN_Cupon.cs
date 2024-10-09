@@ -21,7 +21,7 @@ namespace CapaNegocio
         {
             Mensaje = string.Empty;
 
-            if (obj.Codigo != "")
+            if (obj.Codigo == "")
             {
                 Mensaje += "Es Necesario colocar un codigo valido para el cupon\n";
             }
@@ -45,7 +45,7 @@ namespace CapaNegocio
         {
             Mensaje = string.Empty;
 
-            if (obj.Codigo != "")
+            if (obj.Codigo == "")
             {
                 Mensaje += "Es Necesario colocar un codigo valido para el cupon\n";
             }
