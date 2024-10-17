@@ -2,6 +2,7 @@
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
 using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,9 +12,11 @@ namespace CapaPresentacion
 {
     public partial class FrmReporteVentas : Form
     {
-        public FrmReporteVentas()
+        public Inicio Inicio { get; set; }
+        public FrmReporteVentas(Inicio inicio)
         {
             InitializeComponent(); // Inicializa los componentes de la forma
+            Inicio = inicio;
         }
 
         // Método que se ejecuta al cargar el formulario
@@ -180,6 +183,26 @@ namespace CapaPresentacion
             else
             {
                 e.Handled = true; // Bloquea el carácter
+            }
+        }
+
+
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Comprueba si se ha hecho clic en el botón de selección
+            if (dgvData.Columns[e.ColumnIndex].Name == "btnDetalle")
+            {
+                int indice = e.RowIndex;
+
+                if (indice >= 0)
+                {
+                    // Rellena los campos del formulario con los datos del producto seleccionado
+                    string doc = dgvData.Rows[indice].Cells["NumeroDocumento"].Value.ToString();
+                    Inicio.abrirFormulario4(sender, new FrmDetalleVenta(doc));
+                    this.Close();
+                    
+                }
             }
         }
     }

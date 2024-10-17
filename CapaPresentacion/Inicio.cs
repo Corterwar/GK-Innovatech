@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CustomControls.RJControls;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -51,7 +52,7 @@ namespace CapaPresentacion
         }
 
         // Método para abrir un formulario y cambiar el menú activo.
-        private void abrirFormulario(IconMenuItem menu, Form formulario)
+        public void abrirFormulario(IconMenuItem menu, Form formulario)
         {
             // Restablece el color del menú activo si existe.
             if (menuActivo != null)
@@ -62,6 +63,54 @@ namespace CapaPresentacion
             // Cambia el color del menú seleccionado.
             menu.BackColor = Color.FromArgb(30, 30, 30);
             menuActivo = menu; // Asigna el nuevo menú como activo.
+
+            // Cierra el formulario activo si ya hay uno abierto.
+            if (formActivo != null)
+            {
+                formActivo.Close();
+            }
+
+            formActivo = formulario; // Asigna el nuevo formulario como activo.
+            formulario.TopLevel = false; // Configura el formulario para que no sea de nivel superior.
+            formulario.FormBorderStyle = FormBorderStyle.None; // Elimina los bordes del formulario.
+            formulario.Dock = DockStyle.Fill; // Establece el formulario para que ocupe todo el contenedor.
+            formulario.BackColor = Color.FromArgb(44, 53, 68); // Cambia el color de fondo.
+            Contenedor.Controls.Add(formulario); // Añade el formulario al contenedor visual.
+            formulario.Show(); // Muestra el formulario.
+        }
+
+        private void abrirFormulario3(IconMenuItem menu, FrmReporteVentas formulario)
+        {
+            // Restablece el color del menú activo si existe.
+            if (menuActivo != null)
+            {
+                menuActivo.BackColor = Color.FromArgb(38, 50, 56);
+            }
+
+            // Cambia el color del menú seleccionado.
+            menu.BackColor = Color.FromArgb(30, 30, 30);
+            menuActivo = menu; // Asigna el nuevo menú como activo.
+
+            // Cierra el formulario activo si ya hay uno abierto.
+            if (formActivo != null)
+            {
+                formActivo.Close();
+            }
+
+            formActivo = formulario; // Asigna el nuevo formulario como activo.
+            formulario.Inicio = this;
+            formulario.TopLevel = false; // Configura el formulario para que no sea de nivel superior.
+            formulario.FormBorderStyle = FormBorderStyle.None; // Elimina los bordes del formulario.
+            formulario.Dock = DockStyle.Fill; // Establece el formulario para que ocupe todo el contenedor.
+            formulario.BackColor = Color.FromArgb(44, 53, 68); // Cambia el color de fondo.
+            Contenedor.Controls.Add(formulario); // Añade el formulario al contenedor visual.
+            formulario.Show(); // Muestra el formulario.
+        }
+
+
+        public void abrirFormulario4(object menu, Form formulario)
+        {
+
 
             // Cierra el formulario activo si ya hay uno abierto.
             if (formActivo != null)
@@ -198,7 +247,7 @@ namespace CapaPresentacion
         private void subMenuRVentas_Click(object sender, EventArgs e)
         {
           
-            abrirFormulario(menuReportes, new FrmReporteVentas()); // Abre el formulario de reportes de ventas.
+            abrirFormulario3(menuReportes, new FrmReporteVentas(this)); // Abre el formulario de reportes de ventas.
             this.lblIndicador.Text = "Reporte Ventas";
         }
 
@@ -213,7 +262,7 @@ namespace CapaPresentacion
         private void menuGraficos_Click(object sender, EventArgs e)
         {
             abrirFormulario((IconMenuItem)sender, new FrmGraficos()); // Abre el formulario de gráficos.
-            this.lblIndicador.Text = "Gestion Grafios";
+            this.lblIndicador.Text = "Gestion Graficos";
         }
 
         private void Cupon_Click(object sender, EventArgs e)

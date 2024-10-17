@@ -523,5 +523,15 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void txtPrecioV_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verifica si la tecla presionada es la tecla "Enter"
+            if (e.KeyData == Keys.Enter && txtPrecioC.Texts != "")
+            {
+                decimal total = Convert.ToDecimal(txtPrecioC.Texts) + (Convert.ToDecimal(txtPrecioC.Texts) * 0.25m);
+                txtPrecioV.Texts = total.ToString();
+            }
+        }
     }
 }

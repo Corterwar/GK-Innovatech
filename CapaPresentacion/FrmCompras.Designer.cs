@@ -404,6 +404,7 @@
             this.txtPrecioV.TabIndex = 105;
             this.txtPrecioV.Texts = "";
             this.txtPrecioV.UnderlinedStyle = false;
+            this.txtPrecioV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPrecioV_KeyDown);
             this.txtPrecioV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioV_KeyPress);
             // 
             // txtPrecioC

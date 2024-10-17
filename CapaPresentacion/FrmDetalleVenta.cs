@@ -14,10 +14,20 @@ namespace CapaPresentacion
     // Formulario para mostrar el detalle de una venta
     public partial class FrmDetalleVenta : Form
     {
+
+        public string doc { get; set; }
         // Constructor que inicializa los componentes del formulario
         public FrmDetalleVenta()
         {
             InitializeComponent();
+    
+        }
+        public FrmDetalleVenta(string numero)
+        {
+            InitializeComponent();
+            this.doc = numero;
+            txtBusqueda.Texts = this.doc;
+            btnBuscar_Click(this, new EventArgs());
         }
 
         // Evento asociado al botón "Buscar", que busca una venta según el número de venta ingresado
@@ -259,5 +269,6 @@ namespace CapaPresentacion
                 }
             }
         }
+
     }
 }
