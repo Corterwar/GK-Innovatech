@@ -106,7 +106,6 @@ IdCompra int references Compra(IdCompra),
 IdProducto int references Productos(IdProducto),
 PrecioCompra decimal(10,2) default 0,
 PrecioVenta decimal(10,2) default 0,
---Descuento int default 0, Proxima entrega
 Cantidad int,
 Total decimal(30,2),
 FechaRegistro datetime default getDate()
@@ -1069,3 +1068,9 @@ go
 insert into Negocio(Nombre,RUC,Direccion) 
 values('GK Innovatech',10000,'Av.Armenia 3400')
 go
+
+
+select * from Detalle_Compra
+
+
+select * from Compra

@@ -11,6 +11,7 @@ namespace CapaEntidad
         public String NumeroDocumento { get; set; }
         public String DocumentoCliente { get; set; }
  
+        public int IdCupon { get; set; }
         public String NombreCliente { get; set; }
         public decimal MontoPago { get; set; }
         public decimal MontoCambio { get; set; }

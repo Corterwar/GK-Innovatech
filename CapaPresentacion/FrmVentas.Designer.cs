@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboDocumento = new System.Windows.Forms.ComboBox();
             this.txtIdProd = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -47,30 +47,32 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtFecha = new CustomControls.RJControls.RJTextBox();
             this.txtCantidad = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.rjButton2 = new CustomControls.RJControls.RJButton();
-            this.txtNombreC = new CustomControls.RJControls.RJTextBox();
-            this.txtDocumento = new CustomControls.RJControls.RJTextBox();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtCupon = new System.Windows.Forms.TextBox();
+            this.rjButton3 = new CustomControls.RJControls.RJButton();
+            this.txtCambio = new CustomControls.RJControls.RJTextBox();
+            this.txtPaga = new CustomControls.RJControls.RJTextBox();
+            this.txtTotal = new CustomControls.RJControls.RJTextBox();
+            this.rjButton2 = new CustomControls.RJControls.RJButton();
+            this.txtNombreC = new CustomControls.RJControls.RJTextBox();
+            this.txtDocumento = new CustomControls.RJControls.RJTextBox();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
+            this.txtFecha = new CustomControls.RJControls.RJTextBox();
             this.btnBuscarProd = new CustomControls.RJControls.RJButton();
             this.txtProducto = new CustomControls.RJControls.RJTextBox();
             this.txtStock = new CustomControls.RJControls.RJTextBox();
             this.txtCod = new CustomControls.RJControls.RJTextBox();
             this.txtPrecio = new CustomControls.RJControls.RJTextBox();
             this.BtnAgregar = new CustomControls.RJControls.RJButton();
-            this.txtCambio = new CustomControls.RJControls.RJTextBox();
-            this.txtPaga = new CustomControls.RJControls.RJTextBox();
-            this.txtTotal = new CustomControls.RJControls.RJTextBox();
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -143,15 +145,15 @@
             this.dgvData.AllowUserToResizeColumns = false;
             this.dgvData.AllowUserToResizeRows = false;
             this.dgvData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
@@ -161,24 +163,24 @@
             this.Cantidad,
             this.SubTotal,
             this.btnEliminar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvData.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvData.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvData.EnableHeadersVisualStyles = false;
             this.dgvData.Location = new System.Drawing.Point(107, 296);
             this.dgvData.MultiSelect = false;
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.RowHeadersVisible = false;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvData.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.dgvData.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvData.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
@@ -274,30 +276,6 @@
             this.label1.TabIndex = 69;
             this.label1.Text = "Tipo Factura:";
             // 
-            // txtFecha
-            // 
-            this.txtFecha.BackColor = System.Drawing.Color.Black;
-            this.txtFecha.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtFecha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
-            this.txtFecha.BorderRadius = 10;
-            this.txtFecha.BorderSize = 2;
-            this.txtFecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFecha.ForeColor = System.Drawing.Color.White;
-            this.txtFecha.IsReadOnly = true;
-            this.txtFecha.Location = new System.Drawing.Point(7, 40);
-            this.txtFecha.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFecha.Multiline = false;
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtFecha.PasswordChar = false;
-            this.txtFecha.PlaceholderColor = System.Drawing.Color.White;
-            this.txtFecha.PlaceholderText = "Fecha";
-            this.txtFecha.ShortcutsEnabled = false;
-            this.txtFecha.Size = new System.Drawing.Size(137, 36);
-            this.txtFecha.TabIndex = 68;
-            this.txtFecha.Texts = "";
-            this.txtFecha.UnderlinedStyle = false;
-            // 
             // txtCantidad
             // 
             this.txtCantidad.BackColor = System.Drawing.Color.Black;
@@ -359,78 +337,6 @@
             this.label2.Size = new System.Drawing.Size(84, 17);
             this.label2.TabIndex = 88;
             this.label2.Text = "Documento:";
-            // 
-            // rjButton2
-            // 
-            this.rjButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.rjButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.rjButton2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton2.BorderRadius = 20;
-            this.rjButton2.BorderSize = 2;
-            this.rjButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rjButton2.FlatAppearance.BorderSize = 0;
-            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.rjButton2.Image = global::CapaPresentacion.Properties.Resources.buscar__1_;
-            this.rjButton2.Location = new System.Drawing.Point(137, 36);
-            this.rjButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.rjButton2.Name = "rjButton2";
-            this.rjButton2.Size = new System.Drawing.Size(46, 40);
-            this.rjButton2.TabIndex = 87;
-            this.rjButton2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.rjButton2.UseVisualStyleBackColor = false;
-            this.rjButton2.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // txtNombreC
-            // 
-            this.txtNombreC.BackColor = System.Drawing.Color.Black;
-            this.txtNombreC.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtNombreC.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
-            this.txtNombreC.BorderRadius = 10;
-            this.txtNombreC.BorderSize = 2;
-            this.txtNombreC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreC.ForeColor = System.Drawing.Color.White;
-            this.txtNombreC.IsReadOnly = true;
-            this.txtNombreC.Location = new System.Drawing.Point(189, 40);
-            this.txtNombreC.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNombreC.Multiline = false;
-            this.txtNombreC.Name = "txtNombreC";
-            this.txtNombreC.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtNombreC.PasswordChar = false;
-            this.txtNombreC.PlaceholderColor = System.Drawing.Color.White;
-            this.txtNombreC.PlaceholderText = "Nombre Cliente";
-            this.txtNombreC.ShortcutsEnabled = false;
-            this.txtNombreC.Size = new System.Drawing.Size(152, 36);
-            this.txtNombreC.TabIndex = 69;
-            this.txtNombreC.Texts = "";
-            this.txtNombreC.UnderlinedStyle = false;
-            // 
-            // txtDocumento
-            // 
-            this.txtDocumento.BackColor = System.Drawing.Color.Black;
-            this.txtDocumento.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtDocumento.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
-            this.txtDocumento.BorderRadius = 10;
-            this.txtDocumento.BorderSize = 2;
-            this.txtDocumento.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumento.ForeColor = System.Drawing.Color.White;
-            this.txtDocumento.IsReadOnly = false;
-            this.txtDocumento.Location = new System.Drawing.Point(7, 40);
-            this.txtDocumento.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDocumento.Multiline = false;
-            this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtDocumento.PasswordChar = false;
-            this.txtDocumento.PlaceholderColor = System.Drawing.Color.White;
-            this.txtDocumento.PlaceholderText = "Documento";
-            this.txtDocumento.ShortcutsEnabled = false;
-            this.txtDocumento.Size = new System.Drawing.Size(122, 36);
-            this.txtDocumento.TabIndex = 68;
-            this.txtDocumento.Texts = "";
-            this.txtDocumento.UnderlinedStyle = false;
-            this.txtDocumento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDocumento_KeyDown);
-            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
             // txtIdCliente
             // 
@@ -507,6 +413,232 @@
             this.label5.Size = new System.Drawing.Size(68, 17);
             this.label5.TabIndex = 87;
             this.label5.Text = "Producto:";
+            // 
+            // txtCupon
+            // 
+            this.txtCupon.Location = new System.Drawing.Point(82, 186);
+            this.txtCupon.Name = "txtCupon";
+            this.txtCupon.Size = new System.Drawing.Size(19, 20);
+            this.txtCupon.TabIndex = 91;
+            this.txtCupon.Visible = false;
+            // 
+            // rjButton3
+            // 
+            this.rjButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton3.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton3.BorderRadius = 20;
+            this.rjButton3.BorderSize = 2;
+            this.rjButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjButton3.FlatAppearance.BorderSize = 0;
+            this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.rjButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton3.Image = global::CapaPresentacion.Properties.Resources.etiqueta_de_precio;
+            this.rjButton3.Location = new System.Drawing.Point(60, 562);
+            this.rjButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.rjButton3.Name = "rjButton3";
+            this.rjButton3.Size = new System.Drawing.Size(130, 47);
+            this.rjButton3.TabIndex = 96;
+            this.rjButton3.Text = "Cupones";
+            this.rjButton3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rjButton3.UseVisualStyleBackColor = false;
+            this.rjButton3.Click += new System.EventHandler(this.rjButton3_Click);
+            // 
+            // txtCambio
+            // 
+            this.txtCambio.BackColor = System.Drawing.Color.Black;
+            this.txtCambio.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtCambio.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.txtCambio.BorderRadius = 10;
+            this.txtCambio.BorderSize = 2;
+            this.txtCambio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCambio.ForeColor = System.Drawing.Color.White;
+            this.txtCambio.IsReadOnly = true;
+            this.txtCambio.Location = new System.Drawing.Point(729, 450);
+            this.txtCambio.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCambio.Multiline = false;
+            this.txtCambio.Name = "txtCambio";
+            this.txtCambio.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtCambio.PasswordChar = false;
+            this.txtCambio.PlaceholderColor = System.Drawing.Color.White;
+            this.txtCambio.PlaceholderText = "0.00";
+            this.txtCambio.ShortcutsEnabled = false;
+            this.txtCambio.Size = new System.Drawing.Size(106, 36);
+            this.txtCambio.TabIndex = 79;
+            this.txtCambio.Texts = "";
+            this.txtCambio.UnderlinedStyle = false;
+            // 
+            // txtPaga
+            // 
+            this.txtPaga.BackColor = System.Drawing.Color.Black;
+            this.txtPaga.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtPaga.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.txtPaga.BorderRadius = 10;
+            this.txtPaga.BorderSize = 2;
+            this.txtPaga.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPaga.ForeColor = System.Drawing.Color.White;
+            this.txtPaga.IsReadOnly = false;
+            this.txtPaga.Location = new System.Drawing.Point(729, 386);
+            this.txtPaga.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPaga.Multiline = false;
+            this.txtPaga.Name = "txtPaga";
+            this.txtPaga.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtPaga.PasswordChar = false;
+            this.txtPaga.PlaceholderColor = System.Drawing.Color.White;
+            this.txtPaga.PlaceholderText = "0.00";
+            this.txtPaga.ShortcutsEnabled = false;
+            this.txtPaga.Size = new System.Drawing.Size(106, 36);
+            this.txtPaga.TabIndex = 78;
+            this.txtPaga.Texts = "";
+            this.txtPaga.UnderlinedStyle = false;
+            this.txtPaga.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaga_KeyDown);
+            this.txtPaga.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaga_KeyPress);
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.BackColor = System.Drawing.Color.Black;
+            this.txtTotal.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtTotal.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.txtTotal.BorderRadius = 10;
+            this.txtTotal.BorderSize = 2;
+            this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.ForeColor = System.Drawing.Color.White;
+            this.txtTotal.IsReadOnly = true;
+            this.txtTotal.Location = new System.Drawing.Point(729, 318);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTotal.Multiline = false;
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtTotal.PasswordChar = false;
+            this.txtTotal.PlaceholderColor = System.Drawing.Color.White;
+            this.txtTotal.PlaceholderText = "0.00";
+            this.txtTotal.ShortcutsEnabled = false;
+            this.txtTotal.Size = new System.Drawing.Size(106, 36);
+            this.txtTotal.TabIndex = 69;
+            this.txtTotal.Texts = "";
+            this.txtTotal.UnderlinedStyle = false;
+            // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton2.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton2.BorderRadius = 20;
+            this.rjButton2.BorderSize = 2;
+            this.rjButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton2.Image = global::CapaPresentacion.Properties.Resources.buscar__1_;
+            this.rjButton2.Location = new System.Drawing.Point(137, 36);
+            this.rjButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(46, 40);
+            this.rjButton2.TabIndex = 87;
+            this.rjButton2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtNombreC
+            // 
+            this.txtNombreC.BackColor = System.Drawing.Color.Black;
+            this.txtNombreC.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtNombreC.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.txtNombreC.BorderRadius = 10;
+            this.txtNombreC.BorderSize = 2;
+            this.txtNombreC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreC.ForeColor = System.Drawing.Color.White;
+            this.txtNombreC.IsReadOnly = true;
+            this.txtNombreC.Location = new System.Drawing.Point(189, 40);
+            this.txtNombreC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreC.Multiline = false;
+            this.txtNombreC.Name = "txtNombreC";
+            this.txtNombreC.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtNombreC.PasswordChar = false;
+            this.txtNombreC.PlaceholderColor = System.Drawing.Color.White;
+            this.txtNombreC.PlaceholderText = "Nombre Cliente";
+            this.txtNombreC.ShortcutsEnabled = false;
+            this.txtNombreC.Size = new System.Drawing.Size(152, 36);
+            this.txtNombreC.TabIndex = 69;
+            this.txtNombreC.Texts = "";
+            this.txtNombreC.UnderlinedStyle = false;
+            // 
+            // txtDocumento
+            // 
+            this.txtDocumento.BackColor = System.Drawing.Color.Black;
+            this.txtDocumento.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtDocumento.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.txtDocumento.BorderRadius = 10;
+            this.txtDocumento.BorderSize = 2;
+            this.txtDocumento.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocumento.ForeColor = System.Drawing.Color.White;
+            this.txtDocumento.IsReadOnly = false;
+            this.txtDocumento.Location = new System.Drawing.Point(7, 40);
+            this.txtDocumento.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDocumento.Multiline = false;
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtDocumento.PasswordChar = false;
+            this.txtDocumento.PlaceholderColor = System.Drawing.Color.White;
+            this.txtDocumento.PlaceholderText = "Documento";
+            this.txtDocumento.ShortcutsEnabled = false;
+            this.txtDocumento.Size = new System.Drawing.Size(122, 36);
+            this.txtDocumento.TabIndex = 68;
+            this.txtDocumento.Texts = "";
+            this.txtDocumento.UnderlinedStyle = false;
+            this.txtDocumento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDocumento_KeyDown);
+            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rjButton1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton1.BorderRadius = 20;
+            this.rjButton1.BorderSize = 2;
+            this.rjButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.rjButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton1.Image = global::CapaPresentacion.Properties.Resources.etiqueta_de_precio;
+            this.rjButton1.Location = new System.Drawing.Point(718, 524);
+            this.rjButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(130, 47);
+            this.rjButton1.TabIndex = 77;
+            this.rjButton1.Text = "Registrar";
+            this.rjButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.rjButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.BackColor = System.Drawing.Color.Black;
+            this.txtFecha.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtFecha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.txtFecha.BorderRadius = 10;
+            this.txtFecha.BorderSize = 2;
+            this.txtFecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFecha.ForeColor = System.Drawing.Color.White;
+            this.txtFecha.IsReadOnly = true;
+            this.txtFecha.Location = new System.Drawing.Point(7, 40);
+            this.txtFecha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFecha.Multiline = false;
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtFecha.PasswordChar = false;
+            this.txtFecha.PlaceholderColor = System.Drawing.Color.White;
+            this.txtFecha.PlaceholderText = "Fecha";
+            this.txtFecha.ShortcutsEnabled = false;
+            this.txtFecha.Size = new System.Drawing.Size(137, 36);
+            this.txtFecha.TabIndex = 68;
+            this.txtFecha.Texts = "";
+            this.txtFecha.UnderlinedStyle = false;
             // 
             // btnBuscarProd
             // 
@@ -651,104 +783,6 @@
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // txtCambio
-            // 
-            this.txtCambio.BackColor = System.Drawing.Color.Black;
-            this.txtCambio.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCambio.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
-            this.txtCambio.BorderRadius = 10;
-            this.txtCambio.BorderSize = 2;
-            this.txtCambio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCambio.ForeColor = System.Drawing.Color.White;
-            this.txtCambio.IsReadOnly = true;
-            this.txtCambio.Location = new System.Drawing.Point(729, 450);
-            this.txtCambio.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCambio.Multiline = false;
-            this.txtCambio.Name = "txtCambio";
-            this.txtCambio.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtCambio.PasswordChar = false;
-            this.txtCambio.PlaceholderColor = System.Drawing.Color.White;
-            this.txtCambio.PlaceholderText = "0.00";
-            this.txtCambio.ShortcutsEnabled = false;
-            this.txtCambio.Size = new System.Drawing.Size(106, 36);
-            this.txtCambio.TabIndex = 79;
-            this.txtCambio.Texts = "";
-            this.txtCambio.UnderlinedStyle = false;
-            // 
-            // txtPaga
-            // 
-            this.txtPaga.BackColor = System.Drawing.Color.Black;
-            this.txtPaga.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtPaga.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
-            this.txtPaga.BorderRadius = 10;
-            this.txtPaga.BorderSize = 2;
-            this.txtPaga.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaga.ForeColor = System.Drawing.Color.White;
-            this.txtPaga.IsReadOnly = false;
-            this.txtPaga.Location = new System.Drawing.Point(729, 386);
-            this.txtPaga.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPaga.Multiline = false;
-            this.txtPaga.Name = "txtPaga";
-            this.txtPaga.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtPaga.PasswordChar = false;
-            this.txtPaga.PlaceholderColor = System.Drawing.Color.White;
-            this.txtPaga.PlaceholderText = "0.00";
-            this.txtPaga.ShortcutsEnabled = false;
-            this.txtPaga.Size = new System.Drawing.Size(106, 36);
-            this.txtPaga.TabIndex = 78;
-            this.txtPaga.Texts = "";
-            this.txtPaga.UnderlinedStyle = false;
-            this.txtPaga.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaga_KeyDown);
-            this.txtPaga.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaga_KeyPress);
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.BackColor = System.Drawing.Color.Black;
-            this.txtTotal.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtTotal.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
-            this.txtTotal.BorderRadius = 10;
-            this.txtTotal.BorderSize = 2;
-            this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.ForeColor = System.Drawing.Color.White;
-            this.txtTotal.IsReadOnly = true;
-            this.txtTotal.Location = new System.Drawing.Point(729, 318);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTotal.Multiline = false;
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtTotal.PasswordChar = false;
-            this.txtTotal.PlaceholderColor = System.Drawing.Color.White;
-            this.txtTotal.PlaceholderText = "0.00";
-            this.txtTotal.ShortcutsEnabled = false;
-            this.txtTotal.Size = new System.Drawing.Size(106, 36);
-            this.txtTotal.TabIndex = 69;
-            this.txtTotal.Texts = "";
-            this.txtTotal.UnderlinedStyle = false;
-            // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.rjButton1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton1.BorderRadius = 20;
-            this.rjButton1.BorderSize = 2;
-            this.rjButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.rjButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.rjButton1.Image = global::CapaPresentacion.Properties.Resources.etiqueta_de_precio;
-            this.rjButton1.Location = new System.Drawing.Point(718, 524);
-            this.rjButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(130, 47);
-            this.rjButton1.TabIndex = 77;
-            this.rjButton1.Text = "Registrar";
-            this.rjButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.rjButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.rjButton1.UseVisualStyleBackColor = false;
-            this.rjButton1.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
             // rjTextBox2
             // 
             this.rjTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(59)))));
@@ -769,7 +803,7 @@
             this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.rjTextBox2.PlaceholderText = "";
             this.rjTextBox2.ShortcutsEnabled = true;
-            this.rjTextBox2.Size = new System.Drawing.Size(874, 595);
+            this.rjTextBox2.Size = new System.Drawing.Size(874, 585);
             this.rjTextBox2.TabIndex = 95;
             this.rjTextBox2.Texts = "";
             this.rjTextBox2.UnderlinedStyle = false;
@@ -779,6 +813,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 620);
+            this.Controls.Add(this.txtCupon);
+            this.Controls.Add(this.rjButton3);
             this.Controls.Add(this.txtCambio);
             this.Controls.Add(this.txtPaga);
             this.Controls.Add(this.txtTotal);
@@ -849,5 +885,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
+        private CustomControls.RJControls.RJButton rjButton3;
+        private System.Windows.Forms.TextBox txtCupon;
     }
 }

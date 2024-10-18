@@ -93,6 +93,9 @@ namespace CapaPresentacion
             }
         }
 
+  
+            
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             decimal precio = 0;
@@ -244,6 +247,13 @@ namespace CapaPresentacion
                 {
                     total += Convert.ToDecimal(rows.Cells["SubTotal"].Value.ToString());
                 }
+            }
+
+            if (txtCupon.Text != "")
+            {
+                Cupon cuponAux = new CN_Cupon().obtenerCupones().Where(c => c.IdCupon == Convert.ToInt32(txtCupon.Text)).First();
+
+                total = total - ((total / 100) * cuponAux.Descuento);
             }
 
             // Muestra el total en el campo txtTotal.
@@ -443,11 +453,18 @@ namespace CapaPresentacion
         {
             if (validaciones()) // Primero verifica si todas las validaciones pasan.
             {
+
+
+
                 // Pide confirmación antes de registrar la venta.
                 DialogResult confirmacion = MessageBox.Show("¿Seguro que desea registrar la venta?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (confirmacion == DialogResult.Yes) // Si el usuario confirma que quiere registrar la venta.
                 {
+
+
+                
+
                     // Crea un DataTable para los detalles de la venta.
                     DataTable detalle_Venta = new DataTable();
                     detalle_Venta.Columns.Add("IdProducto", typeof(int));
@@ -484,10 +501,12 @@ namespace CapaPresentacion
                         NumeroDocumento = numeroDocumento,
                         DocumentoCliente = txtDocumento.Texts,
                         NombreCliente = txtNombreC.Texts,
+                        IdCupon = Convert.ToInt32(txtCupon.Text),
                         MontoPago = Convert.ToDecimal(txtPaga.Texts),
                         MontoCambio = Convert.ToDecimal(txtCambio.Texts),
                         MontoTotal = Convert.ToDecimal(txtTotal.Texts)
                     };
+                    
 
                     // Llama al método para registrar la venta en la base de datos.
                     string Mensaje = string.Empty;
@@ -579,6 +598,22 @@ namespace CapaPresentacion
             }
         }
 
+        private void rjButton3_Click(object sender, EventArgs e)
+        {
+            decimal charmander = 0;
+            using (var modal = new mdCupon())
+            {
+                var result = modal.ShowDialog(); // Muestra el diálogo modal.
 
+                if (result == DialogResult.OK) // Si se selecciona un producto, llena los campos de producto y precio.
+                {
+                    charmander = (Convert.ToDecimal(txtTotal.Texts) - (modal.cupon.Descuento * (Convert.ToDecimal(txtTotal.Texts) / 100) ));
+                    txtCupon.Text = modal.cupon.IdCupon.ToString();
+
+                }
+
+            }
+            txtTotal.Texts = charmander.ToString();
+        }
     }
 }
