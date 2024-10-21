@@ -143,6 +143,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cajero_automatico {
+            get {
+                object obj = ResourceManager.GetObject("cajero_automatico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CampoCFinal {
             get {
                 object obj = ResourceManager.GetObject("CampoCFinal", resourceCulture);
@@ -176,6 +186,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap comprobado {
             get {
                 object obj = ResourceManager.GetObject("comprobado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cupones {
+            get {
+                object obj = ResourceManager.GetObject("cupones", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -332,29 +352,25 @@ namespace CapaPresentacion.Properties {
         
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
-        ///&lt;html&gt;
+        ///&lt;html lang=&quot;es&quot;&gt;
         ///&lt;head&gt;
-        ///    &lt;title&gt;Web Page Design&lt;/title&gt;
+        ///
+        ///    &lt;title&gt;Factura de Compra&lt;/title&gt;
         ///    &lt;style&gt;
-        ///        table.border {
-        ///            border-collapse: collapse;
+        ///        /*body {
+        ///            font-family: &apos;Segoe UI&apos;, Tahoma, Geneva, Verdana, sans-serif;
+        ///            background-color: #f9f9f9;
+        ///            color: #333;
+        ///            margin: 0;
+        ///            padding: 20px;
         ///        }
         ///
-        ///            table.border th {
-        ///                text-align: center;
-        ///                padding: 5px;
-        ///                border: 1px solid black;
-        ///            }
-        ///
-        ///            table.border td {
-        ///                text-align: center;
-        ///                padding: 5px;
-        ///                border: 1px solid black;
-        ///            }
-        ///    &lt;/style&gt;
-        ///&lt;/head&gt;
-        ///&lt;body&gt;
-        ///    &lt;tab [resto de la cadena truncado]&quot;;.
+        ///        .container {
+        ///            max-width: 900px;
+        ///            margin: 0 auto;
+        ///            background-color: #fff;
+        ///            padding: 20px;
+        ///            box-shadow: 0 2px 5px rgba(0, 0,  [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string PlantillaCompra {
             get {
@@ -364,25 +380,23 @@ namespace CapaPresentacion.Properties {
         
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
-        ///&lt;html&gt;
+        ///&lt;html lang=&quot;es&quot;&gt;
         ///&lt;head&gt;
-        ///    &lt;!--sistema creado por el canal yt codigo estudiante--&gt;
-        ///    &lt;title&gt;Web Page Design&lt;/title&gt;
+        ///    &lt;title&gt;Factura de Venta&lt;/title&gt;
         ///    &lt;style&gt;
-        ///        table.border {
-        ///            border-collapse: collapse;
-        ///        }
-        ///
-        ///            table.border th {
-        ///                text-align: center;
-        ///                padding: 5px;
-        ///                border: 1px solid black;
-        ///            }
-        ///
-        ///            table.border td {
-        ///                text-align: center;
-        ///                padding: 5px;
-        ///                border: 1px solid b [resto de la cadena truncado]&quot;;.
+        ///        /*body {
+        ///            font-family: &apos;Segoe UI&apos;, Tahoma, Geneva, Verdana, sans-serif;
+        ///            background-color: #f9f9f9;
+        ///            color: #333;
+        ///            margin: 0;
+        ///            padding: 0;*/ /* Eliminado el padding */
+        ///        /*}*/
+        ////*
+        ///        .container {
+        ///            max-width: 900px;
+        ///            margin: 0 auto;
+        ///            background-color: #fff;
+        ///            padding: 0;  Eliminado el paddin [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string PlantillaVenta {
             get {

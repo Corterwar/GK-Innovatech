@@ -238,4 +238,10 @@
   <data name="IMAGEN ASDJKHAKFJGAGSJFAKLDS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMAGEN ASDJKHAKFJGAGSJFAKLDS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cajero_automatico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cajero-automatico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cupones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cupones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

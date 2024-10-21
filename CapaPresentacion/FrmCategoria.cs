@@ -10,13 +10,18 @@ namespace CapaPresentacion // Define el espacio de nombres para la capa de prese
 {
     public partial class FrmCategoria : Form // Define la clase FrmCategoria que hereda de Form.
     {
-        public FrmCategoria() // Constructor de la clase.
+        public Inicio Inicio2 { get; set; }
+        public FrmCategoria(Inicio inicio) // Constructor de la clase.
         {
             InitializeComponent(); // Inicializa los componentes del formulario.
+            Inicio2 = inicio;
+            Inicio2.pintar();
         }
 
         private void FrmCategoria_Load(object sender, EventArgs e) // Maneja el evento de carga del formulario.
         {
+
+         
             // Agrega opciones de estado al comboEstado.
             comboEstado.Items.Add(new OpcionesCombo() { Valor = 1, Texto = "Activo" });
             comboEstado.Items.Add(new OpcionesCombo() { Valor = 0, Texto = "No Activo" });
@@ -286,6 +291,18 @@ namespace CapaPresentacion // Define el espacio de nombres para la capa de prese
             else
             {
                 e.Handled = true; // Bloquea el carácter.
+            }
+        }
+
+        private void dgvData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dgvData.Columns[e.ColumnIndex].Name == "Estado") // Verifica la columna "Estado"
+            {
+                if (e.Value.ToString() == "No Activo") // Si el estado es "No Activo"
+                {
+                    e.CellStyle.BackColor = Color.Red; // Cambia el color de fondo a rojo
+                    e.CellStyle.ForeColor = Color.Black; // Cambia el color de texto a negro
+                }
             }
         }
     }

@@ -473,5 +473,20 @@ namespace CapaPresentacion
                 e.Handled = true; // Bloquear el carácter
             }
         }
+        // Método que se ejecuta al formatear las celdas del DataGridView
+        private void dgvData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+         
+   
+                if (this.dgvData.Columns[e.ColumnIndex].Name == "Estado") // Verifica la columna "Estado"
+                {
+                    if (e.Value.ToString() == "No Activo") // Si el estado es "No Activo"
+                    {
+                        e.CellStyle.BackColor = Color.Red; // Cambia el color de fondo a rojo
+                        e.CellStyle.ForeColor = Color.Black; // Cambia el color de texto a negro
+                    }
+                }
+            
+        }
     }
 }

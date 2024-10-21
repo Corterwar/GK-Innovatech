@@ -199,7 +199,7 @@ namespace CapaPresentacion
                 {
                     // Rellena los campos del formulario con los datos del producto seleccionado
                     string doc = dgvData.Rows[indice].Cells["NumeroDocumento"].Value.ToString();
-                    Inicio.abrirFormulario4(sender, new FrmDetalleVenta(doc));
+                    Inicio.inicio(new FrmDetalleVenta(doc, Inicio));
                     this.Close();
                     
                 }

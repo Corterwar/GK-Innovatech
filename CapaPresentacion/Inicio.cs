@@ -15,7 +15,7 @@ namespace CapaPresentacion
     {
         // Variables estáticas para gestionar el usuario, el menú activo y el formulario activo.
         private static Usuario user; // Variable para almacenar el usuario actual.
-        private static IconMenuItem menuActivo = null; // Almacena el menú que está activo.
+        public static IconMenuItem menuActivo = null; // Almacena el menú que está activo.
         private static Form formActivo = null; // Almacena el formulario activo.
 
         // Constructor de la clase, recibe el objeto Usuario y lo asigna.
@@ -23,13 +23,78 @@ namespace CapaPresentacion
         {
             user = objusuario; // Asigna el usuario recibido.
             InitializeComponent(); // Inicializa los componentes visuales del formulario.
-            abrirFormulario2(new FrmInicio()); // Abre el formulario de inicio por defecto.
+            inicio(new FrmInicio()); // Abre el formulario de inicio por defecto.
+           
             lblRol.Text += " " + user.oRol.Descripcion; // Muestra el rol del usuario en la etiqueta.
         }
 
-        // Método para abrir un formulario sin modificar el menú activo.
-        private void abrirFormulario2(Form formulario)
+        public void pintar()
         {
+            this.menuMantenimiento.BackColor = Color.FromArgb(38, 50, 56);
+            this.menuCompras.BackColor = Color.FromArgb(38, 50, 56);
+            this.menuVentas.BackColor = Color.FromArgb(38, 50, 56);
+            // Definimos conjuntos de tipos de formularios para cada menú
+            var mantenimientoForms = new HashSet<Type>
+    {
+        typeof(FrmCategoria),
+        typeof(FrmCupon),
+        typeof(FrmNegocio),
+        typeof(FrmProducto)
+    };
+
+            var comprasForms = new HashSet<Type>
+    {
+        typeof(FrmDetalleCompra),
+        typeof(FrmCompras)
+    };
+
+            var ventasForms = new HashSet<Type>
+    {
+        typeof(FrmDetalleVenta),
+        typeof(FrmVentas)
+    };
+
+            // Inicializamos el color de fondo por defecto
+            Color defaultColor = Color.FromArgb(38, 50, 56);
+            Color selectedColor = Color.FromArgb(30, 30, 30);
+
+            // Variable para determinar si encontramos un formulario específico
+            bool found = false;
+
+            foreach (Form form in Contenedor.Controls.OfType<Form>())
+            {
+                if (mantenimientoForms.Contains(form.GetType()))
+                {
+                    this.menuMantenimiento.BackColor = selectedColor;
+                    found = true;
+                    break; // Salimos del bucle si encontramos un formulario de mantenimiento
+                }
+                else if (comprasForms.Contains(form.GetType()))
+                {
+                    this.menuCompras.BackColor = selectedColor;
+                    found = true;
+                    break; // Salimos del bucle si encontramos un formulario de compras
+                }
+                else if (ventasForms.Contains(form.GetType()))
+                {
+                    this.menuVentas.BackColor = selectedColor;
+                    found = true;
+                    break; // Salimos del bucle si encontramos un formulario de ventas
+                }
+            }
+
+            // Si no se encontró ningún formulario, aplicamos el color por defecto
+            if (!found)
+            {
+                this.menuMantenimiento.BackColor = defaultColor;
+            }
+        }
+
+
+        // Método para abrir un formulario sin modificar el menú activo.
+        public void inicio(Form formulario)
+        {
+            Contenedor.Controls.Clear();
             // Restablece el color del menú activo si existe.
             if (menuActivo != null)
             {
@@ -48,12 +113,14 @@ namespace CapaPresentacion
             formulario.Dock = DockStyle.Fill; // Establece el formulario para que ocupe todo el contenedor.
             formulario.BackColor = Color.FromArgb(44, 53, 68); // Cambia el color de fondo.
             Contenedor.Controls.Add(formulario); // Añade el formulario al contenedor visual.
+            pintar();
             formulario.Show(); // Muestra el formulario.
         }
 
         // Método para abrir un formulario y cambiar el menú activo.
         public void abrirFormulario(IconMenuItem menu, Form formulario)
         {
+              Contenedor.Controls.Clear();
             // Restablece el color del menú activo si existe.
             if (menuActivo != null)
             {
@@ -76,56 +143,12 @@ namespace CapaPresentacion
             formulario.Dock = DockStyle.Fill; // Establece el formulario para que ocupe todo el contenedor.
             formulario.BackColor = Color.FromArgb(44, 53, 68); // Cambia el color de fondo.
             Contenedor.Controls.Add(formulario); // Añade el formulario al contenedor visual.
-            formulario.Show(); // Muestra el formulario.
-        }
-
-        private void abrirFormulario3(IconMenuItem menu, FrmReporteVentas formulario)
-        {
-            // Restablece el color del menú activo si existe.
-            if (menuActivo != null)
-            {
-                menuActivo.BackColor = Color.FromArgb(38, 50, 56);
-            }
-
-            // Cambia el color del menú seleccionado.
-            menu.BackColor = Color.FromArgb(30, 30, 30);
-            menuActivo = menu; // Asigna el nuevo menú como activo.
-
-            // Cierra el formulario activo si ya hay uno abierto.
-            if (formActivo != null)
-            {
-                formActivo.Close();
-            }
-
-            formActivo = formulario; // Asigna el nuevo formulario como activo.
-            formulario.Inicio = this;
-            formulario.TopLevel = false; // Configura el formulario para que no sea de nivel superior.
-            formulario.FormBorderStyle = FormBorderStyle.None; // Elimina los bordes del formulario.
-            formulario.Dock = DockStyle.Fill; // Establece el formulario para que ocupe todo el contenedor.
-            formulario.BackColor = Color.FromArgb(44, 53, 68); // Cambia el color de fondo.
-            Contenedor.Controls.Add(formulario); // Añade el formulario al contenedor visual.
+            pintar();
             formulario.Show(); // Muestra el formulario.
         }
 
 
-        public void abrirFormulario4(object menu, Form formulario)
-        {
 
-
-            // Cierra el formulario activo si ya hay uno abierto.
-            if (formActivo != null)
-            {
-                formActivo.Close();
-            }
-
-            formActivo = formulario; // Asigna el nuevo formulario como activo.
-            formulario.TopLevel = false; // Configura el formulario para que no sea de nivel superior.
-            formulario.FormBorderStyle = FormBorderStyle.None; // Elimina los bordes del formulario.
-            formulario.Dock = DockStyle.Fill; // Establece el formulario para que ocupe todo el contenedor.
-            formulario.BackColor = Color.FromArgb(44, 53, 68); // Cambia el color de fondo.
-            Contenedor.Controls.Add(formulario); // Añade el formulario al contenedor visual.
-            formulario.Show(); // Muestra el formulario.
-        }
 
         // Evento que se ejecuta al cargar el formulario principal.
         private void Inicio_Load(object sender, EventArgs e)
@@ -151,7 +174,7 @@ namespace CapaPresentacion
         // Evento que abre el formulario de productos cuando se hace clic en el menú correspondiente.
         private void Productos_Click(object sender, EventArgs e)
         {
-            abrirFormulario((IconMenuItem)sender, new FrmProducto()); // Abre el formulario de productos.
+            abrirFormulario((IconMenuItem)sender, new FrmProducto(this)); // Abre el formulario de productos.
             this.lblIndicador.Text = "Gestion Productos";
         }
 
@@ -186,7 +209,7 @@ namespace CapaPresentacion
         // Evento que abre el formulario de categorías cuando se hace clic en el menú correspondiente.
         private void Categorias_Click(object sender, EventArgs e)
         {
-            abrirFormulario((IconMenuItem)sender, new FrmCategoria()); // Abre el formulario de categorías.
+            abrirFormulario((IconMenuItem)sender, new FrmCategoria(this)); // Abre el formulario de categorías.
             this.lblIndicador.Text = "Gestion Categorias";
         }
 
@@ -207,7 +230,7 @@ namespace CapaPresentacion
         // Evento que abre el formulario de detalles de ventas cuando se hace clic en el menú correspondiente.
         private void menuVerDetalle_Click(object sender, EventArgs e)
         {
-            abrirFormulario((IconMenuItem)sender, new FrmDetalleVenta()); // Abre el formulario de detalle de ventas.
+            abrirFormulario((IconMenuItem)sender, new FrmDetalleVenta(this)); // Abre el formulario de detalle de ventas.
             this.lblIndicador.Text = "Detalle Ventas";
         }
 
@@ -223,7 +246,7 @@ namespace CapaPresentacion
         {
             if (user.oRol.IdRol == 1) // Verifica si el usuario es administrador.
             {
-                abrirFormulario((IconMenuItem)sender, new FrmNegocio()); // Abre el formulario de configuración del negocio.
+                abrirFormulario((IconMenuItem)sender, new FrmNegocio(this)); // Abre el formulario de configuración del negocio.
                 this.lblIndicador.Text = "Gestion Negocio";
             }
             else
@@ -246,8 +269,7 @@ namespace CapaPresentacion
         // Evento que abre el submenú de reportes de ventas.
         private void subMenuRVentas_Click(object sender, EventArgs e)
         {
-          
-            abrirFormulario3(menuReportes, new FrmReporteVentas(this)); // Abre el formulario de reportes de ventas.
+            abrirFormulario(menuReportes, new FrmReporteVentas(this)); // Abre el formulario de reportes de ventas.
             this.lblIndicador.Text = "Reporte Ventas";
         }
 
@@ -267,7 +289,7 @@ namespace CapaPresentacion
 
         private void Cupon_Click(object sender, EventArgs e)
         {
-            abrirFormulario((IconMenuItem)sender, new FrmCupon());
+            abrirFormulario((IconMenuItem)sender, new FrmCupon(this));
             this.lblIndicador.Text = "Gestion Cupones";
         }
     }

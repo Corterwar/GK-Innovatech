@@ -449,6 +449,18 @@ namespace CapaPresentacion
                 e.Handled = true; // Bloquear el carácter
             }
         }
+
+        private void dgvData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dgvData.Columns[e.ColumnIndex].Name == "Estado") // Verifica la columna "Estado"
+            {
+                if (e.Value.ToString() == "No Activo") // Si el estado es "No Activo"
+                {
+                    e.CellStyle.BackColor = Color.Red; // Cambia el color de fondo a rojo
+                    e.CellStyle.ForeColor = Color.Black; // Cambia el color de texto a negro
+                }
+            }
+        }
     }
 
 }

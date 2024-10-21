@@ -14,17 +14,22 @@ namespace CapaPresentacion
     // Formulario para mostrar el detalle de una venta
     public partial class FrmDetalleVenta : Form
     {
-
+        public Inicio Inicio { get; set; }
         public string doc { get; set; }
         // Constructor que inicializa los componentes del formulario
-        public FrmDetalleVenta()
+        public FrmDetalleVenta(Inicio inicio)
         {
+            
             InitializeComponent();
-    
+            Inicio = inicio;
+            Inicio.pintar();
+
         }
-        public FrmDetalleVenta(string numero)
+        public FrmDetalleVenta(string numero, Inicio inicio)
         {
             InitializeComponent();
+            Inicio = inicio;
+            Inicio.pintar();
             this.doc = numero;
             txtBusqueda.Texts = this.doc;
             btnBuscar_Click(this, new EventArgs());
@@ -103,6 +108,7 @@ namespace CapaPresentacion
         private void FrmDetalleVenta_Load(object sender, EventArgs e)
         {
             txtBusqueda.Select();
+          
         }
 
         // Evento asociado al botón "Descargar", que genera y guarda un archivo PDF con los detalles de la venta
@@ -176,7 +182,9 @@ namespace CapaPresentacion
                         iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(byteImage);
                         img.ScaleToFit(60, 60);
                         img.Alignment = iTextSharp.text.Image.UNDERLYING;
-                        img.SetAbsolutePosition(pdfDoc.Left, pdfDoc.GetTop(51));
+                        img.SetAbsolutePosition(pdfDoc.Left, pdfDoc.GetTop(51)); // Ajusta la posición vertical
+                       
+                        
                         pdfDoc.Add(img);
                     }
 
@@ -192,6 +200,7 @@ namespace CapaPresentacion
                     MessageBox.Show("Pdf Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+
         }
 
         // Evento que limita la entrada de caracteres en el campo de búsqueda a solo números y un máximo de 8 dígitos

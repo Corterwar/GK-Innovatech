@@ -4,7 +4,7 @@
 
     <title>Factura de Compra</title>
     <style>
-        body {
+        /*body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f9f9f9;
             color: #333;
@@ -17,9 +17,9 @@
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra más ligera */
-            border-radius: 5px; /* Borde redondeado menor */
-        }
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/ /* Sombra más ligera */
+            /*border-radius: 5px;*/ /* Borde redondeado menor */
+        /*}*/
 
         .header {
             text-align: center;
@@ -108,12 +108,12 @@
             <small>RUC: @docnegocio</small><br />
             <small>Dirección: @direcnegocio</small><br />
         </div>
-
+        <br />
         <!-- Tipo y número de documento -->
         <div class="highlight">
             <strong>@tipodocumento - @numerodocumento</strong>
         </div>
-
+        <br />
         <!-- Información del proveedor -->
         <table class="info-section">
             <tr>
@@ -129,7 +129,7 @@
                 <td>@fecharegistro</td>
             </tr>
             <tr>
-                <td style="width: 40%; font-weight: bold;">Usuario Registro:</td>
+                <td style="width: 40%; font-weight: bold;">Nombre Vendedor:</td>
                 <td>@usuarioregistro</td>
             </tr>
         </table>

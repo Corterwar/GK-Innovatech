@@ -623,6 +623,12 @@
   <ItemGroup>
     <None Include="Resources\IMAGEN ASDJKHAKFJGAGSJFAKLDS.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajero-automatico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cupones.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

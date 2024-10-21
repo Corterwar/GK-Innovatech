@@ -10,10 +10,13 @@ namespace CapaPresentacion
     // Formulario que permite gestionar los datos del negocio
     public partial class FrmNegocio : Form
     {
+        public Inicio Inicio { get; set; }
         // Constructor del formulario, inicializa los componentes
-        public FrmNegocio()
+        public FrmNegocio(Inicio inicio)
         {
             InitializeComponent();
+            Inicio = inicio;
+            Inicio.pintar();
         }
 
         // Convierte un arreglo de bytes (byte[]) en una imagen (Image)

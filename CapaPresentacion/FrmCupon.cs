@@ -16,9 +16,12 @@ namespace CapaPresentacion
 {
     public partial class FrmCupon : Form
     {
-        public FrmCupon()
+        public Inicio Inicio { get; set; }
+        public FrmCupon(Inicio inicio)
         {
             InitializeComponent();
+            Inicio = inicio;
+            Inicio.pintar();
         }
 
         private void rjTextBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -338,6 +341,18 @@ namespace CapaPresentacion
         {
             // Limpia todos los campos del formulario.
             LimpiarCampos();
+        }
+
+        private void dgvData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dgvData.Columns[e.ColumnIndex].Name == "Estado") // Verifica la columna "Estado"
+            {
+                if (e.Value.ToString() == "No Activo") // Si el estado es "No Activo"
+                {
+                    e.CellStyle.BackColor = Color.Red; // Cambia el color de fondo a rojo
+                    e.CellStyle.ForeColor = Color.Black; // Cambia el color de texto a negro
+                }
+            }
         }
     }
 }

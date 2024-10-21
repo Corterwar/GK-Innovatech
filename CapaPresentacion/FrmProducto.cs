@@ -12,10 +12,13 @@ namespace CapaPresentacion
 {
     public partial class FrmProducto : Form
     {
+        public Inicio Inicio { get; set; }
         // Constructor de la clase FrmProducto
-        public FrmProducto()
+        public FrmProducto(Inicio inicio)
         {
             InitializeComponent();
+            Inicio = inicio;
+            Inicio.pintar();
         }
 
         // Evento que se ejecuta al cargar el formulario
@@ -272,6 +275,7 @@ namespace CapaPresentacion
                     txtCodigo.Texts = dgvData.Rows[indice].Cells["Codigo"].Value.ToString();
                     txtNombre.Texts = dgvData.Rows[indice].Cells["Nombre"].Value.ToString();
                     txtDescripcion.Texts = dgvData.Rows[indice].Cells["Descripcion"].Value.ToString();
+                    txtMarca.Texts = dgvData.Rows[indice].Cells["Marca"].Value.ToString();
 
                     // Selecciona la categoría correspondiente en el comboCategoria
                     foreach (OpcionesCombo oc in comboCategoria.Items)
@@ -530,6 +534,18 @@ namespace CapaPresentacion
             else
             {
                 e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void dgvData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dgvData.Columns[e.ColumnIndex].Name == "Estado") // Verifica la columna "Estado"
+            {
+                if (e.Value.ToString() == "No Activo") // Si el estado es "No Activo"
+                {
+                    e.CellStyle.BackColor = Color.Red; // Cambia el color de fondo a rojo
+                    e.CellStyle.ForeColor = Color.Black; // Cambia el color de texto a negro
+                }
             }
         }
     }
