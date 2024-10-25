@@ -24,9 +24,28 @@ namespace CapaPresentacion
             user = objusuario; // Asigna el usuario recibido.
             InitializeComponent(); // Inicializa los componentes visuales del formulario.
             inicio(new FrmInicio()); // Abre el formulario de inicio por defecto.
+            menuLateral.Renderer = new MiRenderizador();
+            menuTitulo.Renderer = new MiRenderizador();
             lblIndicador.Text = "Inicio";
             lblRol.Text += " " + user.oRol.Descripcion; // Muestra el rol del usuario en la etiqueta.
         }
+
+        private class MiRenderizador : ToolStripProfessionalRenderer
+        {
+            protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
+            {
+                if (!e.Item.Selected) base.OnRenderMenuItemBackground(e);
+                else
+                {
+                    Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);      
+                    e.Graphics.FillRectangle(Brushes.Gray, rc); //Elige el color que desees
+                    e.Graphics.DrawRectangle(Pens.Black, 1, 0, rc.Width - 2, rc.Height - 1);
+               
+                }
+            }
+        }
+
+
 
         public void pintar()
         {
@@ -291,6 +310,16 @@ namespace CapaPresentacion
         {
             abrirFormulario((IconMenuItem)sender, new FrmCupon(this));
             this.lblIndicador.Text = "Gestion Cupones";
+        }
+
+        private void iconMenuItem9_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(55, 71, 70);
+        }
+
+        private void iconMenuItem9_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(55, 71, 79);
         }
     }
 }

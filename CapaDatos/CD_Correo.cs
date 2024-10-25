@@ -10,8 +10,8 @@ namespace CapaDatos
     {
         public CD_Correo() {
             //Cambiar estos datos al correo nuevo que hay que hacer de la empresa
-            remitenteCorreo = "@gmail.com";
-            password = "";
+            remitenteCorreo = "gkinnovatech@gmail.com";
+            password = "bdgpplykriydpfbt";
             host = "smtp.gmail.com";
             port = 587;
             ssl = true;

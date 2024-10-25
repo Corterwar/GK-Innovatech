@@ -138,10 +138,32 @@ namespace CapaPresentacion
         {
             if (campoDNI.Texts != "")
             {
-                var user = new CN_Recuperar();
-                var result = user.recoverPassword(campoDNI.Texts);
-                MessageBox.Show(result,"Mensaje",MessageBoxButtons.OK);
+                DialogResult confirmacion = MessageBox.Show("¿Desea recuperar la contraseña?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmacion == DialogResult.Yes)
+                {
+
+                    var user = new CN_Recuperar();
+                    var result = user.recoverPassword(campoDNI.Texts);
+                    MessageBox.Show(result, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
             }
+            else
+            {
+                MessageBox.Show("No hay ninguna credencial","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+
+
+        }
+
+        private void label1_MouseEnter(object sender, EventArgs e)
+        {
+            lblRecuperar.ForeColor = Color.DarkGray;
+        }
+
+        private void lblRecuperar_MouseLeave(object sender, EventArgs e)
+        {
+            lblRecuperar.ForeColor = Color.White;
         }
     }
 }

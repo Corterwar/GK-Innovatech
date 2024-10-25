@@ -53,11 +53,11 @@
             this.menuGraficos = new FontAwesome.Sharp.IconMenuItem();
             this.lblRol = new System.Windows.Forms.Label();
             this.BarraTop = new System.Windows.Forms.Panel();
+            this.lblIndicador = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuTitulo = new System.Windows.Forms.MenuStrip();
             this.iconMenuItem9 = new FontAwesome.Sharp.IconMenuItem();
             this.Contenedor = new System.Windows.Forms.Panel();
-            this.lblIndicador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelLateral.SuspendLayout();
             this.menuLateral.SuspendLayout();
@@ -459,6 +459,20 @@
             this.BarraTop.Size = new System.Drawing.Size(1116, 82);
             this.BarraTop.TabIndex = 7;
             // 
+            // lblIndicador
+            // 
+            this.lblIndicador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblIndicador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.lblIndicador.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIndicador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.lblIndicador.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblIndicador.Location = new System.Drawing.Point(312, 30);
+            this.lblIndicador.Name = "lblIndicador";
+            this.lblIndicador.Size = new System.Drawing.Size(410, 31);
+            this.lblIndicador.TabIndex = 7;
+            this.lblIndicador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.image_Photoroom1;
@@ -485,14 +499,18 @@
             // 
             // iconMenuItem9
             // 
+            this.iconMenuItem9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.iconMenuItem9.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
             this.iconMenuItem9.IconColor = System.Drawing.Color.White;
             this.iconMenuItem9.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconMenuItem9.IconSize = 40;
             this.iconMenuItem9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItem9.Name = "iconMenuItem9";
+            this.iconMenuItem9.ShowShortcutKeys = false;
             this.iconMenuItem9.Size = new System.Drawing.Size(52, 36);
             this.iconMenuItem9.Click += new System.EventHandler(this.iconMenuItem9_Click);
+            this.iconMenuItem9.MouseEnter += new System.EventHandler(this.iconMenuItem9_MouseEnter);
+            this.iconMenuItem9.MouseLeave += new System.EventHandler(this.iconMenuItem9_MouseLeave);
             // 
             // Contenedor
             // 
@@ -502,20 +520,6 @@
             this.Contenedor.Name = "Contenedor";
             this.Contenedor.Size = new System.Drawing.Size(918, 659);
             this.Contenedor.TabIndex = 6;
-            // 
-            // lblIndicador
-            // 
-            this.lblIndicador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblIndicador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.lblIndicador.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIndicador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
-            this.lblIndicador.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblIndicador.Location = new System.Drawing.Point(312, 30);
-            this.lblIndicador.Name = "lblIndicador";
-            this.lblIndicador.Size = new System.Drawing.Size(410, 31);
-            this.lblIndicador.TabIndex = 7;
-            this.lblIndicador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Inicio
             // 

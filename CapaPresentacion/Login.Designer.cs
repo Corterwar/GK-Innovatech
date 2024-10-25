@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.campoDNI = new CustomControls.RJControls.RJTextBox();
-            this.campoClave = new CustomControls.RJControls.RJTextBox();
+            this.lblRecuperar = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -42,7 +40,9 @@
             this.Titulo = new System.Windows.Forms.Label();
             this.Fondo = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.campoDNI = new CustomControls.RJControls.RJTextBox();
+            this.campoClave = new CustomControls.RJControls.RJTextBox();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -56,7 +56,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(58)))));
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblRecuperar);
             this.panel1.Controls.Add(this.campoDNI);
             this.panel1.Controls.Add(this.campoClave);
             this.panel1.Controls.Add(this.pictureBox6);
@@ -71,57 +71,18 @@
             this.panel1.Size = new System.Drawing.Size(428, 517);
             this.panel1.TabIndex = 5;
             // 
-            // campoDNI
+            // lblRecuperar
             // 
-            this.campoDNI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(31)))), ((int)(((byte)(84)))));
-            this.campoDNI.BorderColor = System.Drawing.Color.Transparent;
-            this.campoDNI.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
-            this.campoDNI.BorderRadius = 10;
-            this.campoDNI.BorderSize = 1;
-            this.campoDNI.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.campoDNI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoDNI.ForeColor = System.Drawing.Color.White;
-            this.campoDNI.IsReadOnly = false;
-            this.campoDNI.Location = new System.Drawing.Point(129, 273);
-            this.campoDNI.Margin = new System.Windows.Forms.Padding(4);
-            this.campoDNI.Multiline = false;
-            this.campoDNI.Name = "campoDNI";
-            this.campoDNI.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.campoDNI.PasswordChar = false;
-            this.campoDNI.PlaceholderColor = System.Drawing.Color.White;
-            this.campoDNI.PlaceholderText = "D.N.I";
-            this.campoDNI.ShortcutsEnabled = false;
-            this.campoDNI.Size = new System.Drawing.Size(198, 32);
-            this.campoDNI.TabIndex = 1;
-            this.campoDNI.Texts = "";
-            this.campoDNI.UnderlinedStyle = true;
-            this.campoDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoDNI_KeyPress);
-            // 
-            // campoClave
-            // 
-            this.campoClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(31)))), ((int)(((byte)(84)))));
-            this.campoClave.BorderColor = System.Drawing.Color.Transparent;
-            this.campoClave.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
-            this.campoClave.BorderRadius = 10;
-            this.campoClave.BorderSize = 1;
-            this.campoClave.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.campoClave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campoClave.ForeColor = System.Drawing.Color.White;
-            this.campoClave.IsReadOnly = false;
-            this.campoClave.Location = new System.Drawing.Point(129, 336);
-            this.campoClave.Margin = new System.Windows.Forms.Padding(4);
-            this.campoClave.Multiline = false;
-            this.campoClave.Name = "campoClave";
-            this.campoClave.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.campoClave.PasswordChar = true;
-            this.campoClave.PlaceholderColor = System.Drawing.Color.White;
-            this.campoClave.PlaceholderText = "Contraseña";
-            this.campoClave.ShortcutsEnabled = false;
-            this.campoClave.Size = new System.Drawing.Size(198, 32);
-            this.campoClave.TabIndex = 2;
-            this.campoClave.Texts = "";
-            this.campoClave.UnderlinedStyle = true;
-            this.campoClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoClave_KeyPress);
+            this.lblRecuperar.AutoSize = true;
+            this.lblRecuperar.ForeColor = System.Drawing.Color.White;
+            this.lblRecuperar.Location = new System.Drawing.Point(157, 393);
+            this.lblRecuperar.Name = "lblRecuperar";
+            this.lblRecuperar.Size = new System.Drawing.Size(119, 13);
+            this.lblRecuperar.TabIndex = 7;
+            this.lblRecuperar.Text = "¿Olvidó su contraseña?";
+            this.lblRecuperar.Click += new System.EventHandler(this.label1_Click);
+            this.lblRecuperar.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
+            this.lblRecuperar.MouseLeave += new System.EventHandler(this.lblRecuperar_MouseLeave);
             // 
             // pictureBox6
             // 
@@ -144,26 +105,6 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
-            // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(58)))));
-            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(58)))));
-            this.rjButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
-            this.rjButton1.BorderRadius = 20;
-            this.rjButton1.BorderSize = 2;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(114, 420);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(204, 44);
-            this.rjButton1.TabIndex = 3;
-            this.rjButton1.Text = "Ingresar";
-            this.rjButton1.TextColor = System.Drawing.Color.White;
-            this.rjButton1.UseVisualStyleBackColor = false;
-            this.rjButton1.Click += new System.EventHandler(this.btnIngresar2_Click);
             // 
             // pictureBox3
             // 
@@ -253,16 +194,77 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.Salir_Click);
             // 
-            // label1
+            // campoDNI
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(180, 403);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Recuperar pass";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.campoDNI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(31)))), ((int)(((byte)(84)))));
+            this.campoDNI.BorderColor = System.Drawing.Color.Transparent;
+            this.campoDNI.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.campoDNI.BorderRadius = 10;
+            this.campoDNI.BorderSize = 1;
+            this.campoDNI.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.campoDNI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoDNI.ForeColor = System.Drawing.Color.White;
+            this.campoDNI.IsReadOnly = false;
+            this.campoDNI.Location = new System.Drawing.Point(129, 273);
+            this.campoDNI.Margin = new System.Windows.Forms.Padding(4);
+            this.campoDNI.Multiline = false;
+            this.campoDNI.Name = "campoDNI";
+            this.campoDNI.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.campoDNI.PasswordChar = false;
+            this.campoDNI.PlaceholderColor = System.Drawing.Color.White;
+            this.campoDNI.PlaceholderText = "D.N.I";
+            this.campoDNI.ShortcutsEnabled = false;
+            this.campoDNI.Size = new System.Drawing.Size(198, 32);
+            this.campoDNI.TabIndex = 1;
+            this.campoDNI.Texts = "";
+            this.campoDNI.UnderlinedStyle = true;
+            this.campoDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoDNI_KeyPress);
+            // 
+            // campoClave
+            // 
+            this.campoClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(31)))), ((int)(((byte)(84)))));
+            this.campoClave.BorderColor = System.Drawing.Color.Transparent;
+            this.campoClave.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.campoClave.BorderRadius = 10;
+            this.campoClave.BorderSize = 1;
+            this.campoClave.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.campoClave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoClave.ForeColor = System.Drawing.Color.White;
+            this.campoClave.IsReadOnly = false;
+            this.campoClave.Location = new System.Drawing.Point(129, 336);
+            this.campoClave.Margin = new System.Windows.Forms.Padding(4);
+            this.campoClave.Multiline = false;
+            this.campoClave.Name = "campoClave";
+            this.campoClave.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.campoClave.PasswordChar = true;
+            this.campoClave.PlaceholderColor = System.Drawing.Color.White;
+            this.campoClave.PlaceholderText = "Contraseña";
+            this.campoClave.ShortcutsEnabled = false;
+            this.campoClave.Size = new System.Drawing.Size(198, 32);
+            this.campoClave.TabIndex = 2;
+            this.campoClave.Texts = "";
+            this.campoClave.UnderlinedStyle = true;
+            this.campoClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoClave_KeyPress);
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(58)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(58)))));
+            this.rjButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(225)))), ((int)(((byte)(241)))));
+            this.rjButton1.BorderRadius = 20;
+            this.rjButton1.BorderSize = 2;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.Location = new System.Drawing.Point(114, 420);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(204, 44);
+            this.rjButton1.TabIndex = 3;
+            this.rjButton1.Text = "Ingresar";
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.btnIngresar2_Click);
             // 
             // Login
             // 
@@ -311,6 +313,6 @@
         private CustomControls.RJControls.RJTextBox campoDNI;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRecuperar;
     }
 }

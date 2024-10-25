@@ -80,14 +80,14 @@ namespace CapaDatos
                         {
                             string nombreUsuario = reader.GetString(2);
                             string correoUsuario = reader.GetString(3);
-                            string password = reader.GetString(4);
+                            string CuentaContraseña = reader.GetString(4);
 
                             var mailService = new CD_Correo();
                             mailService.sendMail(subject:"Sistema de ventas GK: Solicitud de recuperacion de contraseña",
-                                body: "Hola, " + nombreUsuario + "\nUsted solicito recuperar su contraseña. \n", destinatarioCorreo: new List<string> { correoUsuario}
+                                body: "Hola, " + nombreUsuario + "\nUsted solicito recuperar su contraseña.\n" + "Su contraseña es: " + CuentaContraseña + "\n\nEn caso de no haberlo solicitado simplemente haga caso omiso a este correo.", destinatarioCorreo: new List<string> { correoUsuario}
                             );
 
-                            return "Revise su correo";
+                            return "Por favor " + nombreUsuario + " revise su correo electronico";
 
                         }
                         else
