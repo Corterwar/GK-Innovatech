@@ -24,7 +24,7 @@ namespace CapaPresentacion
             user = objusuario; // Asigna el usuario recibido.
             InitializeComponent(); // Inicializa los componentes visuales del formulario.
             inicio(new FrmInicio()); // Abre el formulario de inicio por defecto.
-           
+            lblIndicador.Text = "Inicio";
             lblRol.Text += " " + user.oRol.Descripcion; // Muestra el rol del usuario en la etiqueta.
         }
 

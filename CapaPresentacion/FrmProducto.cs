@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -33,7 +34,7 @@ namespace CapaPresentacion
             comboEstado.SelectedIndex = 0; // Selecciona "Activo" por defecto
 
             // Carga la lista de categorías y las agrega al comboCategoria
-            List<Categoria> listaCategoria = new CN_Categoria().Listar();
+            List<Categoria> listaCategoria = new CN_Categoria().Listar().Where(p => p.Estado == true).ToList();
             if (listaCategoria != null && listaCategoria.Count > 0)
             {
                 foreach (Categoria item in listaCategoria)

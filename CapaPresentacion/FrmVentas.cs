@@ -39,7 +39,7 @@ namespace CapaPresentacion
 
             // Inicializa el id del producto como "0" (sin producto seleccionado).
             txtIdProd.Text = "0";
-
+            txtCupon.Text = "0";
             // Inicializa los campos de pago, cambio y total.
             txtPaga.Texts = "";
             txtCambio.Texts = "";
@@ -228,7 +228,7 @@ namespace CapaPresentacion
         {
             txtIdProd.Text = "0";
             txtCod.Texts = "";
-           
+            txtCupon.Text = "0";
             txtProducto.Texts = "";
             txtPrecio.Texts = "";
             txtStock.Texts = "";
@@ -249,7 +249,7 @@ namespace CapaPresentacion
                 }
             }
 
-            if (txtCupon.Text != "")
+            if (txtCupon.Text != "0")
             {
                 Cupon cuponAux = new CN_Cupon().obtenerCupones().Where(c => c.IdCupon == Convert.ToInt32(txtCupon.Text)).First();
 
@@ -526,6 +526,7 @@ namespace CapaPresentacion
                         txtNombreC.Texts = "";
                         dgvData.Rows.Clear();
                         calcularTotal();
+                        txtCupon.Text = "0";
                         txtPaga.Texts = "";
                         txtCambio.Texts = "";
                     }

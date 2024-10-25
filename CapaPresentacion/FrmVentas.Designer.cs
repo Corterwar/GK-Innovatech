@@ -108,7 +108,7 @@
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(59)))));
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label13.Location = new System.Drawing.Point(732, 432);
+            this.label13.Location = new System.Drawing.Point(732, 435);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 17);
             this.label13.TabIndex = 76;
@@ -120,7 +120,7 @@
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(59)))));
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(732, 367);
+            this.label10.Location = new System.Drawing.Point(732, 370);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 74;
@@ -132,7 +132,7 @@
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(59)))));
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label12.Location = new System.Drawing.Point(732, 298);
+            this.label12.Location = new System.Drawing.Point(731, 300);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(94, 17);
             this.label12.TabIndex = 71;
@@ -296,7 +296,7 @@
             this.txtFecha.PlaceholderText = "Fecha";
             this.txtFecha.ShortcutsEnabled = false;
             this.txtFecha.Size = new System.Drawing.Size(137, 36);
-            this.txtFecha.TabIndex = 68;
+            this.txtFecha.TabIndex = 1;
             this.txtFecha.Texts = "";
             this.txtFecha.UnderlinedStyle = false;
             // 
@@ -404,7 +404,7 @@
             this.txtNombreC.PlaceholderText = "Nombre Cliente";
             this.txtNombreC.ShortcutsEnabled = false;
             this.txtNombreC.Size = new System.Drawing.Size(152, 36);
-            this.txtNombreC.TabIndex = 69;
+            this.txtNombreC.TabIndex = 3;
             this.txtNombreC.Texts = "";
             this.txtNombreC.UnderlinedStyle = false;
             // 
@@ -428,7 +428,7 @@
             this.txtDocumento.PlaceholderText = "Documento";
             this.txtDocumento.ShortcutsEnabled = false;
             this.txtDocumento.Size = new System.Drawing.Size(122, 36);
-            this.txtDocumento.TabIndex = 68;
+            this.txtDocumento.TabIndex = 2;
             this.txtDocumento.Texts = "";
             this.txtDocumento.UnderlinedStyle = false;
             this.txtDocumento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDocumento_KeyDown);
@@ -552,7 +552,7 @@
             this.txtProducto.PlaceholderText = "Producto";
             this.txtProducto.ShortcutsEnabled = false;
             this.txtProducto.Size = new System.Drawing.Size(137, 36);
-            this.txtProducto.TabIndex = 67;
+            this.txtProducto.TabIndex = 5;
             this.txtProducto.Texts = "";
             this.txtProducto.UnderlinedStyle = false;
             // 
@@ -576,7 +576,7 @@
             this.txtStock.PlaceholderText = "Stock";
             this.txtStock.ShortcutsEnabled = false;
             this.txtStock.Size = new System.Drawing.Size(100, 36);
-            this.txtStock.TabIndex = 68;
+            this.txtStock.TabIndex = 7;
             this.txtStock.Texts = "";
             this.txtStock.UnderlinedStyle = false;
             this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
@@ -601,7 +601,7 @@
             this.txtCod.PlaceholderText = "Cod Producto";
             this.txtCod.ShortcutsEnabled = false;
             this.txtCod.Size = new System.Drawing.Size(136, 36);
-            this.txtCod.TabIndex = 66;
+            this.txtCod.TabIndex = 4;
             this.txtCod.Texts = "";
             this.txtCod.UnderlinedStyle = false;
             this.txtCod.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCod_KeyDown);
@@ -626,7 +626,7 @@
             this.txtPrecio.PlaceholderText = "Precio";
             this.txtPrecio.ShortcutsEnabled = false;
             this.txtPrecio.Size = new System.Drawing.Size(92, 36);
-            this.txtPrecio.TabIndex = 68;
+            this.txtPrecio.TabIndex = 6;
             this.txtPrecio.Texts = "";
             this.txtPrecio.UnderlinedStyle = false;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
@@ -694,7 +694,7 @@
             this.txtCambio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCambio.ForeColor = System.Drawing.Color.White;
             this.txtCambio.IsReadOnly = true;
-            this.txtCambio.Location = new System.Drawing.Point(729, 450);
+            this.txtCambio.Location = new System.Drawing.Point(729, 453);
             this.txtCambio.Margin = new System.Windows.Forms.Padding(4);
             this.txtCambio.Multiline = false;
             this.txtCambio.Name = "txtCambio";
@@ -704,7 +704,7 @@
             this.txtCambio.PlaceholderText = "0.00";
             this.txtCambio.ShortcutsEnabled = false;
             this.txtCambio.Size = new System.Drawing.Size(106, 36);
-            this.txtCambio.TabIndex = 79;
+            this.txtCambio.TabIndex = 10;
             this.txtCambio.Texts = "";
             this.txtCambio.UnderlinedStyle = false;
             // 
@@ -718,7 +718,7 @@
             this.txtPaga.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPaga.ForeColor = System.Drawing.Color.White;
             this.txtPaga.IsReadOnly = false;
-            this.txtPaga.Location = new System.Drawing.Point(729, 386);
+            this.txtPaga.Location = new System.Drawing.Point(729, 389);
             this.txtPaga.Margin = new System.Windows.Forms.Padding(4);
             this.txtPaga.Multiline = false;
             this.txtPaga.Name = "txtPaga";
@@ -728,7 +728,7 @@
             this.txtPaga.PlaceholderText = "0.00";
             this.txtPaga.ShortcutsEnabled = false;
             this.txtPaga.Size = new System.Drawing.Size(106, 36);
-            this.txtPaga.TabIndex = 78;
+            this.txtPaga.TabIndex = 9;
             this.txtPaga.Texts = "";
             this.txtPaga.UnderlinedStyle = false;
             this.txtPaga.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaga_KeyDown);
@@ -744,7 +744,7 @@
             this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.White;
             this.txtTotal.IsReadOnly = true;
-            this.txtTotal.Location = new System.Drawing.Point(729, 318);
+            this.txtTotal.Location = new System.Drawing.Point(728, 320);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.Multiline = false;
             this.txtTotal.Name = "txtTotal";
@@ -754,7 +754,7 @@
             this.txtTotal.PlaceholderText = "0.00";
             this.txtTotal.ShortcutsEnabled = false;
             this.txtTotal.Size = new System.Drawing.Size(106, 36);
-            this.txtTotal.TabIndex = 69;
+            this.txtTotal.TabIndex = 8;
             this.txtTotal.Texts = "";
             this.txtTotal.UnderlinedStyle = false;
             // 
