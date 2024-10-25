@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows;
 using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
 using Point = System.Drawing.Point;
 
 namespace CapaPresentacion
@@ -130,6 +131,16 @@ namespace CapaPresentacion
             else
             {
                 e.Handled = true; // Bloquea el carácter.
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            if (campoDNI.Texts != "")
+            {
+                var user = new CN_Recuperar();
+                var result = user.recoverPassword(campoDNI.Texts);
+                MessageBox.Show(result,"Mensaje",MessageBoxButtons.OK);
             }
         }
     }

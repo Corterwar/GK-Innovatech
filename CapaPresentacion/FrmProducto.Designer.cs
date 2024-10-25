@@ -711,7 +711,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rjTextBox2);
             this.Name = "FrmProducto";
-            this.Text = "FrmProducto";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FrmProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.groupBox1.ResumeLayout(false);
