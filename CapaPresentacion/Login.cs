@@ -165,5 +165,27 @@ namespace CapaPresentacion
         {
             lblRecuperar.ForeColor = Color.White;
         }
+
+        private void campoDNI_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter) // Si el usuario presiona la tecla Enter.
+            {
+                if(campoDNI.Texts != "" && campoClave.Texts != "")
+                {
+                    btnIngresar2_Click(sender,e);
+                }
+            }
+        }
+
+        private void campoClave_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter) // Si el usuario presiona la tecla Enter.
+            {
+                if (campoDNI.Texts != "" && campoClave.Texts != "")
+                {
+                    btnIngresar2_Click(sender, e);
+                }
+            }
+        }
     }
 }

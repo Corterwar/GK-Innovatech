@@ -218,6 +218,7 @@
             this.campoDNI.TabIndex = 1;
             this.campoDNI.Texts = "";
             this.campoDNI.UnderlinedStyle = true;
+            this.campoDNI.KeyDown += new System.Windows.Forms.KeyEventHandler(this.campoDNI_KeyDown);
             this.campoDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoDNI_KeyPress);
             // 
             // campoClave
@@ -244,6 +245,7 @@
             this.campoClave.TabIndex = 2;
             this.campoClave.Texts = "";
             this.campoClave.UnderlinedStyle = true;
+            this.campoClave.KeyDown += new System.Windows.Forms.KeyEventHandler(this.campoClave_KeyDown);
             this.campoClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoClave_KeyPress);
             // 
             // rjButton1
