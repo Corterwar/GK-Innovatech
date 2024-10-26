@@ -76,6 +76,11 @@ namespace CapaNegocio
             }
         }
 
+        public bool Recuperar(string documento, string clave)
+        {
+            return objcd_usuario.Recuperar(documento, clave);
+        }
+
         public bool Eliminar(Usuario obj, out string Mensaje)
         {
             return objcd_usuario.Eliminar(obj, out Mensaje);

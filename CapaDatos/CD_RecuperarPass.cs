@@ -99,5 +99,45 @@ namespace CapaDatos
             }
         }
 
+        public string recoverPassword2(string usuarioSolicitando, string token)
+        {
+            using (SqlConnection oconexion = new SqlConnection())
+            {
+                oconexion.ConnectionString = Conexion.cadena;
+                oconexion.Open();
+
+                using (var command = new SqlCommand())
+                {
+
+                    command.Connection = oconexion;
+                    command.CommandText = "Select * from Usuario where Documento = @Dni";
+                    command.Parameters.AddWithValue("@Dni", usuarioSolicitando);
+                    command.CommandType = CommandType.Text;
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read() == true)
+                    {
+                        string nombreUsuario = reader.GetString(2);
+                        string correoUsuario = reader.GetString(3);
+                        string CuentaContraseña = reader.GetString(4);
+
+                        var mailService = new CD_Correo();
+                        mailService.sendMail(subject: "Sistema de ventas GK: Solicitud de recuperacion de contraseña",
+                            body: "Hola, " + nombreUsuario + "\nUsted solicito recuperar su contraseña.\n" + "Su token es: " + token + "\n\nEn caso de no haberlo solicitado simplemente haga caso omiso a este correo.", destinatarioCorreo: new List<string> { correoUsuario }
+                        );
+
+                        return "Por favor " + nombreUsuario + " revise su correo electronico";
+
+                    }
+                    else
+                    {
+                        return "No hay ningun usuario con esas credenciales";
+                    }
+                }
+
+            }
+        }
+
     }
 }

@@ -312,6 +312,12 @@
     <Compile Include="Modales\mdCliente.Designer.cs">
       <DependentUpon>mdCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modales\mdConfirmacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modales\mdConfirmacion.Designer.cs">
+      <DependentUpon>mdConfirmacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modales\mdCupon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +341,12 @@
     </Compile>
     <Compile Include="Modales\mdProveedor.Designer.cs">
       <DependentUpon>mdProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modales\mdRecuperar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modales\mdRecuperar.Designer.cs">
+      <DependentUpon>mdRecuperar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -394,6 +406,9 @@
     <EmbeddedResource Include="Modales\mdCliente.resx">
       <DependentUpon>mdCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modales\mdConfirmacion.resx">
+      <DependentUpon>mdConfirmacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modales\mdCupon.resx">
       <DependentUpon>mdCupon.cs</DependentUpon>
     </EmbeddedResource>
@@ -405,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modales\mdProveedor.resx">
       <DependentUpon>mdProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modales\mdRecuperar.resx">
+      <DependentUpon>mdRecuperar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

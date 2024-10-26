@@ -1,9 +1,12 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Modales;
+using DocumentFormat.OpenXml.Bibliography;
 using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Forms;
 using MessageBox = System.Windows.Forms.MessageBox;
@@ -138,23 +141,61 @@ namespace CapaPresentacion
         {
             if (campoDNI.Texts != "")
             {
+
+                int longitud = 7;
+                const string alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                StringBuilder token = new StringBuilder();
+                Random rnd = new Random();
+
+                for (int i = 0; i < longitud; i++)
+                {
+                    int indice = rnd.Next(alfabeto.Length);
+                    token.Append(alfabeto[indice]);
+                }
+
+
                 DialogResult confirmacion = MessageBox.Show("¿Desea recuperar la contraseña?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirmacion == DialogResult.Yes)
                 {
 
                     var user = new CN_Recuperar();
-                    var result = user.recoverPassword(campoDNI.Texts);
+                    var result = user.recoverPassword2(campoDNI.Texts,token.ToString());
                     MessageBox.Show(result, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                }
-            }
-            else
-            {
-                MessageBox.Show("No hay ninguna credencial","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-            }
+                    if (result != "No hay ningun usuario con esas credenciales")
+                    {
+      
+                        using (var modal = new mdRecuperar(campoDNI.Texts.ToString(), token.ToString())){
+                            modal.intentos = 0;
+                            modal.TopMost = true;
+                            var resultado = modal.ShowDialog(); // Muestra el diálogo modal.
 
+                            if (resultado == DialogResult.OK) // Si se selecciona un producto, llena los campos de producto y precio.
+                            {
+                                MessageBox.Show("Contraseña cambiada exitosamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Debe reiniciar todo el proceso", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+
+                        }
+                    }
+               
+
+                }
+                else
+                {
+                    MessageBox.Show("No hay ninguna credencial", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+
+            }
 
         }
+    
+           
+
 
         private void label1_MouseEnter(object sender, EventArgs e)
         {

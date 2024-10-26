@@ -15,5 +15,10 @@ namespace CapaNegocio
             return new CD_RecuperarPass().recoverPassword(userRequesting);
         }
 
+        public string recoverPassword2(string userRequesting, string token)
+        {
+            return new CD_RecuperarPass().recoverPassword2(userRequesting, token.ToString());
+        }
+
     }
 }

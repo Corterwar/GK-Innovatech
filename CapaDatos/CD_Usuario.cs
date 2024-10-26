@@ -184,5 +184,52 @@ namespace CapaDatos
             return Respuesta;
 
         }
+
+        public bool Recuperar(string documento, string contraseña)
+        {
+            bool Respuesta = false;
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection())
+                {
+                    oconexion.ConnectionString = Conexion.cadena;
+                    oconexion.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+
+                        command.Connection = oconexion;
+                        command.CommandText = "Update Usuario\r\nset Clave = @Clave\r\nwhere Documento = @Dni";
+                        command.Parameters.AddWithValue("@Dni", documento);
+                        command.Parameters.AddWithValue("@Clave", contraseña);
+                        command.CommandType = CommandType.Text;
+
+
+                        // Ejecutar la consulta y obtener el número de filas afectadas
+                        int filasAfectadas = command.ExecuteNonQuery();
+
+                        // Convertir el resultado a un valor booleano para la variable Respuesta
+                        if (filasAfectadas > 0)
+                        {
+                            Respuesta = true;
+                        }
+                        else
+                        {
+                            Respuesta = false;
+                        }
+                    }
+                        
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+            }
+
+            return Respuesta;
+
+        }
+
     }
 }
