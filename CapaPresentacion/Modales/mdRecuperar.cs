@@ -99,9 +99,9 @@ namespace CapaPresentacion.Modales
 
         private void btnComprobar_Click(object sender, EventArgs e)
         {
-            if (campoToken.Texts != "" && intentos < 3)
+            if (campoToken.Texts.Trim() != "" && intentos < 3)
             {
-                if (campoToken.Texts == Token )
+                if (campoToken.Texts.Trim() == Token )
                 {
                     this.campoToken.Visible = false;
                     this.btnComprobar.Visible = false;
@@ -112,6 +112,11 @@ namespace CapaPresentacion.Modales
                     this.campoClave.Visible = true;
                     this.campoClave2.Visible = true;
                     this.btnRegistrar.Visible = true;
+                }
+                if (intentos < 3)
+                {
+                    MessageBox.Show("Token Incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.intentos = this.intentos + 1;
                 }
             }
             else
