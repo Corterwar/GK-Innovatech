@@ -113,11 +113,12 @@ namespace CapaPresentacion.Modales
                     this.campoClave2.Visible = true;
                     this.btnRegistrar.Visible = true;
                 }
-                if (intentos < 3)
+                else
                 {
                     MessageBox.Show("Token Incorrecto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.intentos = this.intentos + 1;
                 }
+              
             }
             else
             {
@@ -144,29 +145,61 @@ namespace CapaPresentacion.Modales
             this.Close();
         }
 
-        private void campoToken__TextChanged(object sender, EventArgs e)
+        private void campoToken_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
 
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = campoToken.Texts.Length < 8;
+
+            // Permitir el carácter solo si es una tecla de control o un caracter y la longitud permitida no se ha alcanzado
+            if (esControl || longitudPermitida)
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
         }
 
-        private void campoClave2__TextChanged(object sender, EventArgs e)
+        private void campoClave_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
 
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = campoClave.Texts.Length < 80;
+
+            // Permitir el carácter solo si es una tecla de control o un caracter y la longitud permitida no se ha alcanzado
+            if (esControl || longitudPermitida)
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
         }
 
-        private void campoClave__TextChanged(object sender, EventArgs e)
+        private void campoClave2_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Verificar si el carácter es una tecla de control (como Backspace)
+            bool esControl = Char.IsControl(e.KeyChar);
 
-        }
+            // Verificar la longitud actual del texto y permitir solo hasta 8 dígitos
+            bool longitudPermitida = campoClave2.Texts.Length < 80;
 
-        private void rjTextBox2__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nombreUser_Click(object sender, EventArgs e)
-        {
-
+            // Permitir el carácter solo si es una tecla de control o un caracter y la longitud permitida no se ha alcanzado
+            if (esControl || longitudPermitida)
+            {
+                e.Handled = false; // Permitir el carácter
+            }
+            else
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
         }
     }
 }

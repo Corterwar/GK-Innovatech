@@ -488,5 +488,10 @@ namespace CapaPresentacion
                 }
             
         }
+
+        private void txtDocumento__TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

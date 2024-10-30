@@ -451,6 +451,7 @@
             this.txtDocumento.TabIndex = 85;
             this.txtDocumento.Texts = "";
             this.txtDocumento.UnderlinedStyle = false;
+            this.txtDocumento._TextChanged += new System.EventHandler(this.txtDocumento__TextChanged);
             this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
             // txtTelefono

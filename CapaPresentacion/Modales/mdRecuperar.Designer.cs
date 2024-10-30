@@ -35,10 +35,10 @@
             this.campoToken = new CustomControls.RJControls.RJTextBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
-            this.lblToken = new System.Windows.Forms.Label();
-            this.lbl1 = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lblToken = new System.Windows.Forms.Label();
+            this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +66,7 @@
             this.campoClave.TabIndex = 3;
             this.campoClave.Texts = "";
             this.campoClave.UnderlinedStyle = true;
-            this.campoClave._TextChanged += new System.EventHandler(this.campoClave__TextChanged);
+            this.campoClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoClave_KeyPress);
             // 
             // campoClave2
             // 
@@ -92,7 +92,7 @@
             this.campoClave2.TabIndex = 4;
             this.campoClave2.Texts = "";
             this.campoClave2.UnderlinedStyle = true;
-            this.campoClave2._TextChanged += new System.EventHandler(this.campoClave2__TextChanged);
+            this.campoClave2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoClave2_KeyPress);
             // 
             // btnRegistrar
             // 
@@ -158,7 +158,7 @@
             this.campoToken.TabIndex = 7;
             this.campoToken.Texts = "";
             this.campoToken.UnderlinedStyle = true;
-            this.campoToken._TextChanged += new System.EventHandler(this.campoToken__TextChanged);
+            this.campoToken.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoToken_KeyPress);
             // 
             // btnSalir
             // 
@@ -194,6 +194,51 @@
             this.panel1.Size = new System.Drawing.Size(310, 196);
             this.panel1.TabIndex = 10;
             // 
+            // lbl2
+            // 
+            this.lbl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(59)))));
+            this.lbl2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2.ForeColor = System.Drawing.Color.White;
+            this.lbl2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl2.Location = new System.Drawing.Point(47, 72);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(136, 18);
+            this.lbl2.TabIndex = 100;
+            this.lbl2.Text = "Confirmar Clave";
+            this.lbl2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl1
+            // 
+            this.lbl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(59)))));
+            this.lbl1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.ForeColor = System.Drawing.Color.White;
+            this.lbl1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl1.Location = new System.Drawing.Point(46, 20);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(136, 18);
+            this.lbl1.TabIndex = 99;
+            this.lbl1.Text = "Nueva Clave";
+            this.lbl1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblToken
+            // 
+            this.lblToken.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblToken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(59)))));
+            this.lblToken.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToken.ForeColor = System.Drawing.Color.White;
+            this.lblToken.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblToken.Location = new System.Drawing.Point(45, 45);
+            this.lblToken.Name = "lblToken";
+            this.lblToken.Size = new System.Drawing.Size(136, 18);
+            this.lblToken.TabIndex = 98;
+            this.lblToken.Text = "Ingrese el Token";
+            this.lblToken.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // rjTextBox2
             // 
             this.rjTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(59)))));
@@ -218,53 +263,6 @@
             this.rjTextBox2.TabIndex = 97;
             this.rjTextBox2.Texts = "";
             this.rjTextBox2.UnderlinedStyle = false;
-            this.rjTextBox2._TextChanged += new System.EventHandler(this.rjTextBox2__TextChanged);
-            // 
-            // lblToken
-            // 
-            this.lblToken.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblToken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(59)))));
-            this.lblToken.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToken.ForeColor = System.Drawing.Color.White;
-            this.lblToken.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblToken.Location = new System.Drawing.Point(45, 45);
-            this.lblToken.Name = "lblToken";
-            this.lblToken.Size = new System.Drawing.Size(136, 18);
-            this.lblToken.TabIndex = 98;
-            this.lblToken.Text = "Ingrese el Token";
-            this.lblToken.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblToken.Click += new System.EventHandler(this.nombreUser_Click);
-            // 
-            // lbl1
-            // 
-            this.lbl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(59)))));
-            this.lbl1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.ForeColor = System.Drawing.Color.White;
-            this.lbl1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl1.Location = new System.Drawing.Point(46, 20);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(136, 18);
-            this.lbl1.TabIndex = 99;
-            this.lbl1.Text = "Nueva Clave";
-            this.lbl1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbl2
-            // 
-            this.lbl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(43)))), ((int)(((byte)(59)))));
-            this.lbl2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.ForeColor = System.Drawing.Color.White;
-            this.lbl2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl2.Location = new System.Drawing.Point(47, 72);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(136, 18);
-            this.lbl2.TabIndex = 100;
-            this.lbl2.Text = "Confirmar Clave";
-            this.lbl2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // mdRecuperar
             // 
