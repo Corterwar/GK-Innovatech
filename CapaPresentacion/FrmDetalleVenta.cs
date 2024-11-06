@@ -140,7 +140,7 @@ namespace CapaPresentacion
 
             // Generar las filas de la tabla con los productos vendidos
             string filas = string.Empty;
-
+            decimal total = 0;
             foreach (DataGridViewRow row in dgvData.Rows)
             {
                 filas += "<tr>";
@@ -149,10 +149,12 @@ namespace CapaPresentacion
                 filas += "<td>" + row.Cells["Cantidad"].Value.ToString() + "</td>";
                 filas += "<td>" + row.Cells["SubTotal"].Value.ToString() + "</td>";
                 filas += "</tr>";
+                total = total + Convert.ToDecimal(row.Cells["SubTotal"].Value);
             }
 
             // Reemplazar los marcadores con las filas y montos en el HTML
             Texto_Html = Texto_Html.Replace("@filas", filas);
+            Texto_Html = Texto_Html.Replace("@tot", total.ToString());
             Texto_Html = Texto_Html.Replace("@montototal", txtTotal.Texts);
             Texto_Html = Texto_Html.Replace("@pagocon", txtPago.Texts);
             Texto_Html = Texto_Html.Replace("@cambio", txtCambio.Texts);

@@ -11,9 +11,11 @@ namespace CapaPresentacion
 {
     public partial class FrmReporteCompra : Form
     {
-        public FrmReporteCompra()
+        public Inicio inicio {  get; set; }
+        public FrmReporteCompra(Inicio inicio)
         {
             InitializeComponent(); // Inicializa los componentes de la forma
+            this.inicio = inicio;
         }
 
         // Método que se ejecuta al cargar el formulario
@@ -257,6 +259,24 @@ namespace CapaPresentacion
             else
             {
                 e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Comprueba si se ha hecho clic en el botón de selección
+            if (dgvData.Columns[e.ColumnIndex].Name == "btnDetalle")
+            {
+                int indice = e.RowIndex;
+
+                if (indice >= 0)
+                {
+                    // Rellena los campos del formulario con los datos del producto seleccionado
+                    string doc = dgvData.Rows[indice].Cells["NumeroDocumento"].Value.ToString();
+                    inicio.inicio(new FrmDetalleCompra(doc, inicio));
+                    this.Close();
+
+                }
             }
         }
     }

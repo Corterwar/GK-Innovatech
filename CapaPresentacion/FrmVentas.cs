@@ -6,6 +6,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace CapaPresentacion
@@ -13,10 +14,12 @@ namespace CapaPresentacion
     public partial class FrmVentas : Form
     {
         private Usuario usuarioActual;
-        public FrmVentas(Usuario oUsuario = null)
+        public Inicio inicio { get; set; }
+        public FrmVentas(Usuario oUsuario, Inicio pinicio)
         {
             usuarioActual = oUsuario; // Se asigna el usuario actual que inició la sesión.
             InitializeComponent(); // Inicializa los componentes visuales del formulario.
+            this.inicio = pinicio;
         }
 
         private void FrmVentas_Load(object sender, EventArgs e)
@@ -515,10 +518,19 @@ namespace CapaPresentacion
                     if (respuesta) // Si la venta se registró correctamente.
                     {
                         // Muestra un mensaje con el número de venta generado y ofrece copiarlo al portapapeles.
-                        var result = MessageBox.Show("Numero de Venta generada:\n" + numeroDocumento + "\n\n¿Desea copiar al portapapeles?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        var result = MessageBox.Show("Numero de Venta generada:\n" + numeroDocumento + "\n\n¿Desea ver el detalle de venta?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         if (result == DialogResult.Yes)
                         {
                             Clipboard.SetText(numeroDocumento); // Copia el número de venta al portapapeles.
+                            inicio.inicio(new FrmDetalleVenta(numeroDocumento, inicio));
+                            txtDocumento.Texts = "";
+                            txtNombreC.Texts = "";
+                            dgvData.Rows.Clear();
+                            calcularTotal();
+                            txtCupon.Text = "0";
+                            txtPaga.Texts = "";
+                            txtCambio.Texts = "";
+                            this.Close();
                         }
 
                         // Limpia los campos después de registrar la venta.

@@ -14,6 +14,8 @@ namespace CapaPresentacion
     // Formulario para mostrar el detalle de una compra
     public partial class FrmDetalleCompra : Form
     {
+        public Inicio inicio {  get; set; }
+        public string doc { get; set; }
         // Constructor que recibe un objeto Usuario y ajusta la visibilidad del botón de validación
         public FrmDetalleCompra(Usuario obj)
         {
@@ -25,6 +27,16 @@ namespace CapaPresentacion
                 btnValidar.Visible = false;
             }
         }
+        public FrmDetalleCompra(string numero, Inicio pinicio)
+        {
+            InitializeComponent();
+            inicio = pinicio;
+            inicio.pintar();
+            this.doc = numero;
+            txtBusqueda.Texts = this.doc;
+            btnBuscar_Click(this, new EventArgs());
+        }
+
 
         // Evento que busca una compra por su número de documento cuando se hace clic en el botón "Buscar"
         private void btnBuscar_Click(object sender, EventArgs e)

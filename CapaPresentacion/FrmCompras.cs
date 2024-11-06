@@ -14,12 +14,13 @@ namespace CapaPresentacion
     public partial class FrmCompras : Form
     {
         private Usuario usuarioActual;
-
+        public Inicio inicio {  get; set; }
         // Constructor de la clase FrmCompras
-        public FrmCompras(Usuario oUsuario = null)
+        public FrmCompras(Usuario oUsuario,Inicio pinicio)
         {
             usuarioActual = oUsuario; // Asigna el usuario actual si se proporciona uno, de lo contrario será null
             InitializeComponent(); // Inicializa los componentes del formulario
+            inicio = pinicio;
         }
 
 
@@ -414,11 +415,19 @@ namespace CapaPresentacion
                     if (respuesta)
                     {
                         // Muestra un mensaje con el número de compra generada y pregunta si desea copiarlo al portapapeles
-                        var result = MessageBox.Show("Numero de compra generada:\n" + numeroDocumento + "\n\n¿Desea copiar al portapapeles?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        var result = MessageBox.Show("Numero de compra generada:\n" + numeroDocumento + "\n\n¿Desea ver el detalle de compra?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         if (result == DialogResult.Yes)
                         {
-                            // Copia el número de documento al portapapeles
-                            Clipboard.SetText(numeroDocumento);
+                            Clipboard.SetText(numeroDocumento); // Copia el número de venta al portapapeles.
+                            inicio.inicio(new FrmDetalleVenta(numeroDocumento, inicio));
+                            txtIdProveedor.Text = "0";
+                            txtDocumento.Texts = "";
+                            txtRazon.Texts = "";
+                            // Limpia los datos del DataGridView
+                            dgvData.Rows.Clear();
+                            // Recalcula el total
+                            calcularTotal();
+                            this.Close();
                         }
 
                         // Limpia los campos de entrada

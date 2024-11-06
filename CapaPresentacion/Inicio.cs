@@ -235,14 +235,14 @@ namespace CapaPresentacion
         // Evento que abre el formulario para registrar ventas cuando se hace clic en el menú correspondiente.
         private void menuRegistrarVenta_Click(object sender, EventArgs e)
         {
-            abrirFormulario((IconMenuItem)sender, new FrmVentas(user)); // Abre el formulario de registro de ventas.
+            abrirFormulario((IconMenuItem)sender, new FrmVentas(user,this)); // Abre el formulario de registro de ventas.
             this.lblIndicador.Text = "Ventas";
         }
 
         // Evento que abre el formulario para registrar compras cuando se hace clic en el menú correspondiente.
         private void menuRegistrarCompra_Click(object sender, EventArgs e)
         {
-            abrirFormulario((IconMenuItem)sender, new FrmCompras(user)); // Abre el formulario de registro de compras.
+            abrirFormulario((IconMenuItem)sender, new FrmCompras(user,this)); // Abre el formulario de registro de compras.
             this.lblIndicador.Text = "Compras";
         }
 
@@ -295,7 +295,7 @@ namespace CapaPresentacion
         // Evento que abre el submenú de reportes de compras.
         private void subMenuRCompras_Click(object sender, EventArgs e)
         {
-            abrirFormulario(menuReportes, new FrmReporteCompra()); // Abre el formulario de reportes de compras.
+            abrirFormulario(menuReportes, new FrmReporteCompra(this)); // Abre el formulario de reportes de compras.
             this.lblIndicador.Text = "Reporte Compras";
         }
 
