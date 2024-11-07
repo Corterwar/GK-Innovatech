@@ -1069,8 +1069,28 @@ insert into Negocio(Nombre,RUC,Direccion)
 values('GK Innovatech',10000,'Av.Armenia 3400')
 go
 
+Create table BackupR(
+ idBackup int identity primary key,
+ fecha_registro date
+)
 
-select * from Detalle_Compra
+insert into BackupR(fecha_registro) values (GETDATE())
 
 
-select * from Compra
+CREATE FUNCTION comparar(
+    @fecha_registro DATE
+)
+RETURNS BIT
+AS
+BEGIN
+    DECLARE @ultimafecha DATE;
+
+    -- Obtener la última fecha registrada en la tabla BackupR
+    SET @ultimafecha = (SELECT MAX(fecha_registro) FROM BackupR);
+
+    -- Retornar 1 si la diferencia es mayor a 7 días, de lo contrario retornar 0
+    RETURN CASE 
+        WHEN DATEDIFF(DAY, @ultimafecha, @fecha_registro) > 7 THEN 1
+        ELSE 0
+    END;
+END;
