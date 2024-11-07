@@ -58,6 +58,7 @@
             this.menuTitulo = new System.Windows.Forms.MenuStrip();
             this.iconMenuItem9 = new FontAwesome.Sharp.IconMenuItem();
             this.Contenedor = new System.Windows.Forms.Panel();
+            this.Backup = new FontAwesome.Sharp.IconMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelLateral.SuspendLayout();
             this.menuLateral.SuspendLayout();
@@ -268,7 +269,8 @@
             this.Productos,
             this.Categorias,
             this.Negocio,
-            this.Cupon});
+            this.Cupon,
+            this.Backup});
             this.menuMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuMantenimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
             this.menuMantenimiento.IconChar = FontAwesome.Sharp.IconChar.Wrench;
@@ -283,6 +285,7 @@
             this.menuMantenimiento.Size = new System.Drawing.Size(196, 50);
             this.menuMantenimiento.Text = "Mantenimiento";
             this.menuMantenimiento.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.menuMantenimiento.Click += new System.EventHandler(this.menuMantenimiento_Click);
             // 
             // Productos
             // 
@@ -292,7 +295,7 @@
             this.Productos.IconColor = System.Drawing.Color.Black;
             this.Productos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Productos.Name = "Productos";
-            this.Productos.Size = new System.Drawing.Size(169, 28);
+            this.Productos.Size = new System.Drawing.Size(180, 28);
             this.Productos.Text = "Productos";
             this.Productos.Click += new System.EventHandler(this.Productos_Click);
             // 
@@ -304,7 +307,7 @@
             this.Categorias.IconColor = System.Drawing.Color.Black;
             this.Categorias.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Categorias.Name = "Categorias";
-            this.Categorias.Size = new System.Drawing.Size(169, 28);
+            this.Categorias.Size = new System.Drawing.Size(180, 28);
             this.Categorias.Text = "Categorias";
             this.Categorias.Click += new System.EventHandler(this.Categorias_Click);
             // 
@@ -316,7 +319,7 @@
             this.Negocio.IconColor = System.Drawing.Color.Black;
             this.Negocio.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Negocio.Name = "Negocio";
-            this.Negocio.Size = new System.Drawing.Size(169, 28);
+            this.Negocio.Size = new System.Drawing.Size(180, 28);
             this.Negocio.Text = "Negocio";
             this.Negocio.Click += new System.EventHandler(this.Negocio_Click);
             // 
@@ -328,7 +331,7 @@
             this.Cupon.IconColor = System.Drawing.Color.Black;
             this.Cupon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Cupon.Name = "Cupon";
-            this.Cupon.Size = new System.Drawing.Size(169, 28);
+            this.Cupon.Size = new System.Drawing.Size(180, 28);
             this.Cupon.Text = "Cupon";
             this.Cupon.Click += new System.EventHandler(this.Cupon_Click);
             // 
@@ -521,6 +524,18 @@
             this.Contenedor.Size = new System.Drawing.Size(918, 659);
             this.Contenedor.TabIndex = 6;
             // 
+            // Backup
+            // 
+            this.Backup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.Backup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
+            this.Backup.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Backup.IconColor = System.Drawing.Color.Black;
+            this.Backup.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Backup.Name = "Backup";
+            this.Backup.Size = new System.Drawing.Size(180, 28);
+            this.Backup.Text = "Backup";
+            this.Backup.Click += new System.EventHandler(this.Backup_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -579,6 +594,7 @@
         private System.Windows.Forms.Label lblRol;
         private FontAwesome.Sharp.IconMenuItem Cupon;
         private System.Windows.Forms.Label lblIndicador;
+        private FontAwesome.Sharp.IconMenuItem Backup;
     }
 }
 

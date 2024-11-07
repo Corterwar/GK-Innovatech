@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Modales;
 using CustomControls.RJControls;
 using FontAwesome.Sharp;
 using System;
@@ -186,6 +187,15 @@ namespace CapaPresentacion
                 }
             }
 
+      
+            DateTime fecha = DateTime.Now;
+
+            bool resultado = new CN_Backup().Backup(fecha);
+            if(resultado == true)
+            {
+                MessageBox.Show("Se esta realizando una copia de seguridad automatica, aguarde","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+            }
+
             // Muestra el nombre completo del usuario en el formulario.
             nombreUser.Text = user.NombreCompleto;
         }
@@ -320,6 +330,21 @@ namespace CapaPresentacion
         private void iconMenuItem9_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(55, 71, 79);
+        }
+
+        private void menuMantenimiento_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Backup_Click(object sender, EventArgs e)
+        {
+            using (var modal = new mdBackup())
+            {
+                var result = modal.ShowDialog(); // Muestra el diálogo modal.
+
+  
+            }
         }
     }
 }
