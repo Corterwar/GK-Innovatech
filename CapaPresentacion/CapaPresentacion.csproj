@@ -647,6 +647,12 @@
   <ItemGroup>
     <None Include="Resources\cupones.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\horario-de-busqueda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\horario-de-busqueda %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
