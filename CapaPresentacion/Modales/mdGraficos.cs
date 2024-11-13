@@ -75,5 +75,73 @@ namespace CapaPresentacion.Modales
         {
             this.Close();   
         }
+
+        private void dtDesde_ValueChanged(object sender, EventArgs e)
+        {
+            // Crear el objeto que obtiene los datos de fechas
+            Grafico obj = new CN_Grafico().DatosFechas(dtDesde.Value, dtHasta.Value);
+
+            // Convertir los valores a decimales
+            string totVentasStr = obj.totalVentas;
+            string totComprasStr = obj.Compras;
+
+            decimal totVentas;
+            decimal totCompras;
+
+            // Intentar convertir totVentas
+            if (!decimal.TryParse(totVentasStr, out totVentas))
+            {
+                totVentas = 0; // Valor por defecto o manejar según sea necesario
+            }
+
+            // Intentar convertir totCompras
+            if (!decimal.TryParse(totComprasStr, out totCompras))
+            {
+
+                totCompras = 0; // Valor por defecto o manejar según sea necesario
+            }
+
+            // Limpiar las series anteriores (opcional, si no quieres acumular datos)
+            ctVentas.Series[0].Points.Clear();
+            ctCompras.Series[0].Points.Clear();
+
+            // Agregar puntos a las series
+            ctVentas.Series[0].Points.AddY(totVentas);
+            ctCompras.Series[0].Points.AddY(totCompras);
+        }
+
+        private void dtHasta_ValueChanged(object sender, EventArgs e)
+        {
+            // Crear el objeto que obtiene los datos de fechas
+            Grafico obj = new CN_Grafico().DatosFechas(dtDesde.Value, dtHasta.Value);
+
+            // Convertir los valores a decimales
+            string totVentasStr = obj.totalVentas;
+            string totComprasStr = obj.Compras;
+
+            decimal totVentas;
+            decimal totCompras;
+
+            // Intentar convertir totVentas
+            if (!decimal.TryParse(totVentasStr, out totVentas))
+            {
+                totVentas = 0; // Valor por defecto o manejar según sea necesario
+            }
+
+            // Intentar convertir totCompras
+            if (!decimal.TryParse(totComprasStr, out totCompras))
+            {
+
+                totCompras = 0; // Valor por defecto o manejar según sea necesario
+            }
+
+            // Limpiar las series anteriores (opcional, si no quieres acumular datos)
+            ctVentas.Series[0].Points.Clear();
+            ctCompras.Series[0].Points.Clear();
+
+            // Agregar puntos a las series
+            ctVentas.Series[0].Points.AddY(totVentas);
+            ctCompras.Series[0].Points.AddY(totCompras);
+        }
     }
 }

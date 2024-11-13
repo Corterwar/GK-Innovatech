@@ -253,6 +253,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap horario_de_busqueda__1_ {
+            get {
+                object obj = ResourceManager.GetObject("horario_de_busqueda__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image_Photoroom1 {
             get {
                 object obj = ResourceManager.GetObject("image_Photoroom1", resourceCulture);

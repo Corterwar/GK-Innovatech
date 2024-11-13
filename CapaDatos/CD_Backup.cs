@@ -33,6 +33,9 @@ namespace CapaDatos
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("BACKUP DATABASE [DBSistemaVentas] TO  DISK = N'C:\\Backup\\" + nombre + "' WITH NOFORMAT, NOINIT,  NAME = N'DBSistemaVentas-Full Database Backup', SKIP, NOREWIND, NOUNLOAD,  STATS = 10\r\n");
 
+
+                    query.AppendLine("\r\nUpdate BackupR \r\nset fecha_registro = GETDATE()\r\nwhere idBackup = 1");
+
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     oconexion.Open();
                     cmd.CommandType = CommandType.Text;
@@ -48,6 +51,9 @@ namespace CapaDatos
             }
             return resultado;
 
+
+           
+
         }
 
         public string Restore(string ruta)
@@ -62,7 +68,7 @@ namespace CapaDatos
                     query.AppendLine("ALTER DATABASE [DBSistemaVentas] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;");
                     query.AppendLine($"RESTORE DATABASE [DBSistemaVentas] FROM DISK = N'{ruta}' WITH REPLACE;");
                     query.AppendLine("ALTER DATABASE [DBSistemaVentas] SET MULTI_USER;");
-
+                   
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     oconexion.Open();
                     cmd.CommandType = CommandType.Text;
@@ -99,6 +105,7 @@ namespace CapaDatos
 
                         StringBuilder query = new StringBuilder();
                         query.AppendLine("BACKUP DATABASE [DBSistemaVentas] TO  DISK = N'C:\\Backup\\" + nombre + "' WITH NOFORMAT, NOINIT,  NAME = N'DBSistemaVentas-Full Database Backup', SKIP, NOREWIND, NOUNLOAD,  STATS = 10\r\n");
+                        query.AppendLine("\r\nUpdate BackupR \r\nset fecha_registro = GETDATE()\r\nwhere idBackup = 1");
 
                         SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
 
