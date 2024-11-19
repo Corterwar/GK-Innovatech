@@ -187,6 +187,12 @@ namespace CapaPresentacion
                 }
             }
 
+            if (user.oRol.IdRol != 1)
+            {
+                Negocio.Visible = false;
+                Backup.Visible = false;
+            }
+
       
             DateTime fecha = DateTime.Now;
 
@@ -225,7 +231,7 @@ namespace CapaPresentacion
         private void menuProveedores_Click(object sender, EventArgs e)
         {
             abrirFormulario((IconMenuItem)sender, new FrmProveedores()); // Abre el formulario de proveedores.
-            this.lblIndicador.Text = "Gestion Productos";
+            this.lblIndicador.Text = "Gestion Proveedores";
         }
 
         // Evento que abre el formulario de usuarios cuando se hace clic en el menú correspondiente.
